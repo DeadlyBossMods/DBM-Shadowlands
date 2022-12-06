@@ -51,6 +51,7 @@ globals = {
 	"GetRaidTargetIndex",
 	"GetTime",
 	"IsInRaid",
+	"IsInGroup",
 	"IsItemInRange",
 	"IsPartyLFG",
 	"SetCVar",

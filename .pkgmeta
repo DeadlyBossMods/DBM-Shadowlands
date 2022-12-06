@@ -1,0 +1,7 @@
+package-as: DBM-Shadowlands
+
+move-folders:
+  DBM-Shadowlands/DBM-Shadowlands: DBM-Shadowlands
+  DBM-Shadowlands/DBM-DBM-SanctumOfDomination: DBM-SanctumOfDomination
+  DBM-Shadowlands/DBM-CrucibleofStorms: DBM-CrucibleofStorms
+  DBM-Shadowlands/DBM-Sepulcher: DBM-Sepulcher

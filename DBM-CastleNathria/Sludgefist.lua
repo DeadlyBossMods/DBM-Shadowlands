@@ -171,7 +171,7 @@ function mod:SPELL_AURA_APPLIED(args)
 	elseif spellId == 331314 then
 		warnStunnedImpact:Show(args.destName)
 		timerStunnedImpact:Start()
-	elseif spellId == 342420 then--spellId == 342419 or
+	elseif spellId == 342420 then
 		--Combat log order is all 342419 first, then all 342420
 		--Update, both spell Ids now have source and des names, so can just ignore one spell Id entirely and apply source/dest to check for pairs
 		ChainLinkTargets[#ChainLinkTargets + 1] = args.sourceName

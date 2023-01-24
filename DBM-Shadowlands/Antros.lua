@@ -61,7 +61,7 @@ end
 
 function mod:SPELL_CAST_START(args)
 	local spellId = args.spellId
-	if spellId == 338858 and self:AntiSpam(12, 1) then
+	if spellId == 361209 and self:AntiSpam(12, 1) then
 		specWarnFuriousSlam:Show()
 		specWarnFuriousSlam:Play("shockwave")
 		timerFuriousSlamCD:Start()

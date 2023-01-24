@@ -47,7 +47,7 @@ end
 
 function mod:SPELL_CAST_START(args)
 	local spellId = args.spellId
-	if spellId == 338858 then
+	if spellId == 356430 then
 		specWarnIronGolem:Show()
 		timerIronGolemCD:Start()
 	elseif spellId == 353741 then

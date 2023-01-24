@@ -577,8 +577,8 @@ function mod:SPELL_AURA_APPLIED(args)
 		else
 			self:Schedule(0.5, showthreat, self)
 		end
-	elseif spellId == 350534 then--Purging Protocol Activating
-		timerEliminationPatternCD:Stop()--Still probably not most accurate way of doing it, but probably most reliable one given most strategies
+--	elseif spellId == 350534 then--Purging Protocol Activating
+--		timerEliminationPatternCD:Stop()--Still probably not most accurate way of doing it, but probably most reliable one given most strategies
 	end
 end
 --mod.SPELL_AURA_APPLIED_DOSE = mod.SPELL_AURA_APPLIED

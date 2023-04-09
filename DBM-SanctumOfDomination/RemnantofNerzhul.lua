@@ -81,6 +81,7 @@ mod.vb.shatterCount = 0
 --Shatter triggers it's own ICDs handled in shatter/phase change code
 --Spell queue priority: Suffering, Malevolence, Orb, Grasp
 local function updateAllTimers(self, ICD)
+	if not self:IsInCombat() then return end
 	DBM:Debug("updateAllTimers running", 2)
 	local nextCast = 0
 	if timerSufferingCD:GetRemaining() < ICD then

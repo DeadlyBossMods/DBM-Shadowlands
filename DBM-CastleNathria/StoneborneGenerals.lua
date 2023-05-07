@@ -158,7 +158,7 @@ mod.vb.grashDead = false
 --5-Heart rend in general seems ot have half ICD of everything else when ICD is triggered
 --Crystallize > tank abilities> wicked blade> eruption>seismic upheaval
 local function updateAllTimers(self, ICD, exclusion)
-	if not self.Options.ExperimentalTimerCorrection then return end
+	if not self.Options.ExperimentalTimerCorrection or not self:IsInCombat() then return end
 	DBM:Debug("updateAllTimers running", 3)
 	exclusion = exclusion or 0
 	--All phase abilities

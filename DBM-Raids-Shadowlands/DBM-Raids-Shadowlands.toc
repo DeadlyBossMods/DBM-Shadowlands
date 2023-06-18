@@ -1,6 +1,7 @@
 ## Interface: 100100
 ## X-Min-Interface: 90005
 ## Title:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Raids (Shadowlands)|r
+## Title-ruRU:|cffffe00a<|r|cffff7d0aDBM|r|cffffe00a>|r |cff69ccf0Рейды (Темные Земли)|r
 ## Author: MysticalOS
 ## LoadOnDemand: 1
 ## RequiredDeps: DBM-Core
@@ -13,6 +14,7 @@
 ## X-DBM-StatTypes: lfr,normal,heroic,mythic
 ## X-DBM-Mod-SubCategoriesID: 2481, 2450, 2296
 ## X-DBM-Mod-Name: Raids (Shadowlands)
+## X-DBM-Mod-Name-ruRU: Рейды (Темные Земли)
 ## X-DBM-Mod-Sort: 301
 ## X-DBM-Mod-MapID: 2481, 2450, 2296
 ## X-DBM-Mod-MinCoreRevision: 20230617000000

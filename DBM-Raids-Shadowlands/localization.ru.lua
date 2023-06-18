@@ -178,14 +178,6 @@ L:SetGeneralLocalization({
 ---------------------------
 --L= DBM:GetModLocalization(2458)
 
---L:SetOptionLocalization({
-
---})
-
---L:SetMiscLocalization({
-
---})
-
 ---------------------------
 --  Dausegne, the Fallen Oracle --
 ---------------------------
@@ -298,5 +290,5 @@ L:SetMiscLocalization({
 L = DBM:GetModLocalization("SepulcherTrash")
 
 L:SetGeneralLocalization({
-	name =	"Трэш мобы Гробницы Предвечных"
+	name =	"Трэш мобы Гробница Предвечных"
 })

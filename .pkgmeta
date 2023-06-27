@@ -1,5 +1,5 @@
-package-as: DBM-Shadowlands
+package-as: DBM-Raids-Shadowlands
 
 move-folders:
-  DBM-Shadowlands/DBM-Shadowlands: DBM-Shadowlands
-  DBM-Shadowlands/DBM-Raids-Shadowlands: DBM-Raids-Shadowlands
+  DBM-Raids-Shadowlands/DBM-Shadowlands: DBM-Shadowlands
+  DBM-Raids-Shadowlands/DBM-Raids-Shadowlands: DBM-Raids-Shadowlands

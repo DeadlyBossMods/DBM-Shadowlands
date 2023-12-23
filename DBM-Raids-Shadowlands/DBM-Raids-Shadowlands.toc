@@ -30,6 +30,8 @@ localization.cn.lua
 localization.es.lua
 localization.ru.lua
 
+FatedAffixes.lua
+
 Sepulcher\VigilantGuardian.lua
 Sepulcher\Skolex.lua
 Sepulcher\ArtificerXymox.lua

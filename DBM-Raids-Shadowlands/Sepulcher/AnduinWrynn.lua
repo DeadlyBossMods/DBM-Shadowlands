@@ -111,8 +111,7 @@ local timerHopelessnessCD						= mod:NewCDTimer(28.8, 365966, nil, nil, nil, 3, 
 
 mod:AddInfoFrameOption(365966, false)
 
-mod:AddMiscLine(DBM_CORE_L.OPTION_CATEGORY_DROPDOWNS)
-mod:AddDropdownOption("PairingBehavior", {"Auto", "Generic", "None"}, "Generic", "misc")--Controls the yellBlasphemy/specWarnOverconfidence/specWarnHopelessness
+mod:AddDropdownOption("PairingBehavior", {"Auto", "Generic", "None"}, "Generic", "misc", nil, 361989)--Controls the yellBlasphemy/specWarnOverconfidence/specWarnHopelessness
 
 mod.vb.hungersCount = 0
 mod.vb.blastphemyCount = 0

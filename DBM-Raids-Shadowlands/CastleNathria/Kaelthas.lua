@@ -7,7 +7,7 @@ mod:SetEncounterID(2402)
 mod:DisableIEEUCombatDetection()--kael gets stuck on boss frames well after encounter has ended, therefor must not re-engage boss off this bug
 mod:SetUsedIcons(1, 2, 3, 4, 5)
 mod.onlyHighest = true--Instructs DBM health tracking to literally only store highest value seen during fight, even if it drops below that
-mod.noBossDeathKill = true--Instructs mod to ignore 165759 deaths, since goal is to heal kael, not kill him
+mod:DisableBossDeathKill()--Instructs mod to ignore 165759 deaths, since goal is to heal kael, not kill him
 mod:SetHotfixNoticeRev(20210128000000)--2021, 01, 28
 mod:SetMinSyncRevision(20210105000000)
 --mod.respawnTime = 29

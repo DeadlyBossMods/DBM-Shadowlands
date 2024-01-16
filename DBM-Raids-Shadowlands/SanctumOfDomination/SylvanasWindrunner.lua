@@ -665,7 +665,7 @@ function mod:SPELL_CAST_SUCCESS(args)
 			soakCount = 4
 		end
 		if self.Options.SpecWarn358588soakcount then
-			specWarnMerciless:Show(self.vb.merciCount.." ("..soakCount.."x)")
+			specWarnMerciless:Show(self.vb.merciCount.." / "..soakCount.."x")
 			specWarnMerciless:Play("helpsoak")
 		else
 			warnMerciless:Show(self.vb.merciCount.." ("..soakCount.."x)")

@@ -17,8 +17,8 @@ mod:RegisterEventsInCombat(
 	"SPELL_AURA_APPLIED 362401 360281 366285 365150 365153 362075 365219 365222 362192 368383 360174 368593 363748 368591 181089 360378",--362024 360180
 	"SPELL_AURA_REMOVED 362401 360281 366285 365150 365153 365222 368383 360174 368593 363748 368591 363886",--360180
 	"SPELL_PERIODIC_DAMAGE 360425 365174",
-	"SPELL_PERIODIC_MISSED 360425 365174",
-	"UNIT_SPELLCAST_SUCCEEDED boss1"
+	"SPELL_PERIODIC_MISSED 360425 365174"
+--	"UNIT_SPELLCAST_SUCCEEDED boss1"
 )
 
 --TODO, is tyranny warning appropriate? maybe track debuff for mythic?
@@ -69,7 +69,7 @@ local yellRuneofDamnationFades					= mod:NewIconFadesYell(360281)
 local timerRelentingDominationCD				= mod:NewCDCountTimer(28.8, 362028, nil, nil, nil, 2)
 local timerTyrany								= mod:NewCDTimer(11, 366132, nil, nil, nil, 3)
 local timerChainsofOppressionCD					= mod:NewCDCountTimer(28.8, 362631, nil, nil, nil, 3)
-local timerMartyrdomCD							= mod:NewCDCountTimer(28.8, 363893, DBM_COMMON_L.TANKCOMBOC, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON)
+local timerMartyrdomCD							= mod:NewCDCountTimer(28.8, 363893, DBM_COMMON_L.TANKCOMBO.." (%s)", nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON)
 local timerTormentCD							= mod:NewCDCountTimer(28.8, 365436, nil, nil, nil, 2)
 local timerRuneofDamnationCD					= mod:NewCDCountTimer(28.8, 360281, DBM_COMMON_L.BOMBS.." (%s)", nil, nil, 3)
 

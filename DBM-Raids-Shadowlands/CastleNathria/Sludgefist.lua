@@ -1,3 +1,4 @@
+---@diagnostic disable: cast-local-type
 local mod	= DBM:NewMod(2394, "DBM-Raids-Shadowlands", 3, 1190)
 local L		= mod:GetLocalizedStrings()
 

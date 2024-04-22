@@ -300,7 +300,7 @@ function mod:INSTANCE_ENCOUNTER_ENGAGE_UNIT()
 	for i = 1, 5 do
 		local unitID = "boss"..i
 		local unitGUID = UnitGUID(unitID)
-		if UnitExists(unitID) and not castsPerGUID[unitGUID] then
+		if unitGUID and UnitExists(unitID) and not castsPerGUID[unitGUID] then
 			castsPerGUID[unitGUID] = {}
 			castsPerGUID[unitGUID][1] = 1--Diss
 			castsPerGUID[unitGUID][2] = 1--Wave

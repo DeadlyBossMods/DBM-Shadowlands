@@ -427,7 +427,9 @@ function mod:OnCombatStart(delay)
 	for uId in DBM:GetGroupMembers() do
 		if DBM:UnitDebuff(uId, 352394) then
 			local unitName = DBM:GetUnitFullName(uId)
-			playersSafe[unitName] = true
+			if unitName then
+				playersSafe[unitName] = true
+			end
 		end
 	end
 	if DBM:UnitAura("boss1", 352385) then
@@ -467,7 +469,9 @@ function mod:OnTimerRecovery()
 	for uId in DBM:GetGroupMembers() do
 		if DBM:UnitDebuff(uId, 352394) then
 			local unitName = DBM:GetUnitFullName(uId)
-			playersSafe[unitName] = true
+			if unitName then
+				playersSafe[unitName] = true
+			end
 		end
 	end
 end

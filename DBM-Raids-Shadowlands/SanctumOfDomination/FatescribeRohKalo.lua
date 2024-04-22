@@ -13,7 +13,7 @@ mod:RegisterCombat("combat")
 
 mod:RegisterEventsInCombat(
 	"SPELL_CAST_START 351680 350554 350421 353426 350169 354367 354265 357144 353603",
-	"SPELL_CAST_SUCCESS 350355",
+--	"SPELL_CAST_SUCCESS 350355",
 	"SPELL_AURA_APPLIED 354365 351680 353432 350568 356065 353195 354964 357739",
 --	"SPELL_AURA_APPLIED_DOSE",
 	"SPELL_AURA_REMOVED 354365 351680 350568 356065 353195 357739 353432",
@@ -505,7 +505,7 @@ function mod:INSTANCE_ENCOUNTER_ENGAGE_UNIT()
 	for i = 1, 5 do
 		local unitID = "boss"..i
 		local unitGUID = UnitGUID(unitID)
-		if UnitExists(unitID) and not castsPerGUID[unitGUID] then
+		if unitGUID and UnitExists(unitID) and not castsPerGUID[unitGUID] then
 			castsPerGUID[unitGUID] = 0
 			local cid = self:GetUnitCreatureId(unitID)
 			if cid == 180323 then--Fatespawn Monstrosity

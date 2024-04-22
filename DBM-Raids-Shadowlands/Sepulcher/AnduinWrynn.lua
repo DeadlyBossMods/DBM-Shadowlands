@@ -235,7 +235,9 @@ function mod:OnTimerRecovery()
 	for uId in DBM:GetGroupMembers() do
 		if DBM:UnitDebuff(uId, 362055) then
 			local name = DBM:GetUnitFullName(uId)
-			playersSouled[name] = true
+			if name then
+				playersSouled[name] = true
+			end
 		end
 	end
 	updateTimerFades(self)

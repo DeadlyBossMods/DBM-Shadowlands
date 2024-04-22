@@ -1,3 +1,4 @@
+---@diagnostic disable: dbm-sync-checker
 local mod	= DBM:NewMod(2460, "DBM-Raids-Shadowlands", 1, 1195)
 local L		= mod:GetLocalizedStrings()
 
@@ -783,7 +784,6 @@ function mod:SPELL_AURA_APPLIED(args)
 		warnNightHunter:CombinedShow(0.3, args.destName)
 	end
 end
-mod.SPELL_AURA_APPLIED_DOSE = mod.SPELL_AURA_APPLIED
 
 function mod:SPELL_AURA_REMOVED(args)
 	local spellId = args.spellId

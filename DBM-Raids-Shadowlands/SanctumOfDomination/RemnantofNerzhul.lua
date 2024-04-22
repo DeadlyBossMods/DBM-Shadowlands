@@ -55,7 +55,7 @@ local specWarnGraspofMalice						= mod:NewSpecialWarningDodge(355123, nil, nil, 
 
 local timerOrbofTormentCD						= mod:NewCDCountTimer(35, 349908, nil, nil, nil, 1, nil, nil, true)
 local timerMalevolenceCD						= mod:NewCDCountTimer(31.3, 350469, nil, nil, nil, 3, nil, DBM_COMMON_L.CURSE_ICON, true)--Rattlecage of Agony 31.7--49.7
-local timerSufferingCD							= mod:NewCDTimer(24.4, 350894, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON, true, mod:IsTank() and 2, 3)
+local timerSufferingCD							= mod:NewCDTimer(24.4, 350894, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON, true, mod:IsTank() and 2 or nil, 3)
 local timerGraspofMaliceCD						= mod:NewCDTimer(20.7, 355123, nil, nil, nil, 3, nil, nil, true)--Malicious Gauntlet (22 possibly the min time now?)
 --local timerBurstofAgonyCD						= mod:NewAITimer(23, 350096, nil, nil, nil, 3)
 

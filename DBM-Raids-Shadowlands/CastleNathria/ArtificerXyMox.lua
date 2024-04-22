@@ -33,7 +33,7 @@ local warnPhase										= mod:NewPhaseChangeAnnounce(2, nil, nil, nil, nil, nil
 local warnDimensionalTear							= mod:NewTargetNoFilterAnnounce(328437, 3, nil, nil, 327770)
 local warnHyperlightSpark							= mod:NewCountAnnounce(325399, 2, nil, false, 2)
 
-local specWarnDimensionalTear						= mod:NewSpecialWarningYouPos(328437, 327770, nil, nil, 1, 2)
+local specWarnDimensionalTear						= mod:NewSpecialWarningYouPos(328437, nil, 327770, nil, 1, 2)
 local yellDimensionalTear							= mod:NewPosYell(328437, 327770)
 local yellDimensionalTearFades						= mod:NewIconFadesYell(328437, 327770)
 local specWarnGlyphofDestruction					= mod:NewSpecialWarningMoveAwayCount(325361, nil, nil, nil, 1, 2)

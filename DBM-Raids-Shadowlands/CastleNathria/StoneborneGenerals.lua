@@ -311,7 +311,7 @@ function mod:OnCombatStart(delay)
 		DBM:FireEvent("BossMod_EnableHostileNameplates")
 	end
 	if self.Options.InfoFrame then
-		DBM.InfoFrame:SetHeader(DBM:GetSpellInfo(333913))
+		DBM.InfoFrame:SetHeader(DBM:GetSpellName(333913))
 		DBM.InfoFrame:Show(10, "table", LacerationStacks, 1)
 	end
 	if UnitIsGroupLeader("player") then self:SendSync(self.Options.BladeMarking) end

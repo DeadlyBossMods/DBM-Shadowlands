@@ -76,7 +76,7 @@ function mod:OnCombatStart(delay)
 		berserkTimer:Start((self:IsEasy() and 420 or 360)-delay) -- 7 minutes on Normal, 6 minutes on Heroic/Mythic
 	end
 	if self.Options.InfoFrame then
-		DBM.InfoFrame:SetHeader(DBM:GetSpellInfo(359778))
+		DBM.InfoFrame:SetHeader(DBM:GetSpellName(359778))
 		DBM.InfoFrame:Show(20, "table", EphemeraDustStacks, 5)
 	end
 end

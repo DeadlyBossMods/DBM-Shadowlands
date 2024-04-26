@@ -149,7 +149,7 @@ function mod:OnCombatStart(delay)
 	end
 --	berserkTimer:Start(-delay)
 --	if self.Options.InfoFrame then
---		DBM.InfoFrame:SetHeader(DBM:GetSpellInfo(328897))
+--		DBM.InfoFrame:SetHeader(DBM:GetSpellName(328897))
 --		DBM.InfoFrame:Show(10, "table", ExsanguinatedStacks, 1)
 --	end
 	if self.Options.NPAuraOnSharedSuffering then

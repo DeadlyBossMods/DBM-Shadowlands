@@ -402,7 +402,7 @@ function mod:OnCombatStart(delay)
 	end
 --	berserkTimer:Start(-delay)
 	if self.Options.InfoFrame then
-		DBM.InfoFrame:SetHeader(DBM:GetSpellInfo(347807))
+		DBM.InfoFrame:SetHeader(DBM:GetSpellName(347807))
 		DBM.InfoFrame:Show(10, "table", debuffStacks, 1)
 	end
 	if self.Options.NPAuraOnEnflame or self.Options.NPAuraOnRage then
@@ -735,7 +735,7 @@ function mod:SPELL_CAST_SUCCESS(args)
 			timerBansheesScreamCD:Start(105.7, 1)
 		end
 		if self.Options.InfoFrame then
-			DBM.InfoFrame:SetHeader(DBM:GetSpellInfo(353929))
+			DBM.InfoFrame:SetHeader(DBM:GetSpellName(353929))
 			DBM.InfoFrame:Show(10, "table", debuffStacks, 1)
 		end
 	end

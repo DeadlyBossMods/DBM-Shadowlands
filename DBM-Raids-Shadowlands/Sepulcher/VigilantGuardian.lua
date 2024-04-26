@@ -83,7 +83,7 @@ mod:GroupSpells(360412, 360403)--Exposed Core and the shield you seek need to de
 mod.vb.refractedCount = 0
 local castsPerGUID = {}
 
-local shieldName = DBM:GetSpellInfo(360403)
+local shieldName = DBM:GetSpellName(360403)
 
 function mod:OnCombatStart(delay)
 	self:SetStage(1)

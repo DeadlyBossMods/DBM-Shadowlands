@@ -310,7 +310,7 @@ function mod:OnCombatStart(delay)
 	end
 --	berserkTimer:Start(-delay)--Confirmed normal and heroic
 	if self.Options.InfoFrame then
-		DBM.InfoFrame:SetHeader(DBM:GetSpellInfo(326699))
+		DBM.InfoFrame:SetHeader(DBM:GetSpellName(326699))
 		DBM.InfoFrame:Show(self:IsHard() and 30 or 10, "table", SinStacks, 1)--Show everyone on heroic+, filter down to 10 on normal/lfr
 	end
 end
@@ -459,7 +459,7 @@ function mod:SPELL_CAST_SUCCESS(args)
 			timerFatalFitnesseCD:Start(27, 1)--SUCCESS/APPLIED
 			timerSinisterReflectionCD:Start(70.5, 1)--Both ravage and masacre at same time
 			if self.Options.InfoFrame then
-				DBM.InfoFrame:SetHeader(DBM:GetSpellInfo(326699))
+				DBM.InfoFrame:SetHeader(DBM:GetSpellName(326699))
 				DBM.InfoFrame:Show(20, "table", SinStacks, 1)
 			end
 		else

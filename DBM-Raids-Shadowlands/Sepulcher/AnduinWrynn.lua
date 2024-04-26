@@ -126,7 +126,7 @@ local playersSouled = {}
 local playerName = UnitName("player")
 local overconfidentTargets = {}
 local hopelessnessTargets = {}
-local hopelessnessName, overconfidenceName = DBM:GetSpellInfo(361993), DBM:GetSpellInfo(361992)
+local hopelessnessName, overconfidenceName = DBM:GetSpellName(361993), DBM:GetSpellName(361992)
 local castsPerGUID = {}
 local allTimers = {
 	[1] = {
@@ -348,7 +348,7 @@ function mod:SPELL_CAST_START(args)
 			timerHopelessnessCD:Start(19.8)
 			timerWickedStarCD:Start(39.8, 1)
 			if self.Options.InfoFrame then
-				DBM.InfoFrame:SetHeader(DBM:GetSpellInfo(365966))
+				DBM.InfoFrame:SetHeader(DBM:GetSpellName(365966))
 				DBM.InfoFrame:Show(20, "playerdebuffremaining", 365966)
 			end
 			--If an intermission was skipped, affix timer does NOT reset, it continues from previous reset (intermission)
@@ -608,7 +608,7 @@ function mod:SPELL_AURA_REMOVED(args)
 			timerHopelessnessCD:Start(20.4)
 			timerWickedStarCD:Start(40.4, 1)
 			if self.Options.InfoFrame then
-				DBM.InfoFrame:SetHeader(DBM:GetSpellInfo(365966))
+				DBM.InfoFrame:SetHeader(DBM:GetSpellName(365966))
 				DBM.InfoFrame:Show(20, "playerdebuffremaining", 365966)
 			end
 			if self:IsFated() then

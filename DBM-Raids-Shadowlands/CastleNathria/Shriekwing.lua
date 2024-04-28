@@ -76,7 +76,7 @@ local timerEchoingSonar							= mod:NewCastTimer(6, 329362, nil, false, nil, 5)
 
 mod:AddRangeFrameOption("8")
 mod:AddInfoFrameOption(328897, true)
-mod:AddSetIconOption("SetIconOnEcholocation", 342074, true, false, {1, 2, 3})
+mod:AddSetIconOption("SetIconOnEcholocation", 342074, true, 0, {1, 2, 3})
 
 mod:GroupSpells(328857, 328897)
 

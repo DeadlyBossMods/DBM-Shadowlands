@@ -70,7 +70,7 @@ local timerCloakofFlamesCD						= mod:NewNextCountTimer(30, 337859, nil, nil, ni
 --local berserkTimer							= mod:NewBerserkTimer(600)
 
 mod:AddInfoFrameOption(326078, true)--343026
-mod:AddSetIconOption("SetIconOnEmberBlast", 325877, true, false, {1})
+mod:AddSetIconOption("SetIconOnEmberBlast", 325877, true, 0, {1})
 --Adds
 ----Rockbound Vanquisher
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(21954))
@@ -123,7 +123,7 @@ local yellEyeOnTarget							= mod:NewYell(328479, nil, false)
 
 local timerPhoenixRespawn						= mod:NewCastTimer(20, 328731, nil, nil, nil, 1)
 
-mod:AddSetIconOption("SetIconOnBirdo", 328731, true, true, {2, 3, 4, 5})
+mod:AddSetIconOption("SetIconOnBirdo", 328731, true, 5, {2, 3, 4, 5})
 mod:AddNamePlateOption("NPAuraOnPhoenixFixate", 328479)
 
 --Mostly for testing, these are not meant to be used as they aren't actual groupings

@@ -57,8 +57,8 @@ local timerNecroticRitualCD						= mod:NewCDCountTimer(71.4, 360295, nil, nil, n
 local timerRunecarversDeathtouchCD				= mod:NewCDCountTimer(57.1, 360687, nil, nil, nil, 3, nil, DBM_COMMON_L.MAGIC_ICON)
 
 mod:AddInfoFrameOption(360687, "Healer")
-mod:AddSetIconOption("SetIconOnDeathtouch", 360687, false, false, {1, 2, 3, 4}, true)--Technically only 2 debuffs go out, but we allow for even a bad group to have two sets of them out. Off by default do to conflict with seeds
-mod:AddSetIconOption("SetIconOnRitualist", 360295, true, true, {1, 2, 3, 4, 5, 6, 7, 8})--Conflict arg not passed because by default it won't, user has to introduce conflict via dropdown (and that has a warning)
+mod:AddSetIconOption("SetIconOnDeathtouch", 360687, false, 0, {1, 2, 3, 4}, true)--Technically only 2 debuffs go out, but we allow for even a bad group to have two sets of them out. Off by default do to conflict with seeds
+mod:AddSetIconOption("SetIconOnRitualist", 360295, true, 5, {1, 2, 3, 4, 5, 6, 7, 8})--Conflict arg not passed because by default it won't, user has to introduce conflict via dropdown (and that has a warning)
 mod:AddDropdownOption("RitualistIconSetting", {"SetOne", "SetTwo"}, "SetOne", "misc", nil, 360295)
 
 ----Prototype of Duty
@@ -87,7 +87,7 @@ local timerWildStampedeCD						= mod:NewCDCountTimer(28.8, 361304, nil, nil, nil
 local timerWitheringSeedCD						= mod:NewCDCountTimer(96.2, 361568, nil, "Healer", nil, 5, nil, DBM_COMMON_L.HEALER_ICON)
 local timerAnimastormCD							= mod:NewCDCountTimer(28.8, 362132, nil, nil, nil, 2)
 
-mod:AddSetIconOption("SetIconOnSeed", 361568, true, true, {1, 2, 3, 4}, nil, true)
+mod:AddSetIconOption("SetIconOnSeed", 361568, true, 5, {1, 2, 3, 4}, nil, true)
 ----Prototype of Absolution
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24139))
 local warnNightHunter							= mod:NewTargetNoFilterAnnounce(361745, 3)

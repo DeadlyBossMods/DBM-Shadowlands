@@ -61,7 +61,7 @@ local timerDisintegrationHalo					= mod:NewCastCountTimer(5, 365373, 161172, nil
 local timerSiphonReservoirCD					= mod:NewCDCountTimer(28.8, 361643, nil, nil, nil, 6)
 
 mod:AddInfoFrameOption(361651, true)
-mod:AddSetIconOption("SetIconOnStaggeringBarrage", 361018, true, false, {1, 2, 3})--Only one was happening on heroic, is 3 mythic only?
+mod:AddSetIconOption("SetIconOnStaggeringBarrage", 361018, true, 0, {1, 2, 3})--Only one was happening on heroic, is 3 mythic only?
 
 mod.vb.DebuffIcon = 1
 mod.vb.barrageCount = 0

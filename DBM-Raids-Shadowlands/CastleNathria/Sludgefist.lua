@@ -68,7 +68,7 @@ local timerSiesmicShiftCD						= mod:NewCDCountTimer(34, 340817, nil, nil, nil, 
 --local berserkTimer							= mod:NewBerserkTimer(600)
 
 mod:AddRangeFrameOption(5, 340817)
-mod:AddSetIconOption("SetIconGaze", 331209, true, false, {1})
+mod:AddSetIconOption("SetIconGaze", 331209, true, 0, {1})
 
 mod.vb.gazeCount = 0
 mod.vb.stompCount = 0

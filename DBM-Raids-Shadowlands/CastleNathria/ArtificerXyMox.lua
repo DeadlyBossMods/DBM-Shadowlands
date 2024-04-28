@@ -51,7 +51,7 @@ local timerRiftBlastCD								= mod:NewCDTimer(36, 335013, nil, nil, nil, 3)--36
 local timerHyperlightSparkCD						= mod:NewCDTimer(15.8, 325399, nil, nil, nil, 2, nil, DBM_COMMON_L.HEALER_ICON)--15.8 except when it's heavily spell queued
 --local berserkTimer								= mod:NewBerserkTimer(600)
 
-mod:AddSetIconOption("SetIconOnTear", 328437, true, false, {1, 2})
+mod:AddSetIconOption("SetIconOnTear", 328437, true, 0, {1, 2})
 --Sire Denathrius' Private Collection
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22119))
 local warnSpirits									= mod:NewSpellAnnounce(340758, 3, nil, nil, 263222)

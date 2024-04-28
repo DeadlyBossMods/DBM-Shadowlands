@@ -64,7 +64,7 @@ local timerFeedingTimeCD						= mod:NewCDCountTimer(44.3, 327039, nil, nil, nil,
 local timerNightHunterCD						= mod:NewNextCountTimer(44.3, 327796, nil, nil, nil, 3, nil, DBM_COMMON_L.HEROIC_ICON)--Heroic/mythic
 local timerCommandRavageCD						= mod:NewCDCountTimer(57.2, 327227, 327122, nil, nil, 2, nil, DBM_COMMON_L.DEADLY_ICON, nil, 1, 4)--ShortName "Ravage" (the actual cast)
 
-mod:AddSetIconOption("SetIconOnNightHunter", 327796, true, false, {1, 2, 3})
+mod:AddSetIconOption("SetIconOnNightHunter", 327796, true, 0, {1, 2, 3})
 --Intermission: March of the Penitent
 local specWarnMarchofthePenitent				= mod:NewSpecialWarningSpell(328117, nil, nil, nil, 2, 2)
 
@@ -83,7 +83,7 @@ local warnBalefulShadows						= mod:NewSpellAnnounce(344313, 3)
 
 local specWarnVengefulWail						= mod:NewSpecialWarningInterruptCount(344776, "HasInterrupt", nil, nil, 1, 2, 4)
 
-mod:AddSetIconOption("SetIconOnBalefulShadows", 344313, false, true, {7, 8})
+mod:AddSetIconOption("SetIconOnBalefulShadows", 344313, false, 5, {7, 8})
 ----Remornia
 local warnCarnage								= mod:NewStackAnnounce(329906, 2, nil, "Tank|Healer")
 local warnImpale								= mod:NewTargetAnnounce(329951, 2)
@@ -96,7 +96,7 @@ local yellImpaleFades							= mod:NewIconFadesYell(329951)
 
 local timerImpaleCD								= mod:NewNextCountTimer(44.3, 329951, nil, nil, nil, 3)
 
-mod:AddSetIconOption("SetIconOnImpale", 329951, true, false, {1, 2, 3, 4})
+mod:AddSetIconOption("SetIconOnImpale", 329951, true, 0, {1, 2, 3, 4})
 ----Sire Denathrius
 local specWarnWrackingPain						= mod:NewSpecialWarningDefensive(329181, "Tank", nil, nil, 1, 2)--Change to defensive if it can't be dodged
 local specWarnWrackingPainTaunt					= mod:NewSpecialWarningTaunt(329181, nil, nil, nil, 1, 2)
@@ -127,7 +127,7 @@ local timerSinisterReflection					= mod:NewCastTimer(3, 333979, nil, nil, nil, 5
 
 --local berserkTimer							= mod:NewBerserkTimer(600)
 
-mod:AddSetIconOption("SetIconOnFatalFinesse", 332794, true, false, {1, 2, 3})
+mod:AddSetIconOption("SetIconOnFatalFinesse", 332794, true, 0, {1, 2, 3})
 
 mod.vb.priceCount = 0
 mod.vb.painCount = 0

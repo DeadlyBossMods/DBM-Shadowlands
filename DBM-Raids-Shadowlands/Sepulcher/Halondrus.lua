@@ -69,7 +69,7 @@ local timerCrushingPrismCD						= mod:NewCDCountTimer(26.9, 365297, nil, nil, ni
 local timerRelocationForm						= mod:NewCastTimer(6, 359236, nil, nil, nil, 6)
 local timerShatterCD							= mod:NewCDCountTimer(6, 362056, nil, nil, nil, 5, nil, DBM_COMMON_L.DAMAGE_ICON)
 
-mod:AddSetIconOption("SetIconOnCrushing2", 365297, true, false, {1, 2, 3, 4, 5, 6, 7})
+mod:AddSetIconOption("SetIconOnCrushing2", 365297, true, 0, {1, 2, 3, 4, 5, 6, 7})
 mod:AddNamePlateOption("NPAuraOnFractal", 368671, true)
 mod:GroupSpells(368957, 368969)--Combine the cast (Charges with the debuff Charge)
 

@@ -80,8 +80,8 @@ local timerMassiveBang							= mod:NewCastTimer(10, 363533, nil, nil, nil, 5, ni
 
 mod:AddRangeFrameOption(5, 362206)
 mod:AddInfoFrameOption(362081, false)--Tracks just ejection on heroic but on mythic it tracks Irregularity
-mod:AddSetIconOption("SetIconOnDarkEclipse", 361548, true, false, {1, 2, 3}, true)
-mod:AddSetIconOption("SetIconOnQuasar", 362275, false, true, {3, 4, 5, 6, 7, 8}, true)
+mod:AddSetIconOption("SetIconOnDarkEclipse", 361548, true, 0, {1, 2, 3}, true)
+mod:AddSetIconOption("SetIconOnQuasar", 362275, false, 5, {3, 4, 5, 6, 7, 8}, true)
 --The Singularity
 local singularityName = DBM:GetSpellName(362207)
 mod:AddTimerLine(singularityName)

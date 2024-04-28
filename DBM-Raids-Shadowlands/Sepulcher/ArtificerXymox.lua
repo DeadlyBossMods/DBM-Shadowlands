@@ -59,8 +59,8 @@ local timerStasisTrapCD							= mod:NewCDCountTimer(30, 362882, nil, nil, nil, 3
 local timerHyperlightSparknovaCD				= mod:NewCDCountTimer(30, 362849, 206794, nil, nil, 2, nil, DBM_COMMON_L.HEALER_ICON)--28-34
 local berserkTimer								= mod:NewBerserkTimer(600)
 
-mod:AddSetIconOption("SetIconOnWormhole", 362615, true, false, {1, 2})
-mod:AddSetIconOption("SetIconGlyphofRelocation", 362803, false, false, {3})
+mod:AddSetIconOption("SetIconOnWormhole", 362615, true, 0, {1, 2})
+mod:AddSetIconOption("SetIconGlyphofRelocation", 362803, false, 0, {3})
 --Stage Two: Secrets of the Relic
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24589))
 local warnDecipherRelic							= mod:NewSpellAnnounce(363139, 2)
@@ -79,7 +79,7 @@ local specWarnDebilitatingRay					= mod:NewSpecialWarningInterruptCount(364030, 
 local timerRiftBlastsCD							= mod:NewCDTimer(6, 362841, nil, nil, nil, 3, nil, DBM_COMMON_L.MYTHIC_ICON)--Initial ones only on phasing, after that they can get kinda desynced plus very frequent
 local timerMassiveBlastCD						= mod:NewCDTimer(11.5, 365681, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--11.5-12.2
 
-mod:AddSetIconOption("SetIconOnHyperlightAdds", 364021, true, true, {4, 5, 6, 7, 8})
+mod:AddSetIconOption("SetIconOnHyperlightAdds", 364021, true, 5, {4, 5, 6, 7, 8})
 mod:AddNamePlateOption("NPAuraOnDecipherRelic", 363139, true)
 mod:AddNamePlateOption("NPAuraOnOverseersOrders", 365701, true)
 mod:AddNamePlateOption("NPAuraOnAscension", 364040, true)

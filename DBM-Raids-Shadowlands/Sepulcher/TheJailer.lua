@@ -73,8 +73,8 @@ local timerMartyrdomCD							= mod:NewCDCountTimer(28.8, 363893, DBM_COMMON_L.TA
 local timerTormentCD							= mod:NewCDCountTimer(28.8, 365436, nil, nil, nil, 2)
 local timerRuneofDamnationCD					= mod:NewCDCountTimer(28.8, 360281, DBM_COMMON_L.BOMBS.." (%s)", nil, nil, 3)
 
-mod:AddSetIconOption("SetIconOnMartyrdom2", 363893, false, false, {7})
-mod:AddSetIconOption("SetIconOnDamnation", 360281, true, false, {1, 2, 3, 4, 5, 6})
+mod:AddSetIconOption("SetIconOnMartyrdom2", 363893, false, 0, {7})
+mod:AddSetIconOption("SetIconOnDamnation", 360281, true, 0, {1, 2, 3, 4, 5, 6})
 
 --Stage Two: Unholy Attunement
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(23925))
@@ -96,7 +96,7 @@ local timerShatteringBlastCD					= mod:NewCDCountTimer(28.8, 359856, nil, nil, n
 local timerRuneofCompulsionCD					= mod:NewCDCountTimer(28.8, 366285, DBM_COMMON_L.MINDCONTROL.." (%s)", nil, nil, 3)
 local timerDecimatorCD							= mod:NewCDCountTimer(28.8, 364942, 72994, nil, nil, 2)
 
-mod:AddSetIconOption("SetIconOnCopulsion", 366285, true, false, {1, 2, 3, 4})
+mod:AddSetIconOption("SetIconOnCopulsion", 366285, true, 0, {1, 2, 3, 4})
 
 --Stage Three: Eternity's End
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24252))
@@ -125,9 +125,9 @@ local timerRuneofDominationCD					= mod:NewCDCountTimer(28.8, 365150, DBM_COMMON
 local timerChainsofAnguishCD					= mod:NewCDCountTimer(28.8, 365219, nil, nil, nil, 5)
 local timerDefileCD								= mod:NewCDCountTimer(28.8, 365169, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)
 
-mod:AddSetIconOption("SetIconOnDomination2", 365150, true, false, {1, 2, 3})
-mod:AddSetIconOption("SetIconOnChainsofAnguish", 365219, true, false, {5, 6, 7, 8})
---mod:AddSetIconOption("SetIconOnDefile", 365169, true, false, {8})
+mod:AddSetIconOption("SetIconOnDomination2", 365150, true, 0, {1, 2, 3})
+mod:AddSetIconOption("SetIconOnChainsofAnguish", 365219, true, 0, {5, 6, 7, 8})
+--mod:AddSetIconOption("SetIconOnDefile", 365169, true, 0, {8})
 --Stage Four: Hidden Mythic Stage
 mod:AddTimerLine(SCENARIO_STAGE:format(4))
 local warnLifeShieldOver				= mod:NewEndAnnounce(368383, 1)

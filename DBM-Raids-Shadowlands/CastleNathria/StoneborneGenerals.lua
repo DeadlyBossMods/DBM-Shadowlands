@@ -68,9 +68,9 @@ local timerSerratedSwipeCD						= mod:NewCDCountTimer(21.8, 334929, nil, "Tank|H
 local timerCallShadowForcesCD					= mod:NewCDCountTimer(52, 342256, nil, nil, nil, 1, nil, DBM_COMMON_L.MYTHIC_ICON)
 
 mod:AddInfoFrameOption(333913, true)
-mod:AddSetIconOption("SetIconOnHeartRend", 334765, true, false, {1, 2, 3, 4})--On by default since it's most important mechanic to manage outside of shadow forces
-mod:AddSetIconOption("SetIconOnShadowForces", 342256, true, true, {6, 7, 8})
-mod:AddSetIconOption("SetIconOnWickedBlade2", 333376, false, false, {1, 2})--Off by default since it conflicts with heart rend
+mod:AddSetIconOption("SetIconOnHeartRend", 334765, true, 0, {1, 2, 3, 4})--On by default since it's most important mechanic to manage outside of shadow forces
+mod:AddSetIconOption("SetIconOnShadowForces", 342256, true, 5, {6, 7, 8})
+mod:AddSetIconOption("SetIconOnWickedBlade2", 333376, false, 0, {1, 2})--Off by default since it conflicts with heart rend
 mod:AddDropdownOption("BladeMarking", {"SetOne", "SetTwo"}, "SetOne", "misc", nil, 333376)--SetTwo is BW default
 --General Grashaal
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22288))
@@ -102,8 +102,8 @@ local timerSeismicUpheavalCD					= mod:NewCDCountTimer(25.1, 334498, nil, nil, n
 local timerCrystalizeCD							= mod:NewCDCountTimer(55, 339690, nil, nil, 3, 5, nil, nil, true)--55 on mythic, 50 on non mythic
 local timerStoneFistCD							= mod:NewCDCountTimer(18, 342425, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON, true)
 
-mod:AddSetIconOption("SetIconOnEruption2", 344496, false, false, {4})--Off by default since it conflicts with heart rend
-mod:AddSetIconOption("SetIconOnCrystalize", 339690, true, false, {5})
+mod:AddSetIconOption("SetIconOnEruption2", 344496, false, 0, {4})--Off by default since it conflicts with heart rend
+mod:AddSetIconOption("SetIconOnCrystalize", 339690, true, 0, {5})
 --Adds/Intermissions
 local specWarnVolatileStoneShell				= mod:NewSpecialWarningSwitch(340037, "Dps", nil, nil, 1, 2)
 local specWarnShatteringBlast					= mod:NewSpecialWarningSpell(332683, nil, nil, nil, 2, 2)

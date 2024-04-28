@@ -35,7 +35,7 @@ local timerScreamingSkullCD					= mod:NewCDTimer(26.7, 338851, nil, nil, nil, 3,
 local timerBoneCleaveCD						= mod:NewCDTimer(12.3, 338846, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
 local timerUnrulyRemainsCD					= mod:NewCDTimer(15.6, 338849, nil, nil, nil, 3)--15.6-20
 
-mod:AddSetIconOption("SetIconOnSkull", 338851, true, false, {1})
+mod:AddSetIconOption("SetIconOnSkull", 338851, true, 0, {1})
 
 --Ugly, but only accurate way to do it
 local function checkBuff(self)

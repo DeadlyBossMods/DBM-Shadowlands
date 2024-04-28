@@ -58,7 +58,7 @@ local timerThreatNeutralizationCD				= mod:NewCDCountTimer(11.4, 350496, 167180,
 
 mod:AddRangeFrameOption(10, 350496)
 mod:AddInfoFrameOption(352394, true)
-mod:AddSetIconOption("SetIconOnThreat", 350496, true, false, {1, 2, 3})
+mod:AddSetIconOption("SetIconOnThreat", 350496, true, 0, {1, 2, 3})
 mod:AddDropdownOption("IconBehavior", {"TypeOne", "TypeTwo"}, "TypeOne", "misc", nil, 350496)--TypeTwo is BW default
 mod:GroupSpells(350732, 350735)
 

@@ -76,7 +76,7 @@ local timerRealignment							= mod:NewBuffActiveTimer(20, 361200, nil, nil, nil,
 local berserkTimer								= mod:NewBerserkTimer(480)
 --Adds
 
-mod:AddSetIconOption("SetIconOnDeconstructingEnergy", 363795, true, false, {1, 2})
+mod:AddSetIconOption("SetIconOnDeconstructingEnergy", 363795, true, 0, {1, 2})
 mod:AddNamePlateOption("NPAuraOnEphemeralBarrier", 364312, true)
 mod:GroupSpells(368027, 368025, 368024)--Group responance debuffs together
 mod:GroupSpells(362659, 368738, 368740)--Group mythic debuffs together with Allignment Shift (https://ptr.wowhead.com/spell=362659/alignment-shift)

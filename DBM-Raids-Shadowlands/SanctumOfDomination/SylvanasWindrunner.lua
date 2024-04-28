@@ -87,7 +87,7 @@ local timerRangersHeartseekerCD						= mod:NewCDCountTimer(33.9, 352663, nil, "T
 local timerBlackArrowCD								= mod:NewCDCountTimer(33.9, 358705, 208407, nil, nil, 3, nil, DBM_COMMON_L.MYTHIC_ICON)
 local timerBlackArrow								= mod:NewTargetCountTimer(9, 358705, 208407, nil, nil, 5, nil, DBM_COMMON_L.MYTHIC_ICON)
 
-mod:AddSetIconOption("SetIconOnWailingArrow", 348064, true, false, {1, 2, 3})--Applies to both reg and mythic version
+mod:AddSetIconOption("SetIconOnWailingArrow", 348064, true, 0, {1, 2, 3})--Applies to both reg and mythic version
 mod:AddNamePlateOption("NPAuraOnRage", 358711)--Dark Sentinel
 
 --Intermission: A Monument to our Suffering
@@ -153,7 +153,7 @@ local timerDecrepitOrbsCD							= mod:NewCDTimer(16, 351353, nil, nil, nil, 1)
 local timerFilthCD									= mod:NewCDTimer(13.1, 351589, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.MYTHIC_ICON..DBM_COMMON_L.TANK_ICON)
 local timerExpulsionCD								= mod:NewCDTimer(15.8, 351562, nil, nil, nil, 3, nil, DBM_COMMON_L.MYTHIC_ICON)
 
-mod:AddSetIconOption("SetIconOnExpulsion", 351562, true, true, {1, 2, 3})
+mod:AddSetIconOption("SetIconOnExpulsion", 351562, true, 5, {1, 2, 3})
 mod:AddNamePlateOption("NPAuraOnEnflame", 351109)--Mawsworn Hopebreaker
 
 --Stage Three: The Freedom of Choice
@@ -190,7 +190,7 @@ local timerDeathKnivesCD							= mod:NewCDCountTimer(33.9, 358434, nil, nil, nil
 local timerDeathKnives								= mod:NewBuffFadesTimer(9, 358434, nil, nil, nil, 5, nil, DBM_COMMON_L.MYTHIC_ICON)
 local timerMercilessCD								= mod:NewCDCountTimer(33.9, 358588, nil, nil, 2, 5, nil, DBM_COMMON_L.MYTHIC_ICON)
 
-mod:AddSetIconOption("SetIconOnDeathKnives2", 358434, false, false, {1, 2, 3})--Conflicts with arrow, which will be more logical choice. might delete this
+mod:AddSetIconOption("SetIconOnDeathKnives2", 358434, false, 0, {1, 2, 3})--Conflicts with arrow, which will be more logical choice. might delete this
 --mod:GroupSpells(358705, 358711)--Black Arrow and Rage should be bundled?
 
 --P1+ variable

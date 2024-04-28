@@ -43,7 +43,7 @@ local timerLysoniasCallCD					= mod:NewAITimer(82.0, 339278, nil, nil, nil, 3)
 local timerChargedAnimaBlastCD				= mod:NewAITimer(82.0, 327262, nil, nil, nil, 2, nil, DBM_COMMON_L.DEADLY_ICON, nil, 1, 5)
 
 mod:AddRangeFrameOption(10, 327262)--TODO, update range if it's too big or too small
-mod:AddSetIconOption("SetIconOnAnimaBlast", 327262, true, false, {8})
+mod:AddSetIconOption("SetIconOnAnimaBlast", 327262, true, 0, {8})
 
 function mod:OnCombatStart(delay, yellTriggered)
 	if yellTriggered then

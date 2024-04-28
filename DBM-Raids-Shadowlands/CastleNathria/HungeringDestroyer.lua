@@ -57,8 +57,8 @@ local timerOverwhelmCD							= mod:NewNextCountTimer(11.9, 329774, nil, "Tank", 
 local berserkTimer								= mod:NewBerserkTimer(600)
 
 --mod:AddRangeFrameOption(10, 310277)
-mod:AddSetIconOption("SetIconOnGluttonousMiasma", 329298, true, false, {1, 2, 3, 4})
-mod:AddSetIconOption("SetIconOnVolatileEjection2", 334266, true, false, {5, 6, 7, 8})
+mod:AddSetIconOption("SetIconOnGluttonousMiasma", 329298, true, 0, {1, 2, 3, 4})
+mod:AddSetIconOption("SetIconOnVolatileEjection2", 334266, true, 0, {5, 6, 7, 8})
 mod:AddInfoFrameOption(nil, true)
 mod:AddBoolOption("SortDesc", false)
 mod:AddBoolOption("ShowTimeNotStacks", false)

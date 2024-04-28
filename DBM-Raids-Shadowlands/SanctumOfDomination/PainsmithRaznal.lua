@@ -85,8 +85,8 @@ local timerFinalScream							= mod:NewCastTimer(15, 357735, nil, nil, nil, 2, ni
 --local berserkTimer							= mod:NewBerserkTimer(600)
 
 --mod:AddRangeFrameOption("8")
-mod:AddSetIconOption("SetIconOnChains", 355505, true, false, {1, 2, 3})
-mod:AddSetIconOption("SetIconOnTraps", 348456, true, false, {4, 5, 6, 7})
+mod:AddSetIconOption("SetIconOnChains", 355505, true, 0, {1, 2, 3})
+mod:AddSetIconOption("SetIconOnTraps", 348456, true, 0, {4, 5, 6, 7})
 mod:AddNamePlateOption("NPAuraOnFinalScream", 357735)
 
 mod.vb.ChainsIcon = 1

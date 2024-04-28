@@ -63,8 +63,8 @@ local berserkTimer								= mod:NewBerserkTimer(600)
 
 --mod:AddRangeFrameOption("8")
 --mod:AddInfoFrameOption(349890, true)
-mod:AddSetIconOption("SetIconOnMalevolence", 350469, true, false, {1, 2, 3})
-mod:AddSetIconOption("SetIconOnOrbs", 321226, true, true, {7, 6, 5, 4})
+mod:AddSetIconOption("SetIconOnMalevolence", 350469, true, 0, {1, 2, 3})
+mod:AddSetIconOption("SetIconOnOrbs", 321226, true, 5, {7, 6, 5, 4})
 mod:AddNamePlateOption("NPAuraOnOrbEternalTorment", 355790)
 
 mod.vb.orbCount = 0

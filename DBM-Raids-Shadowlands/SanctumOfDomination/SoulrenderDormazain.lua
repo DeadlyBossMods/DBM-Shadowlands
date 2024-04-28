@@ -72,8 +72,8 @@ local timerHellscream						= mod:NewCastTimer(35, 350411, nil, nil, nil, 2, nil,
 
 --mod:AddRangeFrameOption("8")
 mod:AddInfoFrameOption(352158, false)
-mod:AddSetIconOption("SetIconOnBrandofTorment", 350647, true, false, {1, 2, 3, 4})
-mod:AddSetIconOption("SetIconOnMawsworn", 350615, true, true, {5, 6, 7, 8})
+mod:AddSetIconOption("SetIconOnBrandofTorment", 350647, true, 0, {1, 2, 3, 4})
+mod:AddSetIconOption("SetIconOnMawsworn", 350615, true, 5, {5, 6, 7, 8})
 mod:AddNamePlateOption("NPAuraOnDefiance", 350650)
 mod:AddNamePlateOption("NPAuraOnTormented", 350649)
 mod:GroupSpells(350415, 350411)--Shackles and hellscream, same mechanic, hellscream is aoe during shackles

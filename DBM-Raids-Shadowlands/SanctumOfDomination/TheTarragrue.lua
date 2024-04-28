@@ -66,7 +66,7 @@ local timerFuryoftheAgesCD							= mod:NewCDCountTimer(36.4, 347490, nil, "Tank|
 local berserkTimer									= mod:NewBerserkTimer(600)
 
 mod:AddRangeFrameOption(6, 347283)
-mod:AddSetIconOption("SetIconOnChains", 347269, true, false, {1})
+mod:AddSetIconOption("SetIconOnChains", 347269, true, 0, {1})
 mod:GroupSpells(352368, 352382, 352389, 352398)--Parent torment cast, 3 torment types activating, bool for the 3 remannt type ticks
 mod:GroupSpells(346985, 346986)--Tank cast, tank debuff
 

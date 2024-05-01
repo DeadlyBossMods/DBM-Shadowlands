@@ -46,7 +46,7 @@ local function checkBuff(self)
 			if guid then
 				local cid = self:GetCIDFromGUID(guid)
 				if cid == 167525 then
-					if DBM:UnitBuff(338850) then
+					if DBM:UnitBuff(UnitID, 338850) then
 						return true
 					end
 				end
@@ -59,7 +59,7 @@ local function checkBuff(self)
 			if guid then
 				local cid = self:GetCIDFromGUID(guid)
 				if cid == 167525 then
-					if DBM:UnitBuff(338850) then
+					if DBM:UnitBuff(UnitID, 338850) then
 						return true
 					end
 				end
@@ -70,7 +70,7 @@ local function checkBuff(self)
 		if guid then
 			local cid = self:GetCIDFromGUID(guid)
 			if cid == 167525 then
-				if DBM:UnitBuff(338850) then
+				if DBM:UnitBuff("target", 338850) then
 					return true
 				end
 			end

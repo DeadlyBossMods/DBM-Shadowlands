@@ -280,7 +280,7 @@ function mod:SPELL_AURA_APPLIED(args)
 	elseif spellId == 335111 or spellId == 335112 or spellId == 335113 then
 		self.vb.activeSeekers = self.vb.activeSeekers + 1
 		local icon = spellId == 335111 and 1 or spellId == 335112 and 2 or spellId == 335113 and 3
-		if self.Options.SetIconOnSinSeeker then
+		if icon and self.Options.SetIconOnSinSeeker then
 			self:SetIcon(args.destName, icon)
 		end
 		if args:IsPlayer() then

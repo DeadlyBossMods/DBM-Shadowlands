@@ -668,6 +668,7 @@ function mod:SPELL_CAST_SUCCESS(args)
 			specWarnMerciless:Show(self.vb.merciCount.." / "..soakCount.."x")
 			specWarnMerciless:Play("helpsoak")
 		else
+			---@diagnostic disable-next-line: param-type-mismatch
 			warnMerciless:Show(self.vb.merciCount.." ("..soakCount.."x)")
 		end
 		timerMercilessCD:Start(self.vb.merciCount < 7 and 21 or 41, self.vb.merciCount+1)

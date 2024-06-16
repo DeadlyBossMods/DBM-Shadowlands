@@ -37,7 +37,7 @@ mod:RegisterEventsInCombat(
 --]]
 --Stage One: Kingsmourne Hungers
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24462))
-local warnBefouledBarrier						= mod:NewSpellAnnounce(365295, 3, nil, nil, 300531)
+local warnBefouledBarrier						= mod:NewCountAnnounce(365295, 3, nil, nil, 300531)
 local warnWickedStar							= mod:NewTargetCountAnnounce(365030, 3, nil, nil, nil, nil, nil, nil, true)
 local warnDominationWordPain					= mod:NewTargetNoFilterAnnounce(366849, 3, nil, "Healer", 249194)
 

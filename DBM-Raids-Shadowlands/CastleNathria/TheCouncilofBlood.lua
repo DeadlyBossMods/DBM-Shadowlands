@@ -77,7 +77,7 @@ local timerDredgerServantsCD					= mod:NewCDTimer(44.3, 330978, nil, nil, nil, 1
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22199))--Two are dead
 local warnCastellansCadre						= mod:NewSpellAnnounce(330965, 2)--Two bosses dead
 local warnFixate								= mod:NewTargetAnnounce(330967, 3)--Two bosses dead (Veteran Stoneguard)
-local warnSintouchedBlade						= mod:NewSpellAnnounce(346790, 4)--Veteran Stoneguard
+local warnSintouchedBlade						= mod:NewCountAnnounce(346790, 4)--Veteran Stoneguard
 
 local specWarnFixate							= mod:NewSpecialWarningRun(330967, nil, nil, nil, 4, 2)--Two bosses dead
 

@@ -72,7 +72,7 @@ local timerNextPhase							= mod:NewPhaseTimer(16.5, 328117, nil, nil, nil, 6, n
 --Stage Two: The Crimson Chorus
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22059))
 ----Crimson Cabalist
-local warnCrimsonCabalists						= mod:NewSpellAnnounce("ej22131", 2, 329711)
+local warnCrimsonCabalists						= mod:NewCountAnnounce("ej22131", 2, 329711)
 local warnCrescendo								= mod:NewSpellAnnounce(336162, 3)
 
 local specWarnCrescendo							= mod:NewSpecialWarningDodge(336162, false, nil, nil, 2, 2)

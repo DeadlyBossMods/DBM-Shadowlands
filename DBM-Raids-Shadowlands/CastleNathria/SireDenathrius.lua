@@ -68,7 +68,7 @@ mod:AddSetIconOption("SetIconOnNightHunter", 327796, true, 0, {1, 2, 3})
 --Intermission: March of the Penitent
 local specWarnMarchofthePenitent				= mod:NewSpecialWarningSpell(328117, nil, nil, nil, 2, 2)
 
-local timerNextPhase							= mod:NewPhaseTimer(16.5, 328117, nil, nil, nil, 6, nil, nil, nil, 1, 4)
+local timerNextPhase							= mod:NewStageTimer(16.5, 328117, nil, nil, nil, 6, nil, nil, nil, 1, 4)
 --Stage Two: The Crimson Chorus
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22059))
 ----Crimson Cabalist

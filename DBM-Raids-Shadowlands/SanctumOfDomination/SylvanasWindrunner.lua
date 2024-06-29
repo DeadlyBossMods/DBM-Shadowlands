@@ -99,7 +99,7 @@ local warnRive										= mod:NewCountAnnounce(353418, 4)--May default off by de
 local specWarnBansheeWail							= mod:NewSpecialWarningMoveAwayCount(348094, nil, nil, nil, 2, 2)
 
 local timerRiveCD									= mod:NewCDTimer(48.8, 353418, nil, nil, nil, 3)
-local timerNextPhase								= mod:NewPhaseTimer(16.5, 348094, nil, nil, nil, 6)
+local timerNextPhase								= mod:NewStageTimer(16.5, 348094, nil, nil, nil, 6)
 
 --Stage Two: The Banshee Queen
 --mod:AddOptionLine(P2Info, "announce")

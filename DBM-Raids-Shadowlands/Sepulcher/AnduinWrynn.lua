@@ -54,7 +54,7 @@ local specWarnHopebreaker						= mod:NewSpecialWarningCount(361815, nil, nil, ni
 local specWarnDarkZeal							= mod:NewSpecialWarningCount(364248, nil, DBM_CORE_L.AUTO_SPEC_WARN_OPTIONS.stack:format(12, 364248), nil, 1, 2)
 local specWarnDarkZealOther						= mod:NewSpecialWarningTaunt(364248, nil, nil, nil, 1, 2)
 
-local timerPhaseCD								= mod:NewPhaseTimer(30)
+local timerPhaseCD								= mod:NewStageTimer(30)
 local timerKingsmourneHungersCD					= mod:NewCDCountTimer(28.8, 362405, nil, nil, nil, 3)
 local timerLostSoul								= mod:NewBuffFadesTimer(35, 362055, nil, nil, nil, 5)
 local timerBlasphemyCD							= mod:NewCDCountTimer(28.8, 361989, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)

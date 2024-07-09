@@ -149,6 +149,7 @@ mod.vb.grashDead = false
 --Heart rend triggers 2.3 second ICD
 --Stone fist triggers 3-3.5 second ICD
 --Serrated swipe triggers 2.4 second ICD
+
 --Exclusions:
 --1-Heart rend DC not extended by crystalize most of time
 --2-To prevent swipe from altering it's OWN CD since it's started in success and not start (where timer update is)

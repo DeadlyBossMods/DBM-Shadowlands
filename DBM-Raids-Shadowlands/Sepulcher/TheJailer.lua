@@ -24,7 +24,6 @@ mod:RegisterEventsInCombat(
 --TODO, is tyranny warning appropriate? maybe track debuff for mythic?
 --TODO, verify add marking
 --TODO, what type of warning for Unholy Attunement
---TODO, do something with https://www.wowhead.com/spell=365810/falling-debris ?
 --TODO, maybe short name chains in all phases to "chains"? might remove ability to tell them apart though. maybe use Anguish, Oppression instead
 --TODO, azeroth health tracking on infoframe? (Widget ID: 3554). Feels like something people will prefer weak auras for so hands offing it for no unless requested enough
 --[[

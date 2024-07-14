@@ -102,7 +102,7 @@ local warnLinkEssence							= mod:NewTargetNoFilterAnnounce(350483, 3)
 local specWarnPierceSoul						= mod:NewSpecialWarningStack(350475, nil, 4, nil, nil, 1, 6)
 local specWarnPierceSoulTaunt					= mod:NewSpecialWarningTaunt(350475, nil, nil, nil, 1, 2)
 local specWarnLinkEssence						= mod:NewSpecialWarningDefensive(350483, nil, nil, nil, 1, 2, 3)
-local specWarnWordofRecall						= mod:NewSpecialWarningSpell(350687, nil, nil, nil, 2, 2, 3)
+local specWarnWordofRecall						= mod:NewSpecialWarningCount(350687, nil, nil, nil, 2, 2, 3)
 --local specWarnGTFO							= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8)
 
 local timerPierceSoulCD							= mod:NewCDTimer(9.7, 350475, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
@@ -388,7 +388,7 @@ function mod:SPELL_AURA_APPLIED(args)
 		end
 		if amount == 1 then--Initial application from boss only
 			if args:IsPlayer() then
-				specWarnFragmentsofDestiny:Show(self:IconNumToTexture(icon))
+				specWarnFragmentsofDestiny:Show()
 				specWarnFragmentsofDestiny:Play("targetyou")
 				if icon > 0 and icon < 9 then
 					yellFragmentsofDestiny:Yell(icon, icon)

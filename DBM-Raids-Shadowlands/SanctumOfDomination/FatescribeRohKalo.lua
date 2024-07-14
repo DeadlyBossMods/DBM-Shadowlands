@@ -42,7 +42,7 @@ local warnGrimPortent							= mod:NewTargetNoFilterAnnounce(354365, 4)--Mythic
 local warnTwistFate								= mod:NewCountAnnounce(353931, 2, nil, "RemoveMagic")
 local warnCallofEternity						= mod:NewTargetAnnounce(350554, 4, nil, nil, 37859)
 
-local specWarnGrimPortent						= mod:NewSpecialWarningYouPos(354365, nil, nil, nil, 1, 2, 4)--Mythic
+local specWarnGrimPortent						= mod:NewSpecialWarningYou(354365, nil, nil, nil, 1, 2, 4)--Mythic
 local yellGrimPortent							= mod:NewYell(354365)--Mythic
 local yellGrimPortentFades						= mod:NewShortFadesYell(354365)--Mythic
 local specWarnInvokeDestiny						= mod:NewSpecialWarningMoveAway(351680, nil, nil, nil, 1, 2)

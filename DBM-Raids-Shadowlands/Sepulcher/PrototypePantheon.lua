@@ -731,7 +731,7 @@ function mod:SPELL_AURA_APPLIED(args)
 			end
 		end
 		if args:IsPlayer() then
-			specWarnDeathtouch:Show(self:IconNumToTexture(icon))
+			specWarnDeathtouch:Show()
 			specWarnDeathtouch:Play("targetyou")
 			if icon > 0 and icon < 9 then
 				yellDeathtouch:Yell(icon, icon)

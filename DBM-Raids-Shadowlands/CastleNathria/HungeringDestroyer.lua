@@ -37,7 +37,7 @@ local warnVolatileEjection						= mod:NewTargetNoFilterAnnounce(334266, 4, nil, 
 local specWarnGluttonousMiasma					= mod:NewSpecialWarningYouPos(329298, nil, 212238, nil, 1, 2)
 local yellGluttonousMiasma						= mod:NewShortPosYell(329298, 212238, false, 2)
 local specWarnEssenceSap						= mod:NewSpecialWarningStack(334755, false, 8, nil, 2, 1, 6)--Mythic, spammy, opt in
-local specWarnConsume							= mod:NewSpecialWarningRun(334522, nil, nil, nil, 4, 2)
+local specWarnConsume							= mod:NewSpecialWarningRunCount(334522, nil, nil, nil, 4, 2)
 local specWarnExpunge							= mod:NewSpecialWarningMoveAway(329725, nil, nil, nil, 1, 2)
 local specWarnVolatileEjectionPerWarn			= mod:NewSpecialWarningSoon(334266, false, 202046, nil, 2, 2)--Optional prewarn special warning, for the cast (before you know the targets)
 local specWarnVolatileEjection					= mod:NewSpecialWarningYou(334266, nil, 202046, nil, 1, 2)
@@ -349,7 +349,7 @@ function mod:SPELL_AURA_APPLIED(args)
 				specWarnGrowingHunger:Show(amount)
 				specWarnGrowingHunger:Play("changemt")
 			else
-				local targetName = self:GetBossTarget(164261)
+				local targetName = self:GetBossTarget(164261) or DBM_COMMON_L.UNKNOWN
 				specWarnGrowingHungerOther:Show(targetName)
 				specWarnGrowingHungerOther:Play("tauntboss")
 			end

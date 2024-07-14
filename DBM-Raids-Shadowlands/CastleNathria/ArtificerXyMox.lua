@@ -61,7 +61,7 @@ local warnSeedsofExtinction							= mod:NewSpellAnnounce(329834, 3, nil, nil, 20
 local warnUnleashPower								= mod:NewCountAnnounce(342854, 4)
 
 local specWarnFixate								= mod:NewSpecialWarningRun(327902, nil, nil, nil, 4, 2)
-local specWarnEdgeofAnnihilation					= mod:NewSpecialWarningRun(328789, nil, 307421, nil, 4, 2)
+local specWarnEdgeofAnnihilation					= mod:NewSpecialWarningRunCount(328789, nil, 307421, nil, 4, 2)
 
 local timerFleetingSpiritsCD						= mod:NewCDTimer(40.8, 340758, 263222, nil, nil, 3)--40.8-46
 local timerSeedsofExtinctionCD						= mod:NewCDTimer(43.7, 329770, 205446, nil, nil, 5)--43-49. Shortname "Planting Seeds"

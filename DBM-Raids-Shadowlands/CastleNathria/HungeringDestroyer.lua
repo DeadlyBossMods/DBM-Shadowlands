@@ -307,7 +307,7 @@ function mod:SPELL_AURA_APPLIED(args)
 		end
 		local icon
 		local uId = DBM:GetRaidUnitId(args.destName)
-		if self:IsMelee(uId, true) and not self.vb.meleeFound then
+		if self:IsMelee(uId) and not self.vb.meleeFound then
 			icon = 1
 			self.vb.meleeFound = true--Some sets can have more than 1 melee, this makes sure star isn't assigned to multiple
 			DBM:Debug("First Melee Miasma found: "..args.destName, 2)

@@ -168,7 +168,7 @@ local allTimers = {
 		},
 	},
 }
---local alignmentTimers = {0, 36.1, 42.5, 34.9, 43.6, 62.2, 34.8, 43.7, 62.1, 34.9, 43.6, 62.2}
+--local alignmentTimers = {0.000001, 36.1, 42.5, 34.9, 43.6, 62.2, 34.8, 43.7, 62.1, 34.9, 43.6, 62.2}
 
 function mod:OnCombatStart(delay)
 	self.vb.energyIcon = 1

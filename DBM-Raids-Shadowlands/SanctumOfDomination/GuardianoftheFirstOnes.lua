@@ -85,7 +85,7 @@ local allTimers = {
 		},
 		[1] = {--Post Link
 			--Threat Neutralization
-			[356090] = {0, 16.5, 29.2, 17},--Threat used immediately coming out of purging protocol
+			[356090] = {0.000001, 16.5, 29.2, 17},--Threat used immediately coming out of purging protocol
 			--Disintegration
 			[352833] = {5.8, 39},
 		},
@@ -99,7 +99,7 @@ local allTimers = {
 		},
 		[1] = {--Post Link
 			--Threat Neutralization
-			[356090] = {0, 12.1, 12.1, 26.7, 12.1},
+			[356090] = {0.000001, 12.1, 12.1, 26.7, 12.1},
 			--Disintegration
 			[352833] = {5.8, 40.1},
 		},

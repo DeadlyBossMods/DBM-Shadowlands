@@ -70,7 +70,7 @@ L:SetOptionLocalization({
 })
 
 L:SetMiscLocalization({
-	DBMConfigMsg		= "Marking icons configuration set to %s to match raid leaders configuration."
+	DBMConfigMsg		= "Настройки иконок установлены ​​на %s для соответствия конфигурации рейд-лидеров."
 })
 
 ---------------------------
@@ -115,7 +115,7 @@ L:SetOptionLocalization({
 L= DBM:GetModLocalization(2439)
 
 L:SetMiscLocalization({
-	Fragment		= "Фрагмент "--Space is intentional, leave a space to add a number after it
+	Fragment		= "Фрагмент "--Пробел специально. Оставить пробел, чтобы добавить после него цифру
 })
 
 ---------------------------

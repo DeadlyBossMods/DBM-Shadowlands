@@ -238,7 +238,7 @@ function mod:SPELL_AURA_APPLIED(args)
 		if self:AntiSpam(8, 9) then
 			self.vb.shiftCount = self.vb.shiftCount + 1
 			local timer = SiesmicTimers[self.vb.shiftCount+1]
-			if timer then
+			if timer and timer > 0 then
 				timerSiesmicShiftCD:Start(timer, self.vb.shiftCount+1)
 				local timerAfter = SiesmicTimers[self.vb.shiftCount+2]
 				if not timerAfter then--Disable timer keeping if we're out of timer data beind THIS timer

@@ -540,7 +540,7 @@ function mod:SPELL_CAST_SUCCESS(args)
 			elseif cid == 165762 then
 				self.vb.infuserCount = self.vb.infuserCount + 1
 				local timer = addTimers[self.vb.addMode][difficultyName][cid][self.vb.infuserCount+1]
-				if timer then
+				if timer and timer > 0 then
 					timerSoulInfuserCD:Start(timer, self.vb.infuserCount+1)
 					self:Unschedule(expectedInfuser)
 					self:Schedule(timer+10, expectedInfuser, self)

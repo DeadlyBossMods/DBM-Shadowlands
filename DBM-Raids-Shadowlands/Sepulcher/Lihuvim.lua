@@ -225,7 +225,7 @@ function mod:SPELL_CAST_START(args)
 	if spellId == 362601 then
 		self.vb.moteCount = self.vb.moteCount + 1
 		local timer = allTimers[difficultyName][self.vb.timerMode][spellId][self.vb.moteCount+1]
-		if timer then
+		if timer and timer > 0 then
 			timerUnstableMoteCD:Start(timer, self.vb.moteCount+1)
 		end
 		timerUnstableMote:Start()
@@ -251,7 +251,7 @@ function mod:SPELL_CAST_START(args)
 			specWarnProtoformCascade:Play("defensive")
 		end
 		local timer = allTimers[difficultyName][self.vb.timerMode][spellId][self.vb.cascadeCount+1]
-		if timer then
+		if timer and timer > 0 then
 			timerProtoformCascadeCD:Start(timer, self.vb.cascadeCount+1)
 		end
 	elseif spellId == 363088 then
@@ -266,7 +266,7 @@ function mod:SPELL_CAST_START(args)
 			specWarnCosmicShift:Play("pushbackincoming")
 		end
 		local timer = allTimers[difficultyName][self.vb.timerMode][spellId][self.vb.cosmicCount+1]
-		if timer then
+		if timer and timer > 0 then
 			timerCosmicShiftCD:Start(timer, self.vb.cosmicCount+1)
 		end
 		if self:IsMythic() then
@@ -283,7 +283,7 @@ function mod:SPELL_CAST_START(args)
 			warnResonance:Show()
 		end
 		local timer = allTimers[difficultyName][self.vb.timerMode][spellId][self.vb.resonanceCount+1]
-		if timer then
+		if timer and timer > 0 then
 			timerResonanceCD:Start(timer, self.vb.resonanceCount+1)
 		end
 	end
@@ -295,7 +295,7 @@ function mod:SPELL_CAST_SUCCESS(args)
 		self.vb.energyIcon = 1
 		self.vb.deconstructCount = self.vb.deconstructCount + 1
 		local timer = allTimers[difficultyName][self.vb.timerMode][spellId][self.vb.deconstructCount+1]
-		if timer then
+		if timer and timer > 0 then
 			timerDeconstructingEnergyCD:Start(timer, self.vb.deconstructCount+1)
 		end
 	end

@@ -511,7 +511,7 @@ function mod:SPELL_CAST_START(args)
 		specWarnDisintegration:Show(self.vb.beamCount)
 		specWarnDisintegration:Play("farfromline")
 		local timer = allTimers[difficultyName][self.vb.timerMode][spellId][self.vb.beamCount+1]
-		if timer then
+		if timer and timer > 0 then
 			timerDisintegrationCD:Start(timer, self.vb.beamCount+1)
 		end
 	elseif spellId == 352660 then
@@ -522,7 +522,7 @@ function mod:SPELL_CAST_START(args)
 		table.wipe(threatTargets)
 		timerThreatNeutralizationCD:Stop()
 		local timer = allTimers[difficultyName][self.vb.timerMode][spellId][self.vb.threatCount+1]
-		if timer then
+		if timer and timer > 0 then
 			timerThreatNeutralizationCD:Start(timer, self.vb.threatCount+1)
 		end
 	elseif spellId == 355352 or spellId == 350734 then--Mythic, Heroic

@@ -9,6 +9,7 @@ mod:SetBossHPInfoToHighest()
 mod:SetHotfixNoticeRev(20210128000000)--2021, 01, 28
 mod:SetMinSyncRevision(20210126000000)
 mod.respawnTime = 29
+mod:SetZone(2296)
 
 mod:RegisterCombat("combat")
 

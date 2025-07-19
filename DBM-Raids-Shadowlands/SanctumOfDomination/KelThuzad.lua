@@ -10,6 +10,7 @@ mod:DisableBossDeathKill()--Instructs mod to ignore 175559 deaths, since it dies
 mod:SetHotfixNoticeRev(20211006000000)
 mod:SetMinSyncRevision(20211006000000)
 mod.respawnTime = 29
+mod:SetZone(2450)
 
 mod:RegisterCombat("combat")
 

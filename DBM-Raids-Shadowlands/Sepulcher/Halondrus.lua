@@ -8,6 +8,7 @@ mod:SetUsedIcons(1, 2, 3, 4, 5, 6, 7)
 mod:SetHotfixNoticeRev(20220314000000)
 mod:SetMinSyncRevision(20220314000000)
 --mod.respawnTime = 29
+mod:SetZone(2481)
 
 mod:RegisterCombat("combat")
 mod.disableHealthCombat = true--Boss stays active and even heals up after combat, we don't want these events to trigger new combat

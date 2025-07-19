@@ -8,6 +8,7 @@ mod:SetUsedIcons(1, 2)
 mod:SetHotfixNoticeRev(20220508000000)
 mod:SetMinSyncRevision(20220508000000)
 --mod.respawnTime = 29
+mod:SetZone(2481)
 --Disable all combat types to avoid him engaging during trash RP
 mod:DisableRegenDetection()
 mod:DisableIEEUCombatDetection()

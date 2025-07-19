@@ -115,7 +115,7 @@ L:SetOptionLocalization({
 L= DBM:GetModLocalization(2439)
 
 L:SetMiscLocalization({
-	Fragment		= "Фрагмент "--Пробел специально. Оставить пробел, чтобы добавить после него цифру
+	Fragment		= "Фрагмент ",--Пробел специально. Оставить пробел, чтобы добавить после него цифру
 	PrePull			= "А-а-а!"
 })
 

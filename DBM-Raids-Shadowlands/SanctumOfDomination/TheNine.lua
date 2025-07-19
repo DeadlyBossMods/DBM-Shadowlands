@@ -11,6 +11,10 @@ mod:SetMinSyncRevision(20210713000000)
 
 mod:RegisterCombat("combat")
 
+mod:RegisterEvents(
+	"CHAT_MSG_MONSTER_YELL"
+)
+
 mod:RegisterEventsInCombat(
 	"SPELL_CAST_START 350202 350342 350339 350365 350283 350385 350467 352744 350541 350482 350687 350475 355294 352756 352752",
 	"SPELL_CAST_SUCCESS 350286 350745",
@@ -32,6 +36,7 @@ mod:RegisterEventsInCombat(
  or (ability.id = 350745 or ability.id = 350286) and type = "cast"
  or (target.id = 177095 or target.id = 177094) and type = "death"
 --]]
+local timerRP									= mod:NewRPTimer(15.4)
 --Stage One: The Unending Voice
 mod:AddOptionLine(DBM:EJ_GetSectionInfo(22877), "announce")
 ----Kyra, The Unending
@@ -173,7 +178,7 @@ function mod:OnCombatStart(delay)
 	--Skyja
 	timerCalloftheValkyrCD:Start(10.4-delay, 1)--10.4-15
 	if self:IsMythic() then
-		timerFragmentsofDestinyCD:Start(4.5-delay, 1)
+		timerFragmentsofDestinyCD:Start(4.1-delay, 1)
 		if self.Options.InfoFrame then
 			DBM.InfoFrame:SetHeader(OVERVIEW)
 			DBM.InfoFrame:Show(10, "function", updateInfoFrame, false, true, true)
@@ -283,7 +288,7 @@ function mod:SPELL_CAST_SUCCESS(args)
 		self:SetStage(2)
 		--self.vb.fragmentCount = 0
 		timerCalloftheValkyrCD:Stop()
-		timerPierceSoulCD:Start(9.3)--9.3-13.3
+		timerPierceSoulCD:Start(7.3)--7.3-13.3
 		timerResentmentCD:Start(27.5, 1)--27.5-33.6
 		timerCalloftheValkyrCD:Start(self:IsEasy() and 30 or 42.6, 1)--42.6-44
 		timerFragmentsofDestinyCD:Stop()
@@ -493,3 +498,22 @@ function mod:UNIT_SPELLCAST_SUCCEEDED(uId, _, spellId)
 	end
 end
 --]]
+
+--"<1.37 14:44:35> [CHAT_MSG_MONSTER_YELL] RAAAaaaarrGGHHHH!#Highlord Bolvar Fordragon###Sylvanas Windrunner##0#0##0#1215#nil#0#false#false#false#false",
+--"<6.57 14:44:40> [CHAT_MSG_MONSTER_SAY] Val'kyr! You are bound to me! Strike down my foes!#Sylvanas Windrunner###Omegal##0#0##0#1216#nil#0#false#false#false#false",
+--"<14.18 14:44:48> [CHAT_MSG_MONSTER_SAY] As you command, Dark Lady!#Skyja###Omegal##0#0##0#1217#nil#0#false#false#false#false",
+--"<16.77 14:44:51> [NAME_PLATE_UNIT_ADDED] Signe#Creature-0-3878-2450-20078-177094-00007A941C",
+--"<16.77 14:44:51> [NAME_PLATE_UNIT_ADDED] Kyra#Creature-0-3878-2450-20078-177095-00007A941C",
+--"<18.05 14:44:52> [PLAYER_TARGET_CHANGED] -1 Hostile (elite Humanoid) - Kyra # Creature-0-3878-2450-20078-177095-00007A941C",
+--"<18.64 14:44:52> [PLAYER_REGEN_DISABLED] +Entering combat!",
+function mod:CHAT_MSG_MONSTER_YELL(msg)
+	if (msg == L.PrePull or msg:find(L.PrePull)) and self:LatencyCheck() then
+		self:SendSync("NineRP")
+	end
+end
+
+function mod:OnSync(msg)
+	if msg == "NineRP" and self:AntiSpam(10, 1) then
+		timerRP:Start(15.4)
+	end
+end

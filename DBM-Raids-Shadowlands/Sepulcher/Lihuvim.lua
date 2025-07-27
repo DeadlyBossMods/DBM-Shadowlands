@@ -317,10 +317,12 @@ function mod:SPELL_AURA_APPLIED(args)
 			self:SetIcon(args.destName, icon)
 		end
 		if args:IsPlayer() then
-			specWarnDeconstructingEnergy:Show()
-			specWarnDeconstructingEnergy:Play("runout")
-			yellDeconstructingEnergy:Yell(icon, icon)
-			yellDeconstructingEnergyFades:Countdown(spellId, nil, icon)
+			if self:AntiSpam(3, 3) then
+				specWarnDeconstructingEnergy:Show()
+				specWarnDeconstructingEnergy:Play("runout")
+				yellDeconstructingEnergy:Yell(icon, icon)
+				yellDeconstructingEnergyFades:Countdown(spellId, nil, icon)
+			end
 		else
 			local uId = DBM:GetRaidUnitId(args.destName)
 			if self:IsTanking(uId) then

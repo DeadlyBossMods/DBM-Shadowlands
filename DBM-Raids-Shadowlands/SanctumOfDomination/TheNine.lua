@@ -21,7 +21,7 @@ mod:RegisterEventsInCombat(
 	"SPELL_CAST_SUCCESS 350286 350745",
 	"SPELL_AURA_APPLIED 350202 350158 350109 351139 350039 350542 350184 350483 350012 350078 350475",
 	"SPELL_AURA_APPLIED_DOSE 350202 350542 350475",
-	"SPELL_AURA_REMOVED 350158 350109 351139 350039 350542 350184 350483",
+	"SPELL_AURA_REMOVED 350158 350109 351139 350039 350542 350184",
 --	"SPELL_AURA_REMOVED_DOSE 350542",
 --	"SPELL_PERIODIC_DAMAGE",
 --	"SPELL_PERIODIC_MISSED",
@@ -195,9 +195,7 @@ function mod:OnCombatEnd()
 	if self.Options.InfoFrame then
 		DBM.InfoFrame:Hide()
 	end
---	if self.Options.RangeFrame then
---		DBM.RangeCheck:Hide()
---	end
+
 	if self.Options.NPAuraOnBrightAegis then
 		DBM.Nameplate:Hide(true, nil, nil, nil, true, true)
 	end

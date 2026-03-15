@@ -16,7 +16,6 @@ mod:RegisterEventsInCombat(
 	"SPELL_SUMMON 361341",
 	"SPELL_AURA_APPLIED 361632 361390",
 	"SPELL_AURA_APPLIED_DOSE 361390",
-	"SPELL_AURA_REMOVED 361632",
 	"SPELL_PERIODIC_DAMAGE 361335",
 	"SPELL_PERIODIC_MISSED 361335"
 )
@@ -39,8 +38,6 @@ local timerDestructionCoresCD			= mod:NewCDTimer(35.5, 361341, nil, nil, nil, 3)
 local timerBanishmentMarkCD				= mod:NewCDTimer(30.6, 361632, nil, nil, nil, 3, nil, DBM_COMMON_L.HEALER_ICON)
 local timerDeterrentStrikeCD			= mod:NewCDTimer(9.7, 361387, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON)
 
-mod:AddRangeFrameOption(5, 361632)
-
 function mod:OnCombatStart(delay, yellTriggered)
 --	if yellTriggered then
 --		timerFuriousSlamCD:Start(1-delay)
@@ -48,9 +45,6 @@ function mod:OnCombatStart(delay, yellTriggered)
 --		timerBanishmentMarkCD:Start(1-delay)
 --		timerDeterrentStrikeCD:Start(1-delay)
 --	end
-	if self.Options.RangeFrame then
-		DBM.RangeCheck:Hide()
-	end
 end
 
 function mod:OnCombatEnd()
@@ -89,9 +83,6 @@ function mod:SPELL_AURA_APPLIED(args)
 		if args:IsPlayer() then
 			specWarnBanishmentMark:Show()
 			specWarnBanishmentMark:Play("range5")
-			if self.Options.RangeFrame then
-				DBM.RangeCheck:Show(5)
-			end
 		end
 	elseif spellId == 361390 then
 		local amount = args.amount or 1
@@ -118,17 +109,6 @@ function mod:SPELL_AURA_APPLIED(args)
 	end
 end
 mod.SPELL_AURA_APPLIED_DOSE = mod.SPELL_AURA_APPLIED
-
-function mod:SPELL_AURA_REMOVED(args)
-	local spellId = args.spellId
-	if spellId == 361632 then
-		if args:IsPlayer() then
-			if self.Options.RangeFrame then
-				DBM.RangeCheck:Hide()
-			end
-		end
-	end
-end
 
 function mod:SPELL_PERIODIC_DAMAGE(_, _, _, _, destGUID, _, _, _, spellId, spellName)
 	if spellId == 361335 and destGUID == UnitGUID("player") and self:AntiSpam(2, 4) then

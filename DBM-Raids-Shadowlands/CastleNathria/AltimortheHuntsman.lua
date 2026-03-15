@@ -44,7 +44,6 @@ local timerSinseekerCD							= mod:NewCDCountTimer(49, 335114, nil, nil, nil, 3)
 local timerSpreadshotCD							= mod:NewCDTimer(11.8, 334404, nil, nil, nil, 2, nil, DBM_COMMON_L.HEALER_ICON)
 --local berserkTimer							= mod:NewBerserkTimer(600)
 
-mod:AddRangeFrameOption("5/6/10")
 mod:AddSetIconOption("SetIconOnSinSeeker", 335114, true, 0, {1, 2, 3})--335111 335112 335113
 --Hunting Gargon
 ----Margore
@@ -91,30 +90,6 @@ local spreadShotTimers = {
 }
 local playerSinSeeker = false
 local transitionwindow = 0--0 false, 1 true, 2 sinseeker activated while it was 1
-local updateRangeFrame
-do
-	local function debuffFilter(uId)
-		if DBM:UnitDebuff(uId, 335111, 335112, 335113) then
-			return true
-		end
-	end
-	updateRangeFrame = function(self, force)
-		if not self.Options.RangeFrame then return end
-		if DBM:UnitDebuff("player", 334852) then--Petrifying Howl
-			DBM.RangeCheck:Show(10)
-		elseif DBM:UnitDebuff("player", 334945) then--Vicious Lunge
-			DBM.RangeCheck:Show(6)
-		elseif force or (self:IsMythic() and self.vb.phase == 3 and self.vb.activeSeekers > 0) then--Mythic Sinseeker spread mechanic
-			if playerSinSeeker then
-				DBM.RangeCheck:Show(5)--Show everyone
-			else
-				DBM.RangeCheck:Show(5, debuffFilter)--Only show players affected with sinseeker
-			end
-		else
-			DBM.RangeCheck:Hide()
-		end
-	end
-end
 
 local function updateAllTimers(self)
 	DBM:Debug("updateAllTimers running", 3)
@@ -169,9 +144,6 @@ function mod:OnCombatStart(delay)
 end
 
 function mod:OnCombatEnd()
-	if self.Options.RangeFrame then
-		DBM.RangeCheck:Hide()
-	end
 end
 
 function mod:SPELL_CAST_START(args)
@@ -182,9 +154,6 @@ function mod:SPELL_CAST_START(args)
 		--Normal, Dog1: 50-51, Dog2: 60-61, Dog3: 50-51, dogs dead: 24.3
 		local timer = self:IsMythic() and (self.vb.phase == 4 and 25 or 60.2) or (self.vb.phase == 4 and 24.3 or 49.1)--self.vb.phase == 2 and 61.1 or
 		timerSinseekerCD:Start(timer, self.vb.sinSeekerCount+1)
-		if self.vb.phase == 3 and self:IsMythic() then
-			updateRangeFrame(self, true)--Force show during cast so it's up a little early
-		end
 		if transitionwindow == 1 then
 			transitionwindow = 2
 		end
@@ -265,7 +234,6 @@ function mod:SPELL_AURA_APPLIED(args)
 			specWarnViciousLunge:Play("gathershare")
 			yellViciousLunge:Yell()
 			yellViciousLungeFades:Countdown(spellId)
-			updateRangeFrame(self)
 		else
 			warnViciousLunge:Show(args.destName)
 		end
@@ -276,7 +244,6 @@ function mod:SPELL_AURA_APPLIED(args)
 			specWarnPetrifyingHowl:Play("scatter")
 			yellPetrifyingHowl:Yell()
 			yellPetrifyingHowlFades:Countdown(spellId)
-			updateRangeFrame(self)
 		end
 	elseif spellId == 335111 or spellId == 335112 or spellId == 335113 then
 		self.vb.activeSeekers = self.vb.activeSeekers + 1
@@ -330,7 +297,6 @@ function mod:SPELL_AURA_REMOVED(args)
 	if spellId == 334945 then
 		if args:IsPlayer() then
 			yellViciousLungeFades:Cancel()
-			updateRangeFrame(self)
 		end
 	elseif spellId == 334860 then
 		local amount = args.amount or 1
@@ -340,7 +306,6 @@ function mod:SPELL_AURA_REMOVED(args)
 	elseif spellId == 334852 then
 		if args:IsPlayer() then
 			yellPetrifyingHowlFades:Cancel()
-			updateRangeFrame(self)
 		end
 	elseif spellId == 335111 or spellId == 335112 or spellId == 335113 then
 		self.vb.activeSeekers = self.vb.activeSeekers - 1
@@ -350,9 +315,6 @@ function mod:SPELL_AURA_REMOVED(args)
 		end
 		if self.Options.SetIconOnSinSeeker then
 			self:SetIcon(args.destName, 0)
-		end
-		if self.vb.activeSeekers == 0 and self.vb.phase == 3 and self:IsMythic() then
-			updateRangeFrame(self)
 		end
 	end
 end

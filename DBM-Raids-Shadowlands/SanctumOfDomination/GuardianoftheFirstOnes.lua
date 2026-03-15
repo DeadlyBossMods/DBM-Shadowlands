@@ -57,7 +57,6 @@ local timerThreatNeutralizationCD				= mod:NewCDCountTimer(11.4, 350496, 167180,
 
 --local berserkTimer							= mod:NewBerserkTimer(600)
 
-mod:AddRangeFrameOption(10, 350496)
 mod:AddInfoFrameOption(352394, true)
 mod:AddSetIconOption("SetIconOnThreat", 350496, true, 0, {1, 2, 3})
 mod:AddDropdownOption("IconBehavior", {"TypeOne", "TypeTwo"}, "TypeOne", "misc", nil, 350496)--TypeTwo is BW default
@@ -197,9 +196,6 @@ local function showthreat(self)
 			specWarnThreatNeutralization:Play("runout")
 			yellThreatNeutralization:Yell(1, 1)
 			yellThreatNeutralizationFades:Countdown(350496, nil, 1)
-			if self.Options.RangeFrame then
-				DBM.RangeCheck:Show(10)
-			end
 		end
 		if setIcon then
 			self:SetIcon(nameTwo, 2)
@@ -209,9 +205,6 @@ local function showthreat(self)
 			specWarnThreatNeutralization:Play("runout")
 			yellThreatNeutralization:Yell(2, 2)
 			yellThreatNeutralizationFades:Countdown(350496, nil, 2)
-			if self.Options.RangeFrame then
-				DBM.RangeCheck:Show(10)
-			end
 		end
 		if setIcon then
 			self:SetIcon(nameThree, 3)
@@ -221,9 +214,6 @@ local function showthreat(self)
 			specWarnThreatNeutralization:Play("runout")
 			yellThreatNeutralization:Yell(3, 3)
 			yellThreatNeutralizationFades:Countdown(350496, nil, 3)
-			if self.Options.RangeFrame then
-				DBM.RangeCheck:Show(10)
-			end
 		end
 	elseif meleeCount == 2 then--2 melee, 1 ranged
 		local meleeicon = 0--In this set we have only 1 ranged which means up to 2 melee
@@ -237,9 +227,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(meleeicon, meleeicon)
 				yellThreatNeutralizationFades:Countdown(350496, nil, meleeicon)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		else--Ranged (only one, so icon always 3)
 			if setIcon then
@@ -250,9 +237,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(3, 3)
 				yellThreatNeutralizationFades:Countdown(350496, nil, 3)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		end
 		if isMelee[2] then
@@ -265,9 +249,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(meleeicon, meleeicon)
 				yellThreatNeutralizationFades:Countdown(350496, nil, meleeicon)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		else--Ranged (only one, so icon always 3)
 			if setIcon then
@@ -278,9 +259,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(3, 3)
 				yellThreatNeutralizationFades:Countdown(350496, nil, 3)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		end
 		if isMelee[3] then
@@ -293,9 +271,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(meleeicon, meleeicon)
 				yellThreatNeutralizationFades:Countdown(350496, nil, meleeicon)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		else--Ranged (only one, so icon always 3)
 			if setIcon then
@@ -306,9 +281,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(3, 3)
 				yellThreatNeutralizationFades:Countdown(350496, nil, 3)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		end
 	elseif meleeCount == 1 then
@@ -322,9 +294,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(1, 1)
 				yellThreatNeutralizationFades:Countdown(350496, nil, 1)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		else
 			rangedIcon = rangedIcon + 1
@@ -336,9 +305,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(rangedIcon, rangedIcon)
 				yellThreatNeutralizationFades:Countdown(350496, nil, rangedIcon)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		end
 		if isMelee[2] then--Melee will always be icon 1 in this scenario
@@ -350,9 +316,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(1, 1)
 				yellThreatNeutralizationFades:Countdown(350496, nil, 1)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		else
 			rangedIcon = rangedIcon + 1
@@ -364,9 +327,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(rangedIcon, rangedIcon)
 				yellThreatNeutralizationFades:Countdown(350496, nil, rangedIcon)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		end
 		if isMelee[3] then--Melee will always be icon 1 in this scenario
@@ -378,9 +338,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(1, 1)
 				yellThreatNeutralizationFades:Countdown(350496, nil, 1)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		else
 			rangedIcon = rangedIcon + 1
@@ -392,9 +349,6 @@ local function showthreat(self)
 				specWarnThreatNeutralization:Play("runout")
 				yellThreatNeutralization:Yell(rangedIcon, rangedIcon)
 				yellThreatNeutralizationFades:Countdown(350496, nil, rangedIcon)
-				if self.Options.RangeFrame then
-					DBM.RangeCheck:Show(10)
-				end
 			end
 		end
 	end
@@ -450,9 +404,6 @@ end
 function mod:OnCombatEnd()
 	if self.Options.InfoFrame then
 		DBM.InfoFrame:Hide()
-	end
-	if self.Options.RangeFrame then
-		DBM.RangeCheck:Hide()
 	end
 end
 
@@ -602,9 +553,6 @@ function mod:SPELL_AURA_REMOVED(args)
 		end
 		if args:IsPlayer() then
 			yellThreatNeutralizationFades:Cancel()
-			if self.Options.RangeFrame then
-				DBM.RangeCheck:Hide()
-			end
 		end
 --	elseif spellId == 350534 then--Purging Protocol disabling
 

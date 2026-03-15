@@ -75,7 +75,6 @@ local timerBloodshroudCD						= mod:NewCDTimer(112, 328921, nil, nil, nil, 6)--1
 local timerEchoingSonar							= mod:NewCastTimer(6, 329362, nil, false, nil, 5)
 --local berserkTimer							= mod:NewBerserkTimer(600)
 
-mod:AddRangeFrameOption("8")
 mod:AddInfoFrameOption(328897, true)
 mod:AddSetIconOption("SetIconOnEcholocation", 342074, true, 0, {1, 2, 3})
 
@@ -111,9 +110,6 @@ end
 function mod:OnCombatEnd()
 	if self.Options.InfoFrame then
 		DBM.InfoFrame:Hide()
-	end
-	if self.Options.RangeFrame then
-		DBM.RangeCheck:Hide()
 	end
 end
 
@@ -220,9 +216,6 @@ function mod:SPELL_AURA_APPLIED(args)
 		timerWaveofBloodCD:Stop()
 		timerEchoingScreechCD:Stop()
 		timerEarsplittingShriekCD:Start(10.9)
-		if self.Options.RangeFrame then
-			DBM.RangeCheck:Show(8)
-		end
 	end
 end
 mod.SPELL_AURA_APPLIED_DOSE = mod.SPELL_AURA_APPLIED
@@ -250,9 +243,6 @@ function mod:SPELL_AURA_REMOVED(args)
 		end
 		timerEarsplittingShriekCD:Start(48.3)
 		timerBloodshroudCD:Start(112)
-		if self.Options.RangeFrame then
-			DBM.RangeCheck:Hide()
-		end
 	elseif spellId == 342077 then
 		if args:IsPlayer() then
 			yellEcholocationFades:Cancel()

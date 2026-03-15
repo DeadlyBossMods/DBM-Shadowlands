@@ -135,9 +135,7 @@ function mod:OnCombatStart(delay)
 end
 
 function mod:OnCombatEnd()
---	if self.Options.RangeFrame then
---		DBM.RangeCheck:Hide()
---	end
+
 	if self.Options.NPAuraOnFinalScream then
 		DBM.Nameplate:Hide(true, nil, nil, nil, true, true)
 	end

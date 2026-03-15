@@ -84,7 +84,6 @@ local timerArmyofDeadCD							= mod:NewCDTimer(36.9, 362862, nil, nil, nil, 1, n
 ----Monstrous Soul
 local specWarnNecroticDetonation				= mod:NewSpecialWarningDefensive(363024, nil, nil, nil, 2, 2)--Aoe defensive, big damage followed by heal immunity
 
-mod:AddRangeFrameOption(8, 363020)
 mod:AddSetIconOption("SetIconOnMonstrousSoul", 363028, true, 5, {8})
 
 --Stage Two: Grim Reflections
@@ -228,9 +227,6 @@ function mod:OnCombatEnd()
 	table.wipe(overconfidentTargets)
 	table.wipe(hopelessnessTargets)
 	table.wipe(castsPerGUID)
-	if self.Options.RangeFrame then
-		DBM.RangeCheck:Hide()
-	end
 	if self.Options.InfoFrame then
 		DBM.InfoFrame:Hide()
 	end
@@ -526,18 +522,12 @@ function mod:SPELL_AURA_APPLIED(args)
 			end
 			timerArmyofDeadCD:Start(7.5)
 			timerSoulReaperCD:Start(14.5, 1)
-			if self.Options.RangeFrame then
-				DBM.RangeCheck:Show(8)
-			end
 		else
 			self:SetStage(2.5)
 			timerArmyofDeadCD:Start(12.7)
 			timerMarchofDamnedCD:Start(12.7)--Only used in second intermission (on non mythic)
 			timerSoulReaperCD:Start(19.7, 1)
 			timerPhaseCD:Start(self:IsMythic() and 86.7 or self:IsLFR() and 56.7 or 80)
-			if self.Options.RangeFrame then
-				DBM.RangeCheck:Show(8)
-			end
 		end
 		if self:IsFated() then
 			self:AffixEvent(0)

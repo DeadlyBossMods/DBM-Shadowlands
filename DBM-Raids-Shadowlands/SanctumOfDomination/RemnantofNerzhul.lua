@@ -173,9 +173,7 @@ function mod:OnCombatEnd()
 --	if self.Options.InfoFrame then
 --		DBM.InfoFrame:Hide()
 --	end
---	if self.Options.RangeFrame then
---		DBM.RangeCheck:Hide()
---	end
+
 	if self.Options.NPAuraOnOrbEternalTorment then
 		DBM.Nameplate:Hide(true, nil, nil, nil, true, true)
 	end

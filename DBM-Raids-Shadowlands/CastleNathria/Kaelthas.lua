@@ -2,6 +2,7 @@ local mod	= DBM:NewMod(2422, "DBM-Raids-Shadowlands", 3, 1190)
 local L		= mod:GetLocalizedStrings()
 
 mod:SetRevision("@file-date-integer@")
+mod:DisableHardcodedOptions()
 mod:SetCreatureID(165759)
 mod:SetEncounterID(2402)
 mod:DisableIEEUCombatDetection()--kael gets stuck on boss frames well after encounter has ended, therefor must not re-engage boss off this bug

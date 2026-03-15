@@ -2,6 +2,7 @@ local mod	= DBM:NewMod(2435, "DBM-Raids-Shadowlands", 2, 1193)
 local L		= mod:GetLocalizedStrings()
 
 mod:SetRevision("@file-date-integer@")
+mod:DisableHardcodedOptions()
 mod:SetCreatureID(175611)
 mod:SetEncounterID(2423)
 mod:SetUsedIcons(1)

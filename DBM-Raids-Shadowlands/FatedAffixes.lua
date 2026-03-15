@@ -2,6 +2,7 @@ local mod	= DBM:NewMod("FatedAffixes", "DBM-Raids-Shadowlands", 0)
 local L		= mod:GetLocalizedStrings()
 
 mod:SetRevision("@file-date-integer@")
+mod:DisableHardcodedOptions()
 --mod:SetModelID(47785)
 mod:SetZone(2296, 2450, 2481)--Shadowlands Raids
 

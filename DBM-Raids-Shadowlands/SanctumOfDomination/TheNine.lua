@@ -2,6 +2,7 @@ local mod	= DBM:NewMod(2439, "DBM-Raids-Shadowlands", 2, 1193)
 local L		= mod:GetLocalizedStrings()
 
 mod:SetRevision("@file-date-integer@")
+mod:DisableHardcodedOptions()
 mod:SetCreatureID(175726)--Skyja (TODO, add other 2 and set health to highest?)
 mod:SetEncounterID(2429)
 mod:SetUsedIcons(8, 7, 6, 4, 3, 2, 1)

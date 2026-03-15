@@ -2,6 +2,7 @@ local mod	= DBM:NewMod("SanctumofDomTrash", "DBM-Raids-Shadowlands", 2)
 local L		= mod:GetLocalizedStrings()
 
 mod:SetRevision("@file-date-integer@")
+mod:DisableHardcodedOptions()
 --mod:SetModelID(47785)
 mod.isTrashMod = true
 mod:SetZone(2450)

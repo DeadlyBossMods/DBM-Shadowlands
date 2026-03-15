@@ -3,6 +3,7 @@ local mod	= DBM:NewMod(2460, "DBM-Raids-Shadowlands", 1, 1195)
 local L		= mod:GetLocalizedStrings()
 
 mod:SetRevision("@file-date-integer@")
+mod:DisableHardcodedOptions()
 mod:SetCreatureID(181548, 181551, 181546, 181549)
 mod:SetEncounterID(2544)
 mod:SetBossHPInfoToHighest()

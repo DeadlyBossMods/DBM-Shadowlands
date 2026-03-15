@@ -2,6 +2,7 @@ local mod	= DBM:NewMod(2426, "DBM-Raids-Shadowlands", 3, 1190)
 local L		= mod:GetLocalizedStrings()
 
 mod:SetRevision("@file-date-integer@")
+mod:DisableHardcodedOptions()
 mod:SetCreatureID(166971, 166969, 166970)--Castellan Niklaus, Baroness Frieda, Lord Stavros
 mod:SetEncounterID(2412)
 mod:SetBossHPInfoToHighest()

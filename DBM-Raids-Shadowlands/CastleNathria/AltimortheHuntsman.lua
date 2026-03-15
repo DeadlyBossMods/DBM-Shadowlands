@@ -83,12 +83,11 @@ local timerPetrifyingHowlCD						= mod:NewCDTimer(20.6, 334852, 135241, nil, nil
 mod.vb.sinSeekerCount = 0
 mod.vb.activeSeekers = 0
 --NYI, more data needed to substanciate
-local spreadShotTimers = {
-	[1] = {6.5, 30.3, 18.2},
-	[2] = {11.7, 32.7, 12.2, 12.1},
-	[3] = {12.4, 23.1, 43.6},
-}
-local playerSinSeeker = false
+--local spreadShotTimers = {
+--	[1] = {6.5, 30.3, 18.2},
+--	[2] = {11.7, 32.7, 12.2, 12.1},
+--	[3] = {12.4, 23.1, 43.6},
+--}
 local transitionwindow = 0--0 false, 1 true, 2 sinseeker activated while it was 1
 
 local function updateAllTimers(self)
@@ -134,7 +133,6 @@ function mod:OnCombatStart(delay)
 	self:SetStage(1)
 	self.vb.sinSeekerCount = 0
 	self.vb.activeSeekers = 0
-	playerSinSeeker = false
 	timerSpreadshotCD:Start(6-delay)
 	timerSinseekerCD:Start(28.8-delay, 1)
 	--Margore on pull on heroic testing, but can this change?
@@ -143,8 +141,6 @@ function mod:OnCombatStart(delay)
 --	berserkTimer:Start(-delay)--Confirmed normal and heroic
 end
 
-function mod:OnCombatEnd()
-end
 
 function mod:SPELL_CAST_START(args)
 	local spellId = args.spellId
@@ -252,7 +248,6 @@ function mod:SPELL_AURA_APPLIED(args)
 			self:SetIcon(args.destName, icon)
 		end
 		if args:IsPlayer() then
-			playerSinSeeker = true
 			specWarnSinseeker:Show(self:IconNumToTexture(icon))
 			specWarnSinseeker:Play("mm"..icon)
 			yellSinseeker:Yell(icon, icon)
@@ -310,7 +305,6 @@ function mod:SPELL_AURA_REMOVED(args)
 	elseif spellId == 335111 or spellId == 335112 or spellId == 335113 then
 		self.vb.activeSeekers = self.vb.activeSeekers - 1
 		if args:IsPlayer() then
-			playerSinSeeker = false
 			yellSinseekerFades:Cancel()
 		end
 		if self.Options.SetIconOnSinSeeker then

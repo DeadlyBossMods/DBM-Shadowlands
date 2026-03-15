@@ -441,8 +441,6 @@ function mod:OnCombatStart(delay)
 	end
 end
 
-function mod:OnCombatEnd()
-end
 
 function mod:OnTimerRecovery()
 	if self:IsMythic() then

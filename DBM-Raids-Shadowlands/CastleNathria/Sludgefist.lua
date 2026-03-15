@@ -117,8 +117,6 @@ function mod:OnCombatStart(delay)
 --	berserkTimer:Start(-delay)
 end
 
-function mod:OnCombatEnd()
-end
 
 function mod:SPELL_CAST_START(args)
 	local spellId = args.spellId

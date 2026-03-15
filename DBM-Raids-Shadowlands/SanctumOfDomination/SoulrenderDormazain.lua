@@ -71,7 +71,6 @@ local timerHellscream						= mod:NewCastTimer(35, 350411, nil, nil, nil, 2, nil,
 
 --local berserkTimer						= mod:NewBerserkTimer(600)
 
---mod:AddRangeFrameOption("8")
 mod:AddInfoFrameOption(352158, false)
 mod:AddSetIconOption("SetIconOnBrandofTorment", 350647, true, 0, {1, 2, 3, 4})
 mod:AddSetIconOption("SetIconOnMawsworn", 350615, true, 5, {5, 6, 7, 8})

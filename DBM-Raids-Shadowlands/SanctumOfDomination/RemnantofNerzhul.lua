@@ -62,7 +62,6 @@ local timerGraspofMaliceCD						= mod:NewCDTimer(20.7, 355123, nil, nil, nil, 3,
 
 local berserkTimer								= mod:NewBerserkTimer(600)
 
---mod:AddRangeFrameOption("8")
 --mod:AddInfoFrameOption(349890, true)
 mod:AddSetIconOption("SetIconOnMalevolence", 350469, true, 0, {1, 2, 3})
 mod:AddSetIconOption("SetIconOnOrbs", 321226, true, 5, {7, 6, 5, 4})

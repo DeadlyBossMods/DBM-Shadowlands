@@ -52,7 +52,6 @@ local warnPhase										= mod:NewPhaseChangeAnnounce(2, nil, nil, nil, nil, nil
 
 --local berserkTimer								= mod:NewBerserkTimer(600)
 
---mod:AddRangeFrameOption("8")
 mod:AddInfoFrameOption(nil, true)--Aused for 353929 and 347807
 
 --Stage One: A Cycle of Hatred

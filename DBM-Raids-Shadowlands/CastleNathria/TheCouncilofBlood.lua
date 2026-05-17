@@ -104,7 +104,7 @@ local timerPridefulEruptionCD					= mod:NewCDTimer(25, 346657, 138658, nil, nil,
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22945))--Two are dead
 local timerSoulSpikesCD							= mod:NewCDTimer(19.4, 346762, nil, nil, nil, 3)
 
-mod:AddSetIconOption("SetIconOnImage", "ej22433", true, 5, {6})
+mod:AddSetIconOption("SetIconOnImage", -22433, true, 5, {6})
 --Lord Stavros
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22149))--2 baseline abilities
 local warnDarkRecital							= mod:NewTargetNoFilterAnnounce(331634, 3)

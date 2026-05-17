@@ -85,7 +85,7 @@ local warnDespair								= mod:NewCountAnnounce(357144, 3)
 local specWarnDespair							= mod:NewSpecialWarningInterruptCount(357144, "HasInterrupt", nil, nil, 1, 2)--Non mythic only
 local specWarnDespairRun						= mod:NewSpecialWarningRun(357144, nil, nil, nil, 4, 2, 4)
 
-mod:AddSetIconOption("SetIconOnMonstrosity", "ej23764", true, 5, {7, 8})
+mod:AddSetIconOption("SetIconOnMonstrosity", -23764, true, 5, {7, 8})
 --Stage Three: Fated Terminus
 mod:AddOptionLine(DBM:EJ_GetSectionInfo(23486), "announce")
 local warnExtemporaneousFate					= mod:NewSoonAnnounce(353195, 3)

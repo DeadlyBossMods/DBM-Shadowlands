@@ -113,7 +113,7 @@ local specWarnShatteringBlast					= mod:NewSpecialWarningSpell(332683, nil, nil,
 local timerShatteringBlast						= mod:NewCastTimer(5, 332683, nil, nil, nil, 2)
 --Adds
 mod:AddTimerLine(DBM_COMMON_L.ADDS)
-local warnStoneLegionGoliath					= mod:NewSpellAnnounce("ej22777", 2, 343273)
+local warnStoneLegionGoliath					= mod:NewSpellAnnounce(-22777, 2, 343273)
 local warnVolatileAnimaInfusion					= mod:NewTargetNoFilterAnnounce(342655, 2, nil, false)
 local warnRavenousFeast							= mod:NewTargetCountAnnounce(343273, 3, nil, nil, nil, nil, nil, nil, true)
 local warnStonewrathExhaust						= mod:NewCastAnnounce(342722, 3)

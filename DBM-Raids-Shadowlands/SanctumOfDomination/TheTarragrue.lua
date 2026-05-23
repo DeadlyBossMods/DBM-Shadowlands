@@ -47,17 +47,17 @@ local warnRemantPhysical							= mod:NewCountAnnounce(352384, 2, nil, nil, false
 local warnRemantShadow								= mod:NewCountAnnounce(352387, 2, nil, nil, false)--Shadow
 local warnRemnantFire								= mod:NewCountAnnounce(352392, 2, nil, nil, false)--Fire
 
-local specWarnOverpower								= mod:NewSpecialWarningDefensive(346985, nil, nil, nil, 1, 2)
-local specWarnCrushedArmor							= mod:NewSpecialWarningTaunt(346986, nil, nil, nil, 1, 2)
-local specWarnChainsofEternity						= mod:NewSpecialWarningYou(347269, nil, nil, nil, 1, 2)
+local specWarnOverpower								= mod:NewSpecialWarningDefensive(346985, nil, nil, nil, 1, 2, nil, nil, "defensive")
+local specWarnCrushedArmor							= mod:NewSpecialWarningTaunt(346986, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
+local specWarnChainsofEternity						= mod:NewSpecialWarningYou(347269, nil, nil, nil, 1, 2, nil, nil, "targetyou")
 local yellChainsofEternity							= mod:NewYell(347269)
 local yellChainsofEternityFades						= mod:NewShortFadesYell(347269)
-local specWarnAnnihilatingSmash						= mod:NewSpecialWarningYou(347274, nil, nil, nil, 1, 2)
-local specWarnPredatorsHowl							= mod:NewSpecialWarningMoveAway(347283, nil, nil, nil, 1, 2)
+local specWarnAnnihilatingSmash						= mod:NewSpecialWarningYou(347274, nil, nil, nil, 1, 2, nil, nil, "targetyou")
+local specWarnPredatorsHowl							= mod:NewSpecialWarningMoveAway(347283, nil, nil, nil, 1, 2, nil, nil, "range5")
 local yellPredatorsHowl								= mod:NewYell(347283, nil, false)--Lots of targets, so opt in?
-local specWarnHungeringMist							= mod:NewSpecialWarningDodge(347679, nil, nil, nil, 2, 2)
+local specWarnHungeringMist							= mod:NewSpecialWarningDodge(347679, nil, nil, nil, 2, 2, nil, nil, "watchstep")
 --local specWarnGraspofDeath						= mod:NewSpecialWarningInterrupt(347668, "HasInterrupt", nil, nil, 1, 2)
-local specWarnFuryoftheAges							= mod:NewSpecialWarningDispel(347490, "RemoveEnrage", nil, nil, 1, 2)
+local specWarnFuryoftheAges							= mod:NewSpecialWarningDispel(347490, "RemoveEnrage", nil, nil, 1, 2, nil, nil, "enrage")
 --local specWarnGTFO								= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8)
 
 local timerOverpowerCD								= mod:NewCDCountTimer(27.1, 346985, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON)

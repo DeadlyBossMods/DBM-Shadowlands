@@ -22,8 +22,8 @@ local warnStoneFist							= mod:NewSpellAnnounce(338858, 3, nil, "Tank")
 local warnStoneStomp						= mod:NewSpellAnnounce(338863, 3)
 local warnDeepSlumber						= mod:NewCastAnnounce(338868, 2)
 
-local specWarnEarthenBlast					= mod:NewSpecialWarningDodge(338864, nil, nil, nil, 2, 2)
-local specWarnHailofStones					= mod:NewSpecialWarningMoveTo(338867, nil, nil, nil, 3, 2)
+local specWarnEarthenBlast					= mod:NewSpecialWarningDodge(338864, nil, nil, nil, 2, 2, nil, nil, "watchstep")
+local specWarnHailofStones					= mod:NewSpecialWarningMoveTo(338867, nil, nil, nil, 3, 2, nil, nil, "movecenter")
 --local specWarnSummonSwarmguard			= mod:NewSpecialWarningSwitch(314307, "-Healer", nil, nil, 1, 2)
 
 local timerStoneFistCD						= mod:NewAITimer(82.0, 338858, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)

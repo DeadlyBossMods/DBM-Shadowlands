@@ -49,16 +49,16 @@ local warnSpawnMawsworn						= mod:NewCountAnnounce(350615, 3)
 --local warnVesselofTorment					= mod:NewTargetNoFilterAnnounce(350851, 4)--FIXME
 
 --BOSS
-local specWarnTorment						= mod:NewSpecialWarningDodge(352158, nil, nil, nil, 2, 2)
-local specWarnTormentedEruptions			= mod:NewSpecialWarningDodgeCount(349985, nil, nil, nil, 2, 2)
-local specWarnBrandofTorment				= mod:NewSpecialWarningYou(350647, nil, nil, nil, 1, 2)
+local specWarnTorment						= mod:NewSpecialWarningDodge(352158, nil, nil, nil, 2, 2, nil, nil, "watchstep")
+local specWarnTormentedEruptions			= mod:NewSpecialWarningDodgeCount(349985, nil, nil, nil, 2, 2, nil, nil, "watchstep")
+local specWarnBrandofTorment				= mod:NewSpecialWarningYou(350647, nil, nil, nil, 1, 2, nil, nil, "targetyou")
 local yellBrandofTorment					= mod:NewYell(350647)
-local specWarnRuinblade						= mod:NewSpecialWarningStack(350422, nil, 1, nil, nil, 1, 6)
-local specWarnRuinbladeTaunt				= mod:NewSpecialWarningTaunt(350422, nil, nil, nil, 1, 2)
+local specWarnRuinblade						= mod:NewSpecialWarningStack(350422, nil, 1, nil, nil, 1, 6, nil, nil, "stackhigh")
+local specWarnRuinbladeTaunt				= mod:NewSpecialWarningTaunt(350422, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 --Mawsworn Agonizer
-local specWarnAgonizingSpike				= mod:NewSpecialWarningInterruptCount(351779, "false", nil, nil, 1, 2)--Opt in
+local specWarnAgonizingSpike				= mod:NewSpecialWarningInterruptCount(351779, "false", nil, nil, 1, 2, nil, nil, "kickcast")--Opt in
 --Garrosh Hellscream
-local specWarnWarmongerShackles				= mod:NewSpecialWarningSwitchCount(350415, nil, nil, nil, 1, 2)
+local specWarnWarmongerShackles				= mod:NewSpecialWarningSwitchCount(350415, nil, nil, nil, 1, 2, nil, nil, "targetchange")
 --local specWarnGTFO						= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8)
 
 local timerTormentCD						= mod:NewCDCountTimer(35, 352158, nil, nil, nil, 3, nil, nil, true)--Ability is reset by eruption?

@@ -56,13 +56,13 @@ local warnWickedBlade							= mod:NewTargetCountAnnounce(333376, 4, nil, nil, ni
 local warnHeartRend								= mod:NewTargetCountAnnounce(334765, 4, nil, "Healer", 2, nil, nil, nil, true)
 local warnCallShadowForces						= mod:NewCountAnnounce(342256, 2)
 
-local specWarnWickedBladeCast					= mod:NewSpecialWarningCount(333376, false, nil, nil, 2, 2)
-local specWarnWickedBlade						= mod:NewSpecialWarningYouPos(333376, nil, nil, nil, 1, 2)
+local specWarnWickedBladeCast					= mod:NewSpecialWarningCount(333376, false, nil, nil, 2, 2, nil, nil, "specialsoon")
+local specWarnWickedBlade						= mod:NewSpecialWarningYouPos(333376, nil, nil, nil, 1, 2, nil, nil, "mm")
 local yellWickedBlade							= mod:NewPosYell(333376)
 local yellWickedBladeFades						= mod:NewIconFadesYell(333376)
-local specWarnHeartRendCast						= mod:NewSpecialWarningCount(334765, false, nil, nil, 1, 2)
-local specWarnHeartRend							= mod:NewSpecialWarningYou(334765, false, nil, nil, 1, 2)
-local specWarnSerratedSwipe						= mod:NewSpecialWarningDefensive(334929, nil, nil, nil, 1, 2)
+local specWarnHeartRendCast						= mod:NewSpecialWarningCount(334765, false, nil, nil, 1, 2, nil, nil, "specialsoon")
+local specWarnHeartRend							= mod:NewSpecialWarningYou(334765, false, nil, nil, 1, 2, nil, nil, "targetyou")
+local specWarnSerratedSwipe						= mod:NewSpecialWarningDefensive(334929, nil, nil, nil, 1, 2, nil, nil, "defensive")
 
 local timerWickedBladeCD						= mod:NewCDCountTimer(30, 333376, nil, nil, nil, 3, nil, nil, true)--30 unless ICDed
 local timerHeartRendCD							= mod:NewCDCountTimer(42.1, 334765, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON, true)--42.4 unless ICDed
@@ -81,22 +81,22 @@ local warnReverberatingLeap						= mod:NewTargetCountAnnounce(334009, 3, nil, ni
 local warnCrystalize							= mod:NewTargetCountAnnounce(339690, 2, nil, nil, nil, nil, nil, nil, true)
 local warnPulverizingMeteor						= mod:NewTargetCountAnnounce(342544, 4, nil, nil, nil, nil, nil, nil, true)
 
-local specWarnReverberatingEruption				= mod:NewSpecialWarningYou(344496, nil, 138658, nil, 1, 2, 2)
+local specWarnReverberatingEruption				= mod:NewSpecialWarningYou(344496, nil, 138658, nil, 1, 2, 2, nil, "runout")
 local yellReverberatingEruption					= mod:NewYell(344496, 138658)--Short text "Eruption"
 local yellReverberatingEruptionFades			= mod:NewFadesYell(344496, 138658)--Short text "Eruption"
-local specWarnReverberatingLeap					= mod:NewSpecialWarningYou(334009, nil, 337445, nil, 1, 2, 1)
+local specWarnReverberatingLeap					= mod:NewSpecialWarningYou(334009, nil, 337445, nil, 1, 2, 1, nil, "runout")
 local yellReverberatingLeap						= mod:NewYell(334009, 337445)--Short text "Leap"
 local yellReverberatingLeapFades				= mod:NewFadesYell(334009, 337445)--Short text "Leap"
-local specWarnEchoingAnnihilation				= mod:NewSpecialWarningMoveTo(344721, false, nil, nil, 1, 2, 4)--Off by default since strats may vary. Auto asigns reverb soak by remember which one you spawned
-local specWarnSeismicUpheaval					= mod:NewSpecialWarningDodgeCount(334498, nil, nil, nil, 2, 2)
-local specWarnCrystalize						= mod:NewSpecialWarningYou(339690, nil, nil, nil, 1, 2)
-local specWarnCrystalizeTarget					= mod:NewSpecialWarningMoveTo(339690, false, nil, nil, 1, 2)
+local specWarnEchoingAnnihilation				= mod:NewSpecialWarningMoveTo(344721, false, nil, nil, 1, 2, 4, nil, "helpsoak")--Off by default since strats may vary. Auto asigns reverb soak by remember which one you spawned
+local specWarnSeismicUpheaval					= mod:NewSpecialWarningDodgeCount(334498, nil, nil, nil, 2, 2, nil, nil, "watchstep")
+local specWarnCrystalize						= mod:NewSpecialWarningYou(339690, nil, nil, nil, 1, 2, nil, nil, "targetyou")
+local specWarnCrystalizeTarget					= mod:NewSpecialWarningMoveTo(339690, false, nil, nil, 1, 2, nil, nil, "gathershare")
 local yellCrystalize							= mod:NewYell(339690, nil, nil, nil, "YELL")
 local yellCrystalizeFades						= mod:NewFadesYell(339690, nil, nil, nil, "YELL")
-local specWarnMeteor							= mod:NewSpecialWarningYou(342544, nil, nil, nil, 1, 2)
+local specWarnMeteor							= mod:NewSpecialWarningYou(342544, nil, nil, nil, 1, 2, nil, nil, "runout")
 local yellMeteor								= mod:NewYell(342544, nil, nil, nil, "YELL")
-local specWarnStoneFist							= mod:NewSpecialWarningDefensive(342425, nil, nil, nil, 1, 2)
-local specWarnStoneFistTaunt					= mod:NewSpecialWarningTaunt(342425, nil, nil, nil, 1, 2)
+local specWarnStoneFist							= mod:NewSpecialWarningDefensive(342425, nil, nil, nil, 1, 2, nil, nil, "defensive")
+local specWarnStoneFistTaunt					= mod:NewSpecialWarningTaunt(342425, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 
 local timerReverberatingEruptionCD				= mod:NewCDCountTimer(30, 344496, 138658, nil, 3, 3, nil, nil, true)--Short text "Eruption" (Normal+)
 local timerReverberatingLeapCD					= mod:NewCDCountTimer(30, 334009, 337445, nil, 3, 3, nil, nil, true)--Short text "Leap" (LFR)
@@ -107,8 +107,8 @@ local timerStoneFistCD							= mod:NewCDCountTimer(18, 342425, nil, "Tank|Healer
 mod:AddSetIconOption("SetIconOnEruption2", 344496, false, 0, {4})--Off by default since it conflicts with heart rend
 mod:AddSetIconOption("SetIconOnCrystalize", 339690, true, 0, {5})
 --Adds/Intermissions
-local specWarnVolatileStoneShell				= mod:NewSpecialWarningSwitch(340037, "Dps", nil, nil, 1, 2)
-local specWarnShatteringBlast					= mod:NewSpecialWarningSpell(332683, nil, nil, nil, 2, 2)
+local specWarnVolatileStoneShell				= mod:NewSpecialWarningSwitch(340037, "Dps", nil, nil, 1, 2, nil, nil, "targetchange")
+local specWarnShatteringBlast					= mod:NewSpecialWarningSpell(332683, nil, nil, nil, 2, 2, nil, nil, "carefly")
 
 local timerShatteringBlast						= mod:NewCastTimer(5, 332683, nil, nil, nil, 2)
 --Adds

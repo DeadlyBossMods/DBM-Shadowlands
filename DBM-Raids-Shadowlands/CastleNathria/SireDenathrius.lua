@@ -48,17 +48,17 @@ local warnBloodPrice							= mod:NewCountAnnounce(326851, 4)
 local warnFeedingTime							= mod:NewTargetAnnounce(327039, 2)--On this difficulty you don't need to help soak it so don't really NEED to know who it's on
 local warnNightHunter							= mod:NewTargetNoFilterAnnounce(327796, 4)--General announce, if target special warning not enabled
 
-local specWarnCleansingPain						= mod:NewSpecialWarningCount(326707, nil, nil, nil, 2, 2)
-local specWarnFeedingTime						= mod:NewSpecialWarningMoveAway(327039, nil, nil, nil, 1, 2)--Normal/LFR
+local specWarnCleansingPain						= mod:NewSpecialWarningCount(326707, nil, nil, nil, 2, 2, nil, nil, "shockwave")
+local specWarnFeedingTime						= mod:NewSpecialWarningMoveAway(327039, nil, nil, nil, 1, 2, nil, nil, "runout")--Normal/LFR
 local yellFeedingTime							= mod:NewYell(327039)--Normal/LFR
 local yellFeedingTimeFades						= mod:NewFadesYell(327039)--Normal/LFR
-local specWarnNightHunter						= mod:NewSpecialWarningYouPos(327796, nil, nil, nil, 1, 2, 3)--Heroic/Mythic
+local specWarnNightHunter						= mod:NewSpecialWarningYouPos(327796, nil, nil, nil, 1, 2, 3, nil, "mm")--Heroic/Mythic
 local yellNightHunter							= mod:NewShortPosYell(327796)--Heroic/Mythic (not red on purpose, you do NOT want to be anywhere near victim, you want to soak the line before victim)
 local yellNightHunterFades						= mod:NewIconFadesYell(327796)--Heroic/Mythic (not red on purpose, you do NOT want to be anywhere near victim, you want to soak the line before victim)
 local specWarnNightHunterTarget					= mod:NewSpecialWarningTarget(327796, false, nil, nil, 1, 2, 3)--Opt in, for people who are assigned to this soak
-local specWarnCommandRavage						= mod:NewSpecialWarningCount(327227, nil, 327122, nil, 2, 2)
+local specWarnCommandRavage						= mod:NewSpecialWarningCount(327227, nil, 327122, nil, 2, 2, nil, nil, "specialsoon")
 --local specWarnMindFlay						= mod:NewSpecialWarningInterrupt(310552, "HasInterrupt", nil, nil, 1, 2)
-local specWarnGTFO								= mod:NewSpecialWarningGTFO(327992, nil, nil, nil, 1, 8)
+local specWarnGTFO								= mod:NewSpecialWarningGTFO(327992, nil, nil, nil, 1, 8, nil, nil, "watchfeet")
 
 local timerCleansingPainCD						= mod:NewNextCountTimer(16.6, 326707, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON, nil, 2, 3)
 local timerBloodPriceCD							= mod:NewCDCountTimer(57.3, 326851, nil, nil, nil, 2, nil, DBM_COMMON_L.HEALER_ICON)
@@ -77,22 +77,22 @@ mod:AddTimerLine(DBM:EJ_GetSectionInfo(22059))
 local warnCrimsonCabalists						= mod:NewCountAnnounce(-22131, 2, 329711)
 local warnCrescendo								= mod:NewSpellAnnounce(336162, 3)
 
-local specWarnCrescendo							= mod:NewSpecialWarningDodge(336162, false, nil, nil, 2, 2)
+local specWarnCrescendo							= mod:NewSpecialWarningDodge(336162, false, nil, nil, 2, 2, nil, nil, "watchstep")
 
 local timerCrimsonCabalistsCD					= mod:NewNextCountTimer(44.3, -22131, nil, nil, nil, 1, 329711)
 ----Horseman
 local warnBalefulShadows						= mod:NewSpellAnnounce(344313, 3)
 
-local specWarnVengefulWail						= mod:NewSpecialWarningInterruptCount(344776, "HasInterrupt", nil, nil, 1, 2, 4)
+local specWarnVengefulWail						= mod:NewSpecialWarningInterruptCount(344776, "HasInterrupt", nil, nil, 1, 2, 4, nil, "kickcast")
 
 mod:AddSetIconOption("SetIconOnBalefulShadows", 344313, false, 5, {7, 8})
 ----Remornia
 local warnCarnage								= mod:NewStackAnnounce(329906, 2, nil, "Tank|Healer")
 local warnImpale								= mod:NewTargetAnnounce(329951, 2)
 
-local specWarnCarnage							= mod:NewSpecialWarningStack(329906, nil, 6, nil, nil, 1, 6)
-local specWarnCarnageOther						= mod:NewSpecialWarningTaunt(329906, nil, nil, nil, 1, 6)
-local specWarnImpale							= mod:NewSpecialWarningMoveAway(329951, nil, nil, nil, 1, 2)
+local specWarnCarnage							= mod:NewSpecialWarningStack(329906, nil, 6, nil, nil, 1, 6, nil, nil, "stackhigh")
+local specWarnCarnageOther						= mod:NewSpecialWarningTaunt(329906, nil, nil, nil, 1, 6, nil, nil, "tauntboss")
+local specWarnImpale							= mod:NewSpecialWarningMoveAway(329951, nil, nil, nil, 1, 2, nil, nil, "runout")
 local yellImpale								= mod:NewShortPosYell(329951)
 local yellImpaleFades							= mod:NewIconFadesYell(329951)
 
@@ -100,10 +100,10 @@ local timerImpaleCD								= mod:NewNextCountTimer(44.3, 329951, nil, nil, nil, 
 
 mod:AddSetIconOption("SetIconOnImpale", 329951, true, 0, {1, 2, 3, 4})
 ----Sire Denathrius
-local specWarnWrackingPain						= mod:NewSpecialWarningDefensive(329181, "Tank", nil, nil, 1, 2)--Change to defensive if it can't be dodged
-local specWarnWrackingPainTaunt					= mod:NewSpecialWarningTaunt(329181, nil, nil, nil, 1, 2)
-local specWarnHandofDestruction					= mod:NewSpecialWarningRun(333932, nil, nil, nil, 4, 2)
-local specWarnCommandMassacre					= mod:NewSpecialWarningDodgeCount(330042, nil, 330137, nil, 2, 2)
+local specWarnWrackingPain						= mod:NewSpecialWarningDefensive(329181, "Tank", nil, nil, 1, 2, nil, nil, "shockwave")--Change to defensive if it can't be dodged
+local specWarnWrackingPainTaunt					= mod:NewSpecialWarningTaunt(329181, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
+local specWarnHandofDestruction					= mod:NewSpecialWarningRun(333932, nil, nil, nil, 4, 2, nil, nil, "justrun")
+local specWarnCommandMassacre					= mod:NewSpecialWarningDodgeCount(330042, nil, 330137, nil, 2, 2, nil, nil, "watchstep")
 
 local timerWrackingPainCD						= mod:NewCDCountTimer(16.6, 329181, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON, true)
 local timerHandofDestructionCD					= mod:NewCDCountTimer(44.3, 333932, nil, nil, nil, 2)
@@ -114,13 +114,13 @@ mod:AddTimerLine(DBM:EJ_GetSectionInfo(22195))
 local warnScorn									= mod:NewStackAnnounce(332585, 2, nil, "Tank|Healer")
 local warnFatalFinesse							= mod:NewTargetNoFilterAnnounce(332794, 2)
 
-local specWarnScorn								= mod:NewSpecialWarningStack(332585, nil, 6, nil, nil, 1, 6)
-local specWarnScorneOther						= mod:NewSpecialWarningTaunt(332585, nil, nil, nil, 1, 6)
-local specWarnShatteringPain					= mod:NewSpecialWarningCount(332619, nil, nil, nil, 2, 5)
-local specWarnFatalfFinesse						= mod:NewSpecialWarningMoveAway(332794, nil, nil, nil, 1, 2)
+local specWarnScorn								= mod:NewSpecialWarningStack(332585, nil, 6, nil, nil, 1, 6, nil, nil, "stackhigh")
+local specWarnScorneOther						= mod:NewSpecialWarningTaunt(332585, nil, nil, nil, 1, 6, nil, nil, "tauntboss")
+local specWarnShatteringPain					= mod:NewSpecialWarningCount(332619, nil, nil, nil, 2, 5, nil, nil, "carefly")
+local specWarnFatalfFinesse						= mod:NewSpecialWarningMoveAway(332794, nil, nil, nil, 1, 2, nil, nil, "runout")
 local yellFatalfFinesse							= mod:NewShortPosYell(332794)
 local yellFatalfFinesseFades					= mod:NewIconFadesYell(332794)
-local specWarnSinisterReflection				= mod:NewSpecialWarningCount(333979, nil, nil, nil, 2, 2, 4)--Both Massacre and Ravage at same time
+local specWarnSinisterReflection				= mod:NewSpecialWarningCount(333979, nil, nil, nil, 2, 2, 4, nil, "specialsoon")--Both Massacre and Ravage at same time
 
 local timerShatteringPainCD						= mod:NewCDCountTimer(23, 332619, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON)
 local timerFatalFitnesseCD						= mod:NewCDCountTimer(22, 332794, nil, nil, nil, 3)

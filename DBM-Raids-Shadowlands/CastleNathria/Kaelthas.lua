@@ -42,7 +42,7 @@ mod:RegisterEventsInCombat(
 --]]
 --High Torturor Darithos
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22089))
-local specWarnGreaterCastigation				= mod:NewSpecialWarningMoveAway(328885, nil, nil, nil, 1, 2)
+local specWarnGreaterCastigation				= mod:NewSpecialWarningMoveAway(328885, nil, nil, nil, 1, 2, nil, nil, "scatter")
 
 local timerGreaterCastigationCD					= mod:NewNextTimer(15.8, 328885, nil, nil, nil, 3)
 
@@ -52,17 +52,17 @@ local warnFeiryStrike							= mod:NewCastAnnounce(326455, 2, nil, nil, "Melee")
 local warnBurningRemnants						= mod:NewStackAnnounce(326456, 2, nil, "Tank")
 local warnEmberBlast							= mod:NewTargetNoFilterAnnounce(325877, 4)
 
-local specWarnShadeSpawned						= mod:NewSpecialWarningSwitch(-21966, nil, nil, nil, 1, 2)
-local specWarnFeiryStrike						= mod:NewSpecialWarningSpell(326455, false, nil, nil, 1, 2)
-local specWarnBurningRemnants					= mod:NewSpecialWarningStack(326456, nil, 3, nil, nil, 1, 6)
-local specWarnBurningRemnantsTaunt				= mod:NewSpecialWarningTaunt(326456, nil, nil, nil, 1, 2)
-local specWarnEmberBlast						= mod:NewSpecialWarningMoveTo(325877, false, nil, nil, 1, 2)--Opt in as needed
+local specWarnShadeSpawned						= mod:NewSpecialWarningSwitch(-21966, nil, nil, nil, 1, 2, nil, nil, "bigmob")
+local specWarnFeiryStrike						= mod:NewSpecialWarningSpell(326455, false, nil, nil, 1, 2, nil, nil, "shockwave")
+local specWarnBurningRemnants					= mod:NewSpecialWarningStack(326456, nil, 3, nil, nil, 1, 6, nil, nil, "stackhigh")
+local specWarnBurningRemnantsTaunt				= mod:NewSpecialWarningTaunt(326456, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
+local specWarnEmberBlast						= mod:NewSpecialWarningMoveTo(325877, false, nil, nil, 1, 2, nil, nil, "gathershare")--Opt in as needed
 local yellEmberBlast							= mod:NewYell(325877, nil, nil, nil, "YELL")
 local yellEmberBlastFades						= mod:NewFadesYell(325877, nil, nil, nil, "YELL")
-local specWarnBlazingSurge						= mod:NewSpecialWarningDodge(329509, nil, nil, nil, 2, 2)
+local specWarnBlazingSurge						= mod:NewSpecialWarningDodge(329509, nil, nil, nil, 2, 2, nil, nil, "shockwave")
 --local yellBlazingSurge							= mod:NewYell(329509)
-local specWarnUnleashedPyroclasm				= mod:NewSpecialWarningInterrupt(337865, nil, nil, nil, 1, 2)
-local specWarnGTFO								= mod:NewSpecialWarningGTFO(328579, nil, nil, nil, 1, 8)
+local specWarnUnleashedPyroclasm				= mod:NewSpecialWarningInterrupt(337865, nil, nil, nil, 1, 2, nil, nil, "kickcast")
+local specWarnGTFO								= mod:NewSpecialWarningGTFO(328579, nil, nil, nil, 1, 8, nil, nil, "watchfeet")
 
 local timerFieryStrikeCD						= mod:NewCDTimer(8.5, 326455, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
 local timerEmberBlastCD							= mod:NewCDTimer(20.4, 325877, nil, nil, nil, 3)--20 again? or is it just 24 on mythic and 20 on heroic
@@ -79,8 +79,8 @@ local warnVanquisher							= mod:NewCountAnnounce(-21954, 2, 325440)
 local warnVanquished							= mod:NewStackAnnounce(325442, 2, nil, "Tank")
 local warnConcussiveSmash						= mod:NewCountAnnounce(325506, 3)
 
-local specWarnVanquished						= mod:NewSpecialWarningStack(325442, nil, 3, nil, nil, 1, 6)
-local specWarnVanquishedTaunt					= mod:NewSpecialWarningTaunt(325442, nil, nil, nil, 1, 2)
+local specWarnVanquished						= mod:NewSpecialWarningStack(325442, nil, 3, nil, nil, 1, 6, nil, nil, "stackhigh")
+local specWarnVanquishedTaunt					= mod:NewSpecialWarningTaunt(325442, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 
 local timerVanquisherCD							= mod:NewCDCountTimer(80, -21954, nil, nil, nil, 1, 325440, DBM_COMMON_L.DAMAGE_ICON)
 local timerVanquishingStrikeCD					= mod:NewCDTimer(6.1, 325440, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
@@ -91,7 +91,7 @@ local warnAssassin								= mod:NewCountAnnounce(-21993, 2, 326583)
 local warnReturnToStone							= mod:NewTargetNoFilterAnnounce(333145, 4, nil, "-Healer")
 local warnCrimsonFury							= mod:NewTargetAnnounce(341473, 3)
 
-local specWarnCrimsonFury						= mod:NewSpecialWarningMoveAway(341473, nil, nil, nil, 1, 2)
+local specWarnCrimsonFury						= mod:NewSpecialWarningMoveAway(341473, nil, nil, nil, 1, 2, nil, nil, "runout")
 local yellCrimsonFury							= mod:NewYell(341473)
 
 local timerBleakwingAssassinCD					= mod:NewCDCountTimer(80, -21993, nil, nil, nil, 1, 326583, DBM_COMMON_L.DAMAGE_ICON)
@@ -101,7 +101,7 @@ mod:AddTimerLine(DBM:EJ_GetSectionInfo(21952))
 local warnVileOccultists						= mod:NewCountAnnounce(-21952, 2, 329565)
 local warnSummonEssenceFont						= mod:NewSpellAnnounce(329565, 2, nil, "Healer")
 
-local specWarnVulgarBrand						= mod:NewSpecialWarningInterrupt(333002, "HasInterrupt", nil, nil, 1, 2)
+local specWarnVulgarBrand						= mod:NewSpecialWarningInterrupt(333002, "HasInterrupt", nil, nil, 1, 2, nil, nil, "kickcast")
 
 local timerVileOccultistCD						= mod:NewCDCountTimer(10, -21952, nil, nil, nil, 1, 329565, DBM_COMMON_L.DAMAGE_ICON)
 --local timerVulgarBrandCD						= mod:NewCDTimer(44.3, 333002, nil, nil, nil, 3)--TODO, give it a relative icon based on difficulty (Magic/Curse)
@@ -119,7 +119,7 @@ mod:AddTimerLine(DBM:EJ_GetSectionInfo(22090))
 local warnRebornPhoenix							= mod:NewSpellAnnounce(-22090, 2, 328659)
 local warnEyeOnTarget							= mod:NewTargetAnnounce(328479, 2)
 
-local specWarnEyeOnTarget						= mod:NewSpecialWarningYou(328479, nil, nil, nil, 1, 2)
+local specWarnEyeOnTarget						= mod:NewSpecialWarningYou(328479, nil, nil, nil, 1, 2, nil, nil, "targetyou")
 local yellEyeOnTarget							= mod:NewYell(328479, nil, false)
 
 local timerPhoenixRespawn						= mod:NewCastTimer(20, 328731, nil, nil, nil, 1)

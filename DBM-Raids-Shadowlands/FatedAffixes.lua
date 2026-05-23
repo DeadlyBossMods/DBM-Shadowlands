@@ -39,9 +39,9 @@ local warnCreationSpark							= mod:NewTargetNoFilterAnnounce(369505, 3)
 local warnProtoformBarrier						= mod:NewTargetNoFilterAnnounce(371447, 3)
 local warnReconfigurationEmitter				= mod:NewSpellAnnounce(371254, 3)
 
-local specWarnCreationSpark						= mod:NewSpecialWarningYou(369505, nil, nil, nil, 1, 2)
+local specWarnCreationSpark						= mod:NewSpecialWarningYou(369505, nil, nil, nil, 1, 2, nil, nil, "targetyou")
 local yellCreationSpark							= mod:NewYell(369505)
-local specWarnCreationSparkSoak					= mod:NewSpecialWarningSoak(369505, nil, nil, nil, 2, 7)
+local specWarnCreationSparkSoak					= mod:NewSpecialWarningSoak(369505, nil, nil, nil, 2, 7, nil, nil, "helpsoak")
 --local specWarnGTFO							= mod:NewSpecialWarningGTFO(209862, nil, nil, nil, 1, 8)
 
 local timerChaoticEssenceCD						= mod:NewCDTimer(58.8, 372634, nil, nil, nil, 1)--Consistent

@@ -46,20 +46,20 @@ local warnRelocationForm						= mod:NewCastAnnounce(359236, 2)
 local warnEternityOverdrive						= mod:NewCastAnnounce(368529, 2)
 
 --Mythic
-local specWarnVolatileCharges					= mod:NewSpecialWarningCount(368957, nil, nil, nil, 2, 6, 4)
-local specWarnVolatileChargeYou					= mod:NewSpecialWarningYou(368969, nil, nil, nil, 1, 2, 12)
+local specWarnVolatileCharges					= mod:NewSpecialWarningCount(368957, nil, nil, nil, 2, 6, 4, nil, "bombsoon")
+local specWarnVolatileChargeYou					= mod:NewSpecialWarningYou(368969, nil, nil, nil, 1, 2, 12, nil, "bombyou")
 local yellVolatileCharge						= mod:NewYell(368969, nil, false, 2)
 local yellVolatileChargeFades					= mod:NewShortFadesYell(368969)
 --Stage One: The Reclaimer
-local specWarnReclaim							= mod:NewSpecialWarningCount(360115, nil, nil, nil, 1, 2)
-local specWarnSeismicTremors					= mod:NewSpecialWarningCount(367079, false, nil, nil, 1, 2)--I don't even understand mechanic anymore it's been changed so much, no idea if it should be on or off by default
-local specWarnEarthbreakerMissiles				= mod:NewSpecialWarningMoveAwayCount(361676, nil, 183426, nil, 2, 2)
-local specWarnCrushingPrism						= mod:NewSpecialWarningYou(365297, nil, nil, nil, 1, 2)
-local specWarnLightshatterBeam					= mod:NewSpecialWarningMoveTo(360977, nil, 202046, nil, 1, 2)
-local specWarnLightshatterBeamTaunt				= mod:NewSpecialWarningTaunt(360977, nil, 202046, nil, 1, 2)
+local specWarnReclaim							= mod:NewSpecialWarningCount(360115, nil, nil, nil, 1, 2, nil, nil, "attackshield")
+local specWarnSeismicTremors					= mod:NewSpecialWarningCount(367079, false, nil, nil, 1, 2, nil, nil, "specialsoon")--I don't even understand mechanic anymore it's been changed so much, no idea if it should be on or off by default
+local specWarnEarthbreakerMissiles				= mod:NewSpecialWarningMoveAwayCount(361676, nil, 183426, nil, 2, 2, nil, nil, "scatter")
+local specWarnCrushingPrism						= mod:NewSpecialWarningYou(365297, nil, nil, nil, 1, 2, nil, nil, "targetyou")
+local specWarnLightshatterBeam					= mod:NewSpecialWarningMoveTo(360977, nil, 202046, nil, 1, 2, nil, nil, "defensive")
+local specWarnLightshatterBeamTaunt				= mod:NewSpecialWarningTaunt(360977, nil, 202046, nil, 1, 2, nil, nil, "tauntboss")
 --local specWarnGTFO							= mod:NewSpecialWarningGTFO(361002, nil, nil, nil, 1, 8)
 --Stage Two: The Shimmering Cliffs
-local specWarnShatter							= mod:NewSpecialWarningDodge(362056, nil, nil, nil, 2, 2)
+local specWarnShatter							= mod:NewSpecialWarningDodge(362056, nil, nil, nil, 2, 2, nil, nil, "watchstep")
 
 --Stage One: The Reclaimer
 local timerReclaimCD							= mod:NewCDCountTimer(60, 360115, nil, nil, nil, 5)

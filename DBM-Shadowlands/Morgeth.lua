@@ -24,10 +24,10 @@ local warnCriesofAnquish			= mod:NewCastAnnounce(353741, 2)
 local warnTorment					= mod:NewStackAnnounce(353800, 2, nil, "Tank|Healer")
 
 local specWarnIronGolem				= mod:NewSpecialWarningSwitch(356430, "Dps", nil, nil, 1, 2)
-local specWarnTorment				= mod:NewSpecialWarningStack(353800, nil, 2, nil, nil, 1, 6)
-local specWarnTormentSwap			= mod:NewSpecialWarningTaunt(353800, nil, nil, nil, 1, 2)
-local specWarnDamnation				= mod:NewSpecialWarningDodge(355456, nil, nil, nil, 2, 2)
-local specWarnGTFO					= mod:NewSpecialWarningGTFO(353183, nil, nil, nil, 1, 8)
+local specWarnTorment				= mod:NewSpecialWarningStack(353800, nil, 2, nil, nil, 1, 6, nil, nil, "stackhigh")
+local specWarnTormentSwap			= mod:NewSpecialWarningTaunt(353800, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
+local specWarnDamnation				= mod:NewSpecialWarningDodge(355456, nil, nil, nil, 2, 2, nil, nil, "shockwave")
+local specWarnGTFO					= mod:NewSpecialWarningGTFO(353183, nil, nil, nil, 1, 8, nil, nil, "watchfeet")
 
 --All timers are delayed when damnation is cast.
 --If anything comes off CD during Damnation, it just queues up and he casts everything queued right away after damn is over

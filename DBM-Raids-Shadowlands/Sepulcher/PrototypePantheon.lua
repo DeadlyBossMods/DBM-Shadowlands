@@ -49,8 +49,8 @@ mod:AddNamePlateOption("NPAuraOnImprintedSafeguards", 366159, true)--Hostile onl
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24125))
 local warnRunecarversDeathtouch					= mod:NewTargetNoFilterAnnounce(360687, 3)
 
-local specWarnNecroticRitual					= mod:NewSpecialWarningSwitchCount(360295, "-Healer", nil, nil, 1, 2)
-local specWarnDeathtouch						= mod:NewSpecialWarningMoveAway(360687, nil, nil, nil, 1, 2)
+local specWarnNecroticRitual					= mod:NewSpecialWarningSwitchCount(360295, "-Healer", nil, nil, 1, 2, nil, nil, "killmob")
+local specWarnDeathtouch						= mod:NewSpecialWarningMoveAway(360687, nil, nil, nil, 1, 2, nil, nil, "targetyou")
 local yellDeathtouch							= mod:NewShortPosYell(360687)
 
 local timerNecroticRitualCD						= mod:NewCDCountTimer(71.4, 360295, nil, nil, nil, 1, nil, DBM_COMMON_L.DAMAGE_ICON)
@@ -67,9 +67,9 @@ local warnAscensionsCall						= mod:NewCountAnnounce(361066, 2)
 local warnBastionsWard							= mod:NewCastAnnounce(360845, 1)
 local warnPinned								= mod:NewTargetNoFilterAnnounce(362352, 4)
 
-local specWarnHumblingStrikes					= mod:NewSpecialWarningDefensive(365272, nil, 31907, nil, 1, 2)
-local specWarnHumblingStrikesTaunt				= mod:NewSpecialWarningTaunt(365272, nil, 31907, nil, 1, 2)
-local specWarnPinningVolley						= mod:NewSpecialWarningDodgeCount(361278, nil, nil, nil, 2, 2)--Is it dodgeable?
+local specWarnHumblingStrikes					= mod:NewSpecialWarningDefensive(365272, nil, 31907, nil, 1, 2, nil, nil, "defensive")
+local specWarnHumblingStrikesTaunt				= mod:NewSpecialWarningTaunt(365272, nil, 31907, nil, 1, 2, nil, nil, "tauntboss")
+local specWarnPinningVolley						= mod:NewSpecialWarningDodgeCount(361278, nil, nil, nil, 2, 2, nil, nil, "watchstep")--Is it dodgeable?
 local yellPinned								= mod:NewShortYell(362352)
 
 local timerHumblingStrikesCD					= mod:NewCDCountTimer(35.7, 365272, 31907, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--shortname "strike"
@@ -79,9 +79,9 @@ local timerPinningVolleyCD						= mod:NewCDCountTimer(64.1, 361278, nil, nil, ni
 mod:GroupSpells(361278, 362352)--Pinning Volley and Pinned
 ----Prototype of Renewal
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24135))
-local specWarnAnimabolt							= mod:NewSpecialWarningInterrupt(362383, false, nil, nil, 1, 2)--Kinda spammed, opt in, not opt out
-local specWarnWildStampede						= mod:NewSpecialWarningDodgeCount(361304, nil, nil, nil, 2, 2)
-local specWarnAnimastorm						= mod:NewSpecialWarningMoveTo(362132, nil, nil, nil, 2, 2)
+local specWarnAnimabolt							= mod:NewSpecialWarningInterrupt(362383, false, nil, nil, 1, 2, nil, nil, "kickcast")--Kinda spammed, opt in, not opt out
+local specWarnWildStampede						= mod:NewSpecialWarningDodgeCount(361304, nil, nil, nil, 2, 2, nil, nil, "watchstep")
+local specWarnAnimastorm						= mod:NewSpecialWarningMoveTo(362132, nil, nil, nil, 2, 2, nil, nil, "findshelter")
 
 local timerWildStampedeCD						= mod:NewCDCountTimer(28.8, 361304, nil, nil, nil, 3)
 local timerWitheringSeedCD						= mod:NewCDCountTimer(96.2, 361568, nil, "Healer", nil, 5, nil, DBM_COMMON_L.HEALER_ICON)
@@ -92,10 +92,10 @@ mod:AddSetIconOption("SetIconOnSeed", 361568, true, 5, {1, 2, 3, 4}, nil, true)
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24139))
 local warnNightHunter							= mod:NewTargetNoFilterAnnounce(361745, 3)
 
-local specWarnSinfulProjection					= mod:NewSpecialWarningMoveAway(364839, nil, nil, nil, 2, 2)--Sound 2 because everyone gets it
-local specWarnWrackingPain						= mod:NewSpecialWarningCount(365126, nil, nil, nil, 1, 2)--Change to moveto?
-local specWarnHandofDestruction					= mod:NewSpecialWarningRun(361789, nil, nil, nil, 4, 2)
-local specWarnNightHunter						= mod:NewSpecialWarningYou(361745, nil, nil, nil, 1, 2, 4)--Nont moveto, because it's kind of RLs perogative to prioritize seeds or ritualists if both up, don't want to make that call
+local specWarnSinfulProjection					= mod:NewSpecialWarningMoveAway(364839, nil, nil, nil, 2, 2, nil, nil, "scatter")--Sound 2 because everyone gets it
+local specWarnWrackingPain						= mod:NewSpecialWarningCount(365126, nil, nil, nil, 1, 2, nil, nil, "shockwave")--Change to moveto?
+local specWarnHandofDestruction					= mod:NewSpecialWarningRun(361789, nil, nil, nil, 4, 2, nil, nil, "justrun")
+local specWarnNightHunter						= mod:NewSpecialWarningYou(361745, nil, nil, nil, 1, 2, 4, nil, "targetyou")--Nont moveto, because it's kind of RLs perogative to prioritize seeds or ritualists if both up, don't want to make that call
 local yellNightHunter							= mod:NewShortPosYell(361745)
 local yellNightHunterFades						= mod:NewIconFadesYell(361745)
 

@@ -46,18 +46,18 @@ local warnBefouledBarrier						= mod:NewCountAnnounce(365295, 3, nil, nil, 30053
 local warnWickedStar							= mod:NewTargetCountAnnounce(365030, 3, nil, nil, nil, nil, nil, nil, true)
 local warnDominationWordPain					= mod:NewTargetNoFilterAnnounce(366849, 3, nil, "Healer", 249194)
 
-local specWarnKingsmourneHungers				= mod:NewSpecialWarningCount(362405, nil, nil, nil, 1, 2)
-local specWarnMalignantward						= mod:NewSpecialWarningDispel(364031, "RemoveMagic", nil, nil, 1, 2)
-local specWarnBlasphemy							= mod:NewSpecialWarningMoveAway(361989, nil, nil, nil, 3, 2)
-local specWarnOverconfidence					= mod:NewSpecialWarningMoveTo(361992, nil, nil, nil, 1, 2)
-local specWarnHopelessness						= mod:NewSpecialWarningMoveTo(361993, nil, nil, nil, 1, 2)
+local specWarnKingsmourneHungers				= mod:NewSpecialWarningCount(362405, nil, nil, nil, 1, 2, nil, nil, "shockwave")
+local specWarnMalignantward						= mod:NewSpecialWarningDispel(364031, "RemoveMagic", nil, nil, 1, 2, nil, nil, "helpdispel")
+local specWarnBlasphemy							= mod:NewSpecialWarningMoveAway(361989, nil, nil, nil, 3, 2, nil, nil, "scatter")
+local specWarnOverconfidence					= mod:NewSpecialWarningMoveTo(361992, nil, nil, nil, 1, 2, nil, nil, "gather")
+local specWarnHopelessness						= mod:NewSpecialWarningMoveTo(361993, nil, nil, nil, 1, 2, nil, nil, "gather")
 local yellBlasphemy								= mod:NewIconRepeatYell(361989, DBM_CORE_L.AUTO_YELL_ANNOUNCE_TEXT.shortyell, nil, false)--Option hidden, it's controlled by dropdown
-local specWarnWickedStar						= mod:NewSpecialWarningYou(365021, nil, nil, nil, 1, 2)
+local specWarnWickedStar						= mod:NewSpecialWarningYou(365021, nil, nil, nil, 1, 2, nil, nil, "runout")
 local yellWickedStar							= mod:NewShortPosYell(365021)
 local yellWickedStarFades						= mod:NewIconFadesYell(365021)
-local specWarnHopebreaker						= mod:NewSpecialWarningCount(361815, nil, nil, nil, 2, 2)
-local specWarnDarkZeal							= mod:NewSpecialWarningCount(364248, nil, DBM_CORE_L.AUTO_SPEC_WARN_OPTIONS.stack:format(12, 364248), nil, 1, 2)
-local specWarnDarkZealOther						= mod:NewSpecialWarningTaunt(364248, nil, nil, nil, 1, 2)
+local specWarnHopebreaker						= mod:NewSpecialWarningCount(361815, nil, nil, nil, 2, 2, nil, nil, "aesoon")
+local specWarnDarkZeal							= mod:NewSpecialWarningCount(364248, nil, DBM_CORE_L.AUTO_SPEC_WARN_OPTIONS.stack:format(12, 364248), nil, 1, 2, nil, nil, "changemt")
+local specWarnDarkZealOther						= mod:NewSpecialWarningTaunt(364248, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 
 local timerRP									= mod:NewRPTimer(15.4)
 local timerPhaseCD								= mod:NewStageTimer(30)
@@ -77,20 +77,20 @@ mod:GroupSpells(365030, 365021)--Group both wicked star IDs
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24494))
 local warnArmyofDead							= mod:NewSpellAnnounce(362862, 3)
 
-local specWarnSoulReaper						= mod:NewSpecialWarningDefensive(362771, nil, nil, nil, 1, 2)
-local specWarnSoulReaperTaunt					= mod:NewSpecialWarningTaunt(362771, nil, nil, nil, 1, 2)
+local specWarnSoulReaper						= mod:NewSpecialWarningDefensive(362771, nil, nil, nil, 1, 2, nil, nil, "defensive")
+local specWarnSoulReaperTaunt					= mod:NewSpecialWarningTaunt(362771, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 
 local timerSoulReaperCD							= mod:NewCDCountTimer(12, 362771, nil, "Healer|Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
 local timerArmyofDeadCD							= mod:NewCDTimer(36.9, 362862, nil, nil, nil, 1, nil, DBM_COMMON_L.DAMAGE_ICON)
 ----Monstrous Soul
-local specWarnNecroticDetonation				= mod:NewSpecialWarningDefensive(363024, nil, nil, nil, 2, 2)--Aoe defensive, big damage followed by heal immunity
+local specWarnNecroticDetonation				= mod:NewSpecialWarningDefensive(363024, nil, nil, nil, 2, 2, nil, nil, "defensive")--Aoe defensive, big damage followed by heal immunity
 
 mod:AddSetIconOption("SetIconOnMonstrousSoul", 363028, true, 5, {8})
 
 --Stage Two: Grim Reflections
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24478))
-local specWarnGrimReflections					= mod:NewSpecialWarningSwitch(365120, "-Healer", nil, nil, 1, 2)
-local specWarnPsychicTerror						= mod:NewSpecialWarningInterruptCount(365008, "HasInterrupt", nil, nil, 1, 2)
+local specWarnGrimReflections					= mod:NewSpecialWarningSwitch(365120, "-Healer", nil, nil, 1, 2, nil, nil, "killmob")
+local specWarnPsychicTerror						= mod:NewSpecialWarningInterruptCount(365008, "HasInterrupt", nil, nil, 1, 2, nil, nil, "kickcast")
 
 local timerGrimReflectionsCD					= mod:NewCDCountTimer(28.8, 365120, nil, nil, nil, 1, nil, DBM_COMMON_L.DAMAGE_ICON)
 
@@ -106,11 +106,11 @@ local timerMarchofDamnedCD						= mod:NewCDTimer(28.8, 364020, nil, nil, nil, 3,
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24417))
 local warnBeaconofHope							= mod:NewCastAnnounce(365872, 1)
 
-local specWarnDireBlasphemy						= mod:NewSpecialWarningMoveAway(365966, nil, nil, nil, 3, 2)
-local specWarnS3Hopelessness					= mod:NewSpecialWarningYou(365966, nil, nil, nil, 1, 2)
+local specWarnDireBlasphemy						= mod:NewSpecialWarningMoveAway(365966, nil, nil, nil, 3, 2, nil, nil, "scatter")
+local specWarnS3Hopelessness					= mod:NewSpecialWarningYou(365966, nil, nil, nil, 1, 2, nil, nil, "targetyou")
 local yellHopelessness							= mod:NewYell(365966)
 local yellHopelessnessRepeat					= mod:NewIconRepeatYell(365966, DBM_CORE_L.AUTO_YELL_ANNOUNCE_TEXT.shortyell)
-local specWarnEmpoweredHopebreaker				= mod:NewSpecialWarningCount(365805, nil, nil, nil, 2, 2)
+local specWarnEmpoweredHopebreaker				= mod:NewSpecialWarningCount(365805, nil, nil, nil, 2, 2, nil, nil, "aesoon")
 
 local timerHopelessnessCD						= mod:NewCDTimer(28.8, 365966, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)
 

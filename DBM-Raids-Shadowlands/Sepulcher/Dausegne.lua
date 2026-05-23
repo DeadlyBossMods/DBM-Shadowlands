@@ -38,19 +38,19 @@ local warnDisintegrationHalo					= mod:NewCountAnnounce(365373, 4, nil, nil, 161
 local warnSiphonReservoir						= mod:NewCountAnnounce(361643, 2)
 
 --The Fallen Oracle
-local specWarnInfusedStrikes					= mod:NewSpecialWarningStack(361966, nil, 8, nil, nil, 1, 6)
-local specWarnInfusedStrikesTaunt				= mod:NewSpecialWarningTaunt(361966, nil, nil, nil, 1, 2)
+local specWarnInfusedStrikes					= mod:NewSpecialWarningStack(361966, nil, 8, nil, nil, 1, 6, nil, nil, "stackhigh")
+local specWarnInfusedStrikesTaunt				= mod:NewSpecialWarningTaunt(361966, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 local yellInfusedStrikes						= mod:NewShortFadesYell(361966)
-local specWarnStaggeringBarrage					= mod:NewSpecialWarningYouPosCount(361018, nil, nil, nil, 1, 2)
+local specWarnStaggeringBarrage					= mod:NewSpecialWarningYouPosCount(361018, nil, nil, nil, 1, 2, nil, nil, "mm")
 local yellStaggeringBarrage						= mod:NewShortPosYell(361018)
 local yellStaggeringBarrageFades				= mod:NewIconFadesYell(361018)
 local specWarnStaggeringBarrageTarget			= mod:NewSpecialWarningTargetCount(361018, false, nil, nil, 1, 2, 3)--Optional Soak special warning that auto checks no soak debuff
-local specWarnDominationBolt					= mod:NewSpecialWarningInterruptCount(363607, "HasInterrupt", nil, nil, 1, 2)
-local specWarnObliterationArc					= mod:NewSpecialWarningDodgeCount(361513, nil, nil, nil, 2, 2)
-local specWarnDisintegrationHalo				= mod:NewSpecialWarningCount(365373, nil, 161172, nil, 2, 2)
+local specWarnDominationBolt					= mod:NewSpecialWarningInterruptCount(363607, "HasInterrupt", nil, nil, 1, 2, nil, nil, "kickcast")
+local specWarnObliterationArc					= mod:NewSpecialWarningDodgeCount(361513, nil, nil, nil, 2, 2, nil, nil, "shockwave")
+local specWarnDisintegrationHalo				= mod:NewSpecialWarningCount(365373, nil, 161172, nil, 2, 2, nil, nil, "watchwave")
 --local specWarnGTFO							= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8)
 --Inevitable Dominion
-local specWarnTotalDominion						= mod:NewSpecialWarningSpell(365418, nil, nil, nil, 3, 2)--Basically soft enrage/wipe mechanic
+local specWarnTotalDominion						= mod:NewSpecialWarningSpell(365418, nil, nil, nil, 3, 2, nil, nil, "stilldanger")--Basically soft enrage/wipe mechanic
 
 --The Fallen Oracle
 local timerUnleashedInfusion					= mod:NewTargetTimer(20, 361967, nil, nil, nil, 2)

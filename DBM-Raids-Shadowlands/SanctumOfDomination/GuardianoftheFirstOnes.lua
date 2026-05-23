@@ -36,20 +36,20 @@ local warnFormSentry							= mod:NewSpellAnnounce(352660, 2)
 local warnObliterate							= mod:NewCountAnnounce(355352, 2)
 
 --Cores
-local specWarnRadiantEnergy						= mod:NewSpecialWarningMoveTo(350455, nil, nil, nil, 1, 2)
-local specWarnMeltdown							= mod:NewSpecialWarningRun(352589, nil, nil, nil, 4, 2)--Change to appropriate text and priority
+local specWarnRadiantEnergy						= mod:NewSpecialWarningMoveTo(350455, nil, nil, nil, 1, 2, nil, nil, "findshelter")
+local specWarnMeltdown							= mod:NewSpecialWarningRun(352589, nil, nil, nil, 4, 2, nil, nil, "justrun")--Change to appropriate text and priority
 --Guardian
-local specWarnPurgingProtocol					= mod:NewSpecialWarningCount(352538, nil, nil, nil, 2, 2)
-local specWarnSunder							= mod:NewSpecialWarningDefensive(350732, nil, nil, nil, 1, 2)
-local specWarnSunderTaunt						= mod:NewSpecialWarningTaunt(350732, nil, nil, nil, 1, 2)--Only used on normal/LFR, swaps for heroic and mythic are during Obliterate
-local specWarnObliterate						= mod:NewSpecialWarningTaunt(350734, nil, nil, nil, 1, 2)
+local specWarnPurgingProtocol					= mod:NewSpecialWarningCount(352538, nil, nil, nil, 2, 2, nil, nil, "aesoon")
+local specWarnSunder							= mod:NewSpecialWarningDefensive(350732, nil, nil, nil, 1, 2, nil, nil, "defensive")
+local specWarnSunderTaunt						= mod:NewSpecialWarningTaunt(350732, nil, nil, nil, 1, 2, nil, nil, "tauntboss")--Only used on normal/LFR, swaps for heroic and mythic are during Obliterate
+local specWarnObliterate						= mod:NewSpecialWarningTaunt(350734, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 local specWarnObliterateCount					= mod:NewSpecialWarningCount(350734, false, nil, nil, 1, 2)
-local specWarnDisintegration					= mod:NewSpecialWarningDodgeCount(352833, nil, 182908, nil, 2, 2)
+local specWarnDisintegration					= mod:NewSpecialWarningDodgeCount(352833, nil, 182908, nil, 2, 2, nil, nil, "farfromline")
 local yellDisintegration						= mod:NewYell(352833)
-local specWarnThreatNeutralization				= mod:NewSpecialWarningMoveAway(350496, nil, 37859, nil, 1, 2)
+local specWarnThreatNeutralization				= mod:NewSpecialWarningMoveAway(350496, nil, 37859, nil, 1, 2, nil, nil, "runout")
 local yellThreatNeutralization					= mod:NewShortPosYell(350496, 37859)
 local yellThreatNeutralizationFades				= mod:NewIconFadesYell(350496, 37859)
-local specWarnGTFO								= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8)
+local specWarnGTFO								= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8, nil, nil, "watchfeet")
 
 local timerEliminationPatternCD					= mod:NewCDCountTimer(31.6, 350735, 350732, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--Time between casts not known, but link reset kinda works
 local timerDisintegrationCD						= mod:NewCDCountTimer(34.6, 352833, 182908, nil, nil, 3)--Continues whether linked or not

@@ -35,15 +35,15 @@ local warnPhase										= mod:NewPhaseChangeAnnounce(2, nil, nil, nil, nil, nil
 local warnDimensionalTear							= mod:NewTargetNoFilterAnnounce(328437, 3, nil, nil, 327770)
 local warnHyperlightSpark							= mod:NewCountAnnounce(325399, 2, nil, false, 2)
 
-local specWarnDimensionalTear						= mod:NewSpecialWarningYouPos(328437, nil, 327770, nil, 1, 2)
+local specWarnDimensionalTear						= mod:NewSpecialWarningYouPos(328437, nil, 327770, nil, 1, 2, nil, nil, "mm")
 local yellDimensionalTear							= mod:NewPosYell(328437, 327770)
 local yellDimensionalTearFades						= mod:NewIconFadesYell(328437, 327770)
-local specWarnGlyphofDestruction					= mod:NewSpecialWarningMoveAwayCount(325361, nil, nil, nil, 1, 2)
+local specWarnGlyphofDestruction					= mod:NewSpecialWarningMoveAwayCount(325361, nil, nil, nil, 1, 2, nil, nil, "runout")
 local yellGlyphofDestruction						= mod:NewYell(325361)
 local yellGlyphofDestructionFades					= mod:NewShortFadesYell(325361)
-local specWarnGlyphofDestructionTaunt				= mod:NewSpecialWarningTaunt(325361, nil, nil, nil, 1, 2)
-local specWarnStasisTrap							= mod:NewSpecialWarningDodge(326271, nil, nil, nil, 2, 2)
-local specWarnRiftBlast								= mod:NewSpecialWarningDodge(335013, nil, nil, nil, 2, 2)
+local specWarnGlyphofDestructionTaunt				= mod:NewSpecialWarningTaunt(325361, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
+local specWarnStasisTrap							= mod:NewSpecialWarningDodge(326271, nil, nil, nil, 2, 2, nil, nil, "watchstep")
+local specWarnRiftBlast								= mod:NewSpecialWarningDodge(335013, nil, nil, nil, 2, 2, nil, nil, "farfromline")
 
 local timerDimensionalTearCD						= mod:NewCDTimer(25, 328437, 327770, nil, nil, 3)
 local timerGlyphofDestructionCD						= mod:NewCDCountTimer(27.9, 325361, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--27.9-58.6 for now
@@ -62,8 +62,8 @@ local warnPossession								= mod:NewTargetNoFilterAnnounce(327414, 4)
 local warnSeedsofExtinction							= mod:NewSpellAnnounce(329834, 3, nil, nil, 205446)--Shortname "Planting Seeds"
 local warnUnleashPower								= mod:NewCountAnnounce(342854, 4)
 
-local specWarnFixate								= mod:NewSpecialWarningRun(327902, nil, nil, nil, 4, 2)
-local specWarnEdgeofAnnihilation					= mod:NewSpecialWarningRunCount(328789, nil, 307421, nil, 4, 2)
+local specWarnFixate								= mod:NewSpecialWarningRun(327902, nil, nil, nil, 4, 2, nil, nil, "justrun")
+local specWarnEdgeofAnnihilation					= mod:NewSpecialWarningRunCount(328789, nil, 307421, nil, 4, 2, nil, nil, "justrun")
 
 local timerFleetingSpiritsCD						= mod:NewCDTimer(40.8, 340758, 263222, nil, nil, 3)--40.8-46
 local timerSeedsofExtinctionCD						= mod:NewCDTimer(43.7, 329770, 205446, nil, nil, 5)--43-49. Shortname "Planting Seeds"

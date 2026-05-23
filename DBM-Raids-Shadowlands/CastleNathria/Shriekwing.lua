@@ -47,20 +47,20 @@ local warnBloodLantern							= mod:NewTargetNoFilterAnnounce(341684, 1)--Mythic
 
 
 --Stage One - Thirst for Blood
-local specWarnExsanguinated						= mod:NewSpecialWarningStack(328897, nil, 2, nil, nil, 1, 6)
-local specWarnExsanguinatingBite				= mod:NewSpecialWarningDefensive(328857, nil, 17253, nil, 1, 2)
-local specWarnExsanguinatingBiteOther			= mod:NewSpecialWarningTaunt(328857, nil, 17253, nil, 1, 2)
-local specWarnEcholocation						= mod:NewSpecialWarningMoveAway(342074, nil, nil, nil, 1, 2)
+local specWarnExsanguinated						= mod:NewSpecialWarningStack(328897, nil, 2, nil, nil, 1, 6, nil, nil, "stackhigh")
+local specWarnExsanguinatingBite				= mod:NewSpecialWarningDefensive(328857, nil, 17253, nil, 1, 2, nil, nil, "defensive")
+local specWarnExsanguinatingBiteOther			= mod:NewSpecialWarningTaunt(328857, nil, 17253, nil, 1, 2, nil, nil, "tauntboss")
+local specWarnEcholocation						= mod:NewSpecialWarningMoveAway(342074, nil, nil, nil, 1, 2, nil, nil, "runout")
 local yellEcholocation							= mod:NewPosYell(342074)
 local yellEcholocationFades						= mod:NewIconFadesYell(342074)
-local specWarnEarsplittingShriek				= mod:NewSpecialWarningMoveTo(330711, nil, 251719, nil, 1, 2)
-local specWarnBlindSwipe						= mod:NewSpecialWarningDefensive(343005, "Tank", nil, nil, 1, 2)
-local specWarnEchoingScreech					= mod:NewSpecialWarningDodge(342863, nil, 252538, nil, 2, 2)
+local specWarnEarsplittingShriek				= mod:NewSpecialWarningMoveTo(330711, nil, 251719, nil, 1, 2, nil, nil, "findshelter")
+local specWarnBlindSwipe						= mod:NewSpecialWarningDefensive(343005, "Tank", nil, nil, 1, 2, nil, nil, "shockwave")
+local specWarnEchoingScreech					= mod:NewSpecialWarningDodge(342863, nil, 252538, nil, 2, 2, nil, nil, "watchstep")
 --Stage Two - Terror of Castle Nathria
-local specWarnBloodshroud						= mod:NewSpecialWarningSpell(328921, nil, nil, nil, 2, 2)
-local specWarnDeadlyDescent						= mod:NewSpecialWarningYou(343021, nil, nil, nil, 1, 2)--1 because you can't do anything about it
+local specWarnBloodshroud						= mod:NewSpecialWarningSpell(328921, nil, nil, nil, 2, 2, nil, nil, "phasechange")
+local specWarnDeadlyDescent						= mod:NewSpecialWarningYou(343021, nil, nil, nil, 1, 2, nil, nil, "targetyou")--1 because you can't do anything about it
 local yellDeadlyDescent							= mod:NewYell(343021, nil, false)--Useless with only 1 second to avoid
-local specWarnGTFO								= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8)
+local specWarnGTFO								= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8, nil, nil, "watchfeet")
 
 --Stage One - Thirst for Blood
 local timerExsanguinatingBiteCD					= mod:NewCDTimer(17.8, 328857, 17253, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--10-22.9 (too varaible for a countdown by default)

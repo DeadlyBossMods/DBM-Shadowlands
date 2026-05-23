@@ -19,7 +19,7 @@
 ## X-DBM-Mod-Name-ruRU: Рейды (Темные Земли)
 ## X-DBM-Mod-Sort: 301
 ## X-DBM-Mod-MapID: 2481, 2450, 2296
-## X-DBM-Mod-MinCoreRevision: 20230617000000
+## X-DBM-Mod-MinCoreRevision: 20260522000000
 ## X-DBM-Mod-MinExpansion: 8
 ## X-Curse-Project-ID: 723031
 ## X-Wago-ID: RqGYOE6g

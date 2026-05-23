@@ -41,7 +41,7 @@ mod:AddTimerLine(DBM:EJ_GetSectionInfo(24588))
 local warnDimensionalTear						= mod:NewTargetNoFilterAnnounce(362615, 3, nil, nil, 67833)
 local warnStasisTrap							= mod:NewTargetNoFilterAnnounce(362882, 2)--Failing to dodge it
 
-local specWarnDimensionalTear					= mod:NewSpecialWarningYouPos(362615, nil, 67833, nil, 1, 2, nil, nil, "mm")
+local specWarnDimensionalTear					= mod:NewSpecialWarningYouPos(362615, nil, 67833, nil, 1, 2, nil, nil, "mm1")
 local yellDimensionalTear						= mod:NewPosYell(362615, 67833)
 local yellDimensionalTearFades					= mod:NewIconFadesYell(362615, 67833)
 local specWarnCartelElite						= mod:NewSpecialWarningSwitch(363485, "-Healer", nil, nil, 1, 2, 4, nil, "killmob")

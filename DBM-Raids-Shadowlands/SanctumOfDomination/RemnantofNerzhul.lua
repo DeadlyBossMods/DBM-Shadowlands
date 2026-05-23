@@ -41,7 +41,7 @@ local warnOrbEternalTorment						= mod:NewFadesAnnounce(355790, 1)
 local warnMalevolence							= mod:NewTargetNoFilterAnnounce(350469, 3)
 local warnShatter								= mod:NewCountAnnounce(351066, 1)
 
-local specWarnMalevolence						= mod:NewSpecialWarningYouPos(350469, nil, nil, nil, 1, 2, nil, nil, "mm")
+local specWarnMalevolence						= mod:NewSpecialWarningYouPos(350469, nil, nil, nil, 1, 2, nil, nil, "mm1")
 local yellMalevolence							= mod:NewShortPosYell(350469)
 local yellMalevolenceFades						= mod:NewIconFadesYell(350469)
 local specWarnSufferingTank						= mod:NewSpecialWarningMoveTo(350894, nil, nil, nil, 1, 2, nil, nil, "targetyou")--Tank Warning

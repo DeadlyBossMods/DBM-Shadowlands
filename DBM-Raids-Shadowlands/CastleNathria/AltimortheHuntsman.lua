@@ -37,7 +37,7 @@ local warnPhase									= mod:NewPhaseChangeAnnounce(2, nil, nil, nil, nil, nil,
 local warnSinseeker								= mod:NewTargetNoFilterAnnounce(335114, 4)
 local warnSpreadshot							= mod:NewSpellAnnounce(334404, 3)
 
-local specWarnSinseeker							= mod:NewSpecialWarningYouPos(335114, nil, nil, nil, 3, 2, nil, nil, "mm")
+local specWarnSinseeker							= mod:NewSpecialWarningYouPos(335114, nil, nil, nil, 3, 2, nil, nil, "mm1")
 local yellSinseeker								= mod:NewShortPosYell(335114)
 local yellSinseekerFades						= mod:NewIconFadesYell(335114)
 

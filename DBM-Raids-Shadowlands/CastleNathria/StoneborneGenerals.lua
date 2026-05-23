@@ -57,7 +57,7 @@ local warnHeartRend								= mod:NewTargetCountAnnounce(334765, 4, nil, "Healer"
 local warnCallShadowForces						= mod:NewCountAnnounce(342256, 2)
 
 local specWarnWickedBladeCast					= mod:NewSpecialWarningCount(333376, false, nil, nil, 2, 2, nil, nil, "specialsoon")
-local specWarnWickedBlade						= mod:NewSpecialWarningYouPos(333376, nil, nil, nil, 1, 2, nil, nil, "mm")
+local specWarnWickedBlade						= mod:NewSpecialWarningYouPos(333376, nil, nil, nil, 1, 2, nil, nil, "mm1")
 local yellWickedBlade							= mod:NewPosYell(333376)
 local yellWickedBladeFades						= mod:NewIconFadesYell(333376)
 local specWarnHeartRendCast						= mod:NewSpecialWarningCount(334765, false, nil, nil, 1, 2, nil, nil, "specialsoon")

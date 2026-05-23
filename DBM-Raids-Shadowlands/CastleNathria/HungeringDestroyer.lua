@@ -36,7 +36,7 @@ mod:RegisterEventsInCombat(
 local warnGluttonousMiasma						= mod:NewTargetNoFilterAnnounce(329298, 4, nil, nil, 212238)
 local warnVolatileEjection						= mod:NewTargetNoFilterAnnounce(334266, 4, nil, nil, 202046)
 
-local specWarnGluttonousMiasma					= mod:NewSpecialWarningYouPos(329298, nil, 212238, nil, 1, 2, nil, nil, "mm")
+local specWarnGluttonousMiasma					= mod:NewSpecialWarningYouPos(329298, nil, 212238, nil, 1, 2, nil, nil, "mm1")
 local yellGluttonousMiasma						= mod:NewShortPosYell(329298, 212238, false, 2)
 local specWarnEssenceSap						= mod:NewSpecialWarningStack(334755, false, 8, nil, 2, 1, 6, nil, nil, "stackhigh")--Mythic, spammy, opt in
 local specWarnConsume							= mod:NewSpecialWarningRunCount(334522, nil, nil, nil, 4, 2, nil, nil, "justrun")

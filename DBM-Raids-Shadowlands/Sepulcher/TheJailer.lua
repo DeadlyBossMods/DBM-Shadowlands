@@ -107,7 +107,7 @@ local warnDefile								= mod:NewTargetNoFilterAnnounce(365169, 4)
 
 local specWarnWorldShatterer					= mod:NewSpecialWarningCount(367051, nil, nil, nil, 2, 2, 4, nil, "specialsoon")
 local specWarnDesolation						= mod:NewSpecialWarningCount(365033, nil, nil, nil, 2, 2, nil, nil, "helpsoak")
-local specWarnRuneofDomination					= mod:NewSpecialWarningYouPos(365150, nil, nil, nil, 1, 2, nil, nil, "mm")
+local specWarnRuneofDomination					= mod:NewSpecialWarningYouPos(365150, nil, nil, nil, 1, 2, nil, nil, "mm1")
 local yellRuneofDomination						= mod:NewShortPosYell(365150, 166419)--short text "Rune"
 local yellRuneofDominationFades					= mod:NewIconFadesYell(365150)
 local specWarnChainsofAnguish					= mod:NewSpecialWarningDefensive(365219, nil, nil, nil, 1, 2, nil, nil, "defensive")

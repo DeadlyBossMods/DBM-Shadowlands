@@ -33,12 +33,15 @@ mod:RegisterEventsInCombat(
 --]]
 --Forerunner Relic
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24215))
+DBM:RegisterAltSpellName(362615, 67833)--Dimensional Tear -> short name
+DBM:RegisterAltSpellName(362849, 206794)--Hyperlight Spark -> Nova
+
 local specWarnForerunnerRings					= mod:NewSpecialWarningDodgeCount(363520, nil, nil, nil, 2, 2, nil, nil, "watchwave")
 
 local timerForerunnerRingsCD					= mod:NewNextCountTimer(30, 363520, nil, nil, nil, 3)
 --Stage One: Cartel Xy
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24588))
-local warnDimensionalTear						= mod:NewTargetNoFilterAnnounce(362615, 3, nil, nil, 67833)
+local warnDimensionalTear						= mod:NewTargetNoFilterAnnounce(362615, 3)
 local warnStasisTrap							= mod:NewTargetNoFilterAnnounce(362882, 2)--Failing to dodge it
 
 local specWarnDimensionalTear					= mod:NewSpecialWarningYouPos(362615, nil, 67833, nil, 1, 2, nil, nil, "mm1")
@@ -53,12 +56,12 @@ local specWarnStasisTrap						= mod:NewSpecialWarningDodgeCount(362882, nil, nil
 local yellStasisTrap							= mod:NewYell(362882)--Failing to dodge it
 local specWarnHyperlightSpark					= mod:NewSpecialWarningCount(362849, nil, 206794, nil, 2, 2, nil, nil, "aesoon")--Short Text "Nova"
 
-local timerDimensionalTearCD					= mod:NewNextCountTimer(8, 362615, 67833, nil, nil, 3)
+local timerDimensionalTearCD					= mod:NewNextCountTimer(8, 362615, nil, nil, nil, 3)
 local timerCartelEliteCD						= mod:NewCDTimer(28.8, 363485, nil, nil, nil, 1, nil, DBM_COMMON_L.MYTHIC_ICON)
 local timerGlyphofRelocationCD					= mod:NewCDCountTimer(60, 362801, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON)
 local timerGlyphExplostion						= mod:NewTargetTimer(5, 362803, nil, nil, nil, 2, nil, DBM_COMMON_L.HEALER_ICON)
 local timerStasisTrapCD							= mod:NewCDCountTimer(30, 362882, nil, nil, nil, 3)--28-32. it attemts to average 30 but has ~2 in either direction for some reason
-local timerHyperlightSparknovaCD				= mod:NewCDCountTimer(30, 362849, 206794, nil, nil, 2, nil, DBM_COMMON_L.HEALER_ICON)--28-34
+local timerHyperlightSparknovaCD				= mod:NewCDCountTimer(30, 362849, nil, nil, nil, 2, nil, DBM_COMMON_L.HEALER_ICON)--28-34
 local berserkTimer								= mod:NewBerserkTimer(600)
 
 mod:AddSetIconOption("SetIconOnWormhole", 362615, true, 0, {1, 2})

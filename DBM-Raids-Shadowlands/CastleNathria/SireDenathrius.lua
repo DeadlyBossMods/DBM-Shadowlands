@@ -38,6 +38,9 @@ mod:RegisterEventsInCombat(
  or ability.id = 328117
  or (source.type = "NPC" and source.firstSeen = timestamp) or (target.type = "NPC" and target.firstSeen = timestamp)
 --]]
+DBM:RegisterAltSpellName(327227, 327122)--Command: Ravage -> short name
+DBM:RegisterAltSpellName(330042, 330137)--Command: Massacre -> short name
+
 --General
 local warnPhase									= mod:NewPhaseChangeAnnounce(2, nil, nil, nil, nil, nil, 2)
 
@@ -64,7 +67,7 @@ local timerCleansingPainCD						= mod:NewNextCountTimer(16.6, 326707, nil, nil, 
 local timerBloodPriceCD							= mod:NewCDCountTimer(57.3, 326851, nil, nil, nil, 2, nil, DBM_COMMON_L.HEALER_ICON)
 local timerFeedingTimeCD						= mod:NewCDCountTimer(44.3, 327039, nil, nil, nil, 3)--Normal/LFR
 local timerNightHunterCD						= mod:NewNextCountTimer(44.3, 327796, nil, nil, nil, 3, nil, DBM_COMMON_L.HEROIC_ICON)--Heroic/mythic
-local timerCommandRavageCD						= mod:NewCDCountTimer(57.2, 327227, 327122, nil, nil, 2, nil, DBM_COMMON_L.DEADLY_ICON, nil, 1, 4)--ShortName "Ravage" (the actual cast)
+local timerCommandRavageCD						= mod:NewCDCountTimer(57.2, 327227, nil, nil, nil, 2, nil, DBM_COMMON_L.DEADLY_ICON, nil, 1, 4)--ShortName "Ravage" (the actual cast)
 
 mod:AddSetIconOption("SetIconOnNightHunter", 327796, true, 0, {1, 2, 3})
 --Intermission: March of the Penitent
@@ -107,7 +110,7 @@ local specWarnCommandMassacre					= mod:NewSpecialWarningDodgeCount(330042, nil,
 
 local timerWrackingPainCD						= mod:NewCDCountTimer(16.6, 329181, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON, true)
 local timerHandofDestructionCD					= mod:NewCDCountTimer(44.3, 333932, nil, nil, nil, 2)
-local timerCommandMassacreCD					= mod:NewCDCountTimer(49.8, 330042, 330137, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)--Mythic 41-45, Heroic 47.4-51
+local timerCommandMassacreCD					= mod:NewCDCountTimer(49.8, 330042, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)--Mythic 41-45, Heroic 47.4-51
 
 --Stage Three: Indignation
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22195))

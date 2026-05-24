@@ -33,6 +33,9 @@ mod:RegisterEventsInCombat(
 --]]
 --Huntsman Altimor
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22309))
+DBM:RegisterAltSpellName(334945, 262783)--Vicious Lunge -> short name
+DBM:RegisterAltSpellName(334852, 135241)--Petrifying Howl -> Howl
+
 local warnPhase									= mod:NewPhaseChangeAnnounce(2, nil, nil, nil, nil, nil, 2)
 local warnSinseeker								= mod:NewTargetNoFilterAnnounce(335114, 4)
 local warnSpreadshot							= mod:NewSpellAnnounce(334404, 3)
@@ -50,7 +53,7 @@ mod:AddSetIconOption("SetIconOnSinSeeker", 335114, true, 0, {1, 2, 3})--335111 3
 ----Margore
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22312))
 local warnJaggedClaws							= mod:NewStackAnnounce(334971, 2, nil, "Tank|Healer")
-local warnViciousLunge							= mod:NewTargetNoFilterAnnounce(334945, 3, nil, nil, 262783)
+local warnViciousLunge							= mod:NewTargetNoFilterAnnounce(334945, 3)
 
 local specWarnJaggedClaws						= mod:NewSpecialWarningStack(334971, nil, 2, nil, nil, 1, 6, nil, nil, "stackhigh")
 local specWarnJaggedClawsTaunt					= mod:NewSpecialWarningTaunt(334971, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
@@ -59,7 +62,7 @@ local yellViciousLunge							= mod:NewYell(334945, 262783, nil, nil, "YELL")
 local yellViciousLungeFades						= mod:NewFadesYell(334945, 262783, nil, nil, "YELL")
 
 local timerJaggedClawsCD						= mod:NewCDTimer(10.9, 334971, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--22.1, 23.4, 11.0
-local timerViciousLungeCD						= mod:NewCDTimer(25.5, 334945, 262783, nil, nil, 3)--Shortname Lunge
+local timerViciousLungeCD						= mod:NewCDTimer(25.5, 334945, nil, nil, nil, 3)--Shortname Lunge
 ----Bargast
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22311))
 local specWarnRipSoul							= mod:NewSpecialWarningDefensive(334797, nil, nil, nil, 1, 2, nil, nil, "defensive")
@@ -73,13 +76,13 @@ mod:AddSetIconOption("SetIconOnShades", 334757, true, 5, {4, 5})
 ----Hecutis
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22310))
 local warnCrushingStone							= mod:NewStackAnnounce(334860, 2, nil, "Tank|Healer")
-local warnPetrifyingHowl						= mod:NewTargetAnnounce(334852, 3, nil, nil, 135241)--Shortname "Howl"
+local warnPetrifyingHowl						= mod:NewTargetAnnounce(334852, 3)--Shortname "Howl"
 
 local specWarnPetrifyingHowl					= mod:NewSpecialWarningMoveAway(334852, nil, nil, nil, 1, 2, nil, nil, "scatter")
 local yellPetrifyingHowl						= mod:NewYell(334852, 135241)--Shortname "Howl"
 local yellPetrifyingHowlFades					= mod:NewFadesYell(334852, 135241)--Shortname "Howl"
 
-local timerPetrifyingHowlCD						= mod:NewCDTimer(20.6, 334852, 135241, nil, nil, 3)--20-26 Shortname "Howl"
+local timerPetrifyingHowlCD						= mod:NewCDTimer(20.6, 334852, nil, nil, nil, 3)--20-26 Shortname "Howl"
 
 mod.vb.sinSeekerCount = 0
 mod.vb.activeSeekers = 0

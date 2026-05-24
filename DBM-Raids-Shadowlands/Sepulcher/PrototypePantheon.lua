@@ -38,6 +38,8 @@ mod:RegisterEventsInCombat(
  or (ability.id = 366234) and (type = "applybuff" or type = "applydebuff")
  or (ability.id = 360845 or ability.id = 361044) and type = "begincast"
 --]]
+DBM:RegisterAltSpellName(365272, 31907)--Humbling Strikes -> Strike
+
 --General
 local warnCompleteRecon							= mod:NewCastAnnounce(366062, 4)
 
@@ -72,7 +74,7 @@ local specWarnHumblingStrikesTaunt				= mod:NewSpecialWarningTaunt(365272, nil, 
 local specWarnPinningVolley						= mod:NewSpecialWarningDodgeCount(361278, nil, nil, nil, 2, 2, nil, nil, "watchstep")--Is it dodgeable?
 local yellPinned								= mod:NewShortYell(362352)
 
-local timerHumblingStrikesCD					= mod:NewCDCountTimer(35.7, 365272, 31907, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--shortname "strike"
+local timerHumblingStrikesCD					= mod:NewCDCountTimer(35.7, 365272, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--shortname "strike"
 local timerAscensionsCallCD						= mod:NewCDCountTimer(57.1, 361066, nil, nil, nil, 1)
 local timerPinningVolleyCD						= mod:NewCDCountTimer(64.1, 361278, nil, nil, nil, 3)
 

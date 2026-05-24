@@ -34,6 +34,8 @@ mod:RegisterEventsInCombat(
  or ability.id = 181089 or ability.id = 368383
  or ability.id = 366132 and type = "applydebuff"
 --]]
+DBM:RegisterAltSpellName(364942, 72994)--Decimator -> short name
+
 --General
 local warnPhase									= mod:NewPhaseChangeAnnounce(2, nil, nil, nil, nil, nil, 2)
 --local warnHealAzeroth							= mod:NewAnnounce("warnHealAzeroth", 3, 366401, nil, nil, nil, 366401)
@@ -69,9 +71,9 @@ local yellRuneofDamnationFades					= mod:NewIconFadesYell(360281)
 local timerRelentingDominationCD				= mod:NewCDCountTimer(28.8, 362028, nil, nil, nil, 2)
 local timerTyrany								= mod:NewCDTimer(11, 366132, nil, nil, nil, 3)
 local timerChainsofOppressionCD					= mod:NewCDCountTimer(28.8, 362631, nil, nil, nil, 3)
-local timerMartyrdomCD							= mod:NewCDCountTimer(28.8, 363893, DBM_COMMON_L.TANKCOMBO.." (%s)", nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON)
+local timerMartyrdomCD							= mod:NewCDCountTimer(28.8, 363893, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON)
 local timerTormentCD							= mod:NewCDCountTimer(28.8, 365436, nil, nil, nil, 2)
-local timerRuneofDamnationCD					= mod:NewCDCountTimer(28.8, 360281, DBM_COMMON_L.BOMBS.." (%s)", nil, nil, 3)
+local timerRuneofDamnationCD					= mod:NewCDCountTimer(28.8, 360281, nil, nil, nil, 3)
 
 mod:AddSetIconOption("SetIconOnMartyrdom2", 363893, false, 0, {7})
 mod:AddSetIconOption("SetIconOnDamnation", 360281, true, 0, {1, 2, 3, 4, 5, 6})
@@ -93,8 +95,8 @@ local specWarnTormentingEcho					= mod:NewSpecialWarningDodge(365371, nil, nil, 
 local timerWorldCrackerCD						= mod:NewCDCountTimer(28.8, 366678, nil, nil, nil, 2, nil, DBM_COMMON_L.MYTHIC_ICON)
 local timerUnholyAttunementCD					= mod:NewCDCountTimer(28.8, 360373, nil, nil, nil, 3)
 local timerShatteringBlastCD					= mod:NewCDCountTimer(28.8, 359856, nil, nil, nil, 5)
-local timerRuneofCompulsionCD					= mod:NewCDCountTimer(28.8, 366285, DBM_COMMON_L.MINDCONTROL.." (%s)", nil, nil, 3)
-local timerDecimatorCD							= mod:NewCDCountTimer(28.8, 364942, 72994, nil, nil, 2)
+local timerRuneofCompulsionCD					= mod:NewCDCountTimer(28.8, 366285, nil, nil, nil, 3)
+local timerDecimatorCD							= mod:NewCDCountTimer(28.8, 364942, nil, nil, nil, 2)
 
 mod:AddSetIconOption("SetIconOnCopulsion", 366285, true, 0, {1, 2, 3, 4})
 
@@ -120,8 +122,8 @@ local specWarnDefile							= mod:NewSpecialWarningCount(365169, nil, nil, nil, 3
 
 local timerWorldShattererCD						= mod:NewCDTimer(28.8, 367051, nil, nil, nil, 2, nil, DBM_COMMON_L.MYTHIC_ICON)
 local timerUnbreakableGraspCD					= mod:NewCDTimer(28.8, 363332, nil, nil, nil, 6)
-local timerDesolationCD							= mod:NewCDCountTimer(28.8, 365033, L.AzerothSoak.." (%s)", nil, nil, 3)
-local timerRuneofDominationCD					= mod:NewCDCountTimer(28.8, 365150, DBM_COMMON_L.GROUPSOAKS.." (%s)", nil, nil, 3)
+local timerDesolationCD							= mod:NewCDCountTimer(28.8, 365033, nil, nil, nil, 3)
+local timerRuneofDominationCD					= mod:NewCDCountTimer(28.8, 365150, nil, nil, nil, 3)
 local timerChainsofAnguishCD					= mod:NewCDCountTimer(28.8, 365219, nil, nil, nil, 5)
 local timerDefileCD								= mod:NewCDCountTimer(28.8, 365169, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)
 

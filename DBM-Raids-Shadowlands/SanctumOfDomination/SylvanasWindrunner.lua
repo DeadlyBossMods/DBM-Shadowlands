@@ -46,6 +46,13 @@ mod:RegisterEventsInCombat(
 --]]
 --Shadow dagger timer pruposely uses diff timer from
 local P1Info, P15Info, P2Info, P3Info = DBM:EJ_GetSectionInfo(23057), DBM:EJ_GetSectionInfo(22891), DBM:EJ_GetSectionInfo(23067), DBM:EJ_GetSectionInfo(22890)
+DBM:RegisterAltSpellName(349419, 298213)--Domination Chains -> short name
+DBM:RegisterAltSpellName(347704, 209426)--Veil of Darkness -> short name
+DBM:RegisterAltSpellName(347609, 208407)--Wailing Arrow -> short name
+DBM:RegisterAltSpellName(358705, 208407)--Black Arrow -> short name
+DBM:RegisterAltSpellName(354011, 208407)--Bane Arrows -> short name
+DBM:RegisterAltSpellName(353952, 31295)--Banshee Scream -> short name
+
 --General
 local warnPhase										= mod:NewPhaseChangeAnnounce(2, nil, nil, nil, nil, nil, 2)
 
@@ -63,11 +70,11 @@ mod:AddTimerLine(P1Info)
 --mod:AddIconLine(P1Info)
 local warnWindrunnerOver							= mod:NewEndAnnounce(347504, 2)
 local warnShadowDagger								= mod:NewTargetNoFilterAnnounce(353935, 2, nil, "Healer")
-local warnDominationChains							= mod:NewTargetAnnounce(349419, 2, nil, nil, 298213)--Could be spammy, unknown behavior
-local warnWailingArrow								= mod:NewTargetCountAnnounce(348064, 4, nil, nil, 208407, nil, nil, nil, true)
+local warnDominationChains							= mod:NewTargetAnnounce(349419, 2)--Could be spammy, unknown behavior
+local warnWailingArrow								= mod:NewTargetCountAnnounce(348064, 4, nil, nil, nil, nil, nil, nil, true)
 local warnRangersHeartseeker						= mod:NewCountAnnounce(352663, 2, nil, "Tank")
 local warnBansheesMark								= mod:NewStackAnnounce(347607, 2, nil, "Tank|Healer")
-local warnBlackArrow								= mod:NewTargetCountAnnounce(358705, 4, nil, nil, 208407, nil, nil, nil, true)
+local warnBlackArrow								= mod:NewTargetCountAnnounce(358705, 4, nil, nil, nil, nil, nil, nil, true)
 
 local specWarnWindrunner							= mod:NewSpecialWarningCount(347504, nil, nil, nil, 2, 2, nil, nil, "specialsoon")
 local specWarnShadowDagger							= mod:NewSpecialWarningYou(353935, false, nil, nil, 1, 2, nil, nil, "targetyou")
@@ -85,13 +92,13 @@ local specWarnRage									= mod:NewSpecialWarningRun(358711, nil, nil, nil, 4, 
 
 local timerRP										= mod:NewRPTimer(58.3)
 local timerWindrunnerCD								= mod:NewCDCountTimer(50.3, 347504, nil, nil, nil, 6, nil, nil, nil, 1, 3)
-local timerDominationChainsCD						= mod:NewCDCountTimer(50.7, 349419, 298213, nil, nil, 3)--Shortname Chains
-local timerVeilofDarknessCD							= mod:NewCDCountTimer(48.8, 347704, 209426, nil, nil, 3)--Shortname Darkness
-local timerWailingArrowCD							= mod:NewCDCountTimer(33.9, 347609, 208407, nil, 2, 3)--Shortname Arrow
-local timerWailingArrow								= mod:NewTargetCountTimer(9, 347609, 208407, nil, nil, 5)--6 seconds for pre debuff plus 3 sec cast
+local timerDominationChainsCD						= mod:NewCDCountTimer(50.7, 349419, nil, nil, nil, 3)--Shortname Chains
+local timerVeilofDarknessCD							= mod:NewCDCountTimer(48.8, 347704, nil, nil, nil, 3)--Shortname Darkness
+local timerWailingArrowCD							= mod:NewCDCountTimer(33.9, 347609, nil, nil, 2, 3)--Shortname Arrow
+local timerWailingArrow								= mod:NewTargetCountTimer(9, 347609, nil, nil, nil, 5)--6 seconds for pre debuff plus 3 sec cast
 local timerRangersHeartseekerCD						= mod:NewCDCountTimer(33.9, 352663, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
-local timerBlackArrowCD								= mod:NewCDCountTimer(33.9, 358705, 208407, nil, nil, 3, nil, DBM_COMMON_L.MYTHIC_ICON)
-local timerBlackArrow								= mod:NewTargetCountTimer(9, 358705, 208407, nil, nil, 5, nil, DBM_COMMON_L.MYTHIC_ICON)
+local timerBlackArrowCD								= mod:NewCDCountTimer(33.9, 358705, nil, nil, nil, 3, nil, DBM_COMMON_L.MYTHIC_ICON)
+local timerBlackArrow								= mod:NewTargetCountTimer(9, 358705, nil, nil, nil, 5, nil, DBM_COMMON_L.MYTHIC_ICON)
 
 mod:AddSetIconOption("SetIconOnWailingArrow", 348064, true, 0, {1, 2, 3})--Applies to both reg and mythic version
 mod:AddNamePlateOption("NPAuraOnRage", 358711)--Dark Sentinel
@@ -187,9 +194,9 @@ local specWarnMerciless								= mod:NewSpecialWarningSoakCount(358588, false, n
 
 local timerBansheesHeartseekerCD					= mod:NewCDCountTimer(33.9, 353969, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
 local timerShadowDaggerCD							= mod:NewCDCountTimer(23, 353935, nil, nil, nil, 3)--Only used in phase 3, in phase 1 it's tied to windrunner
-local timerBaneArrowsCD								= mod:NewCDCountTimer(23, 354011, 208407, nil, nil, 3)
+local timerBaneArrowsCD								= mod:NewCDCountTimer(23, 354011, nil, nil, nil, 3)
 local timerBansheesFuryCD							= mod:NewCDCountTimer(23, 354068, nil, nil, nil, 2)--Short name NOT used since "Fury" also exists on fight
-local timerBansheesScreamCD							= mod:NewCDCountTimer(23, 353952, 31295, nil, nil, 3)
+local timerBansheesScreamCD							= mod:NewCDCountTimer(23, 353952, nil, nil, nil, 3)
 local timerRazeCD									= mod:NewCDCountTimer(23, 354147, nil, nil, 2, 2, nil, DBM_COMMON_L.DEADLY_ICON)
 --local timerBansheesBladesCD						= mod:NewCDCountTimer(33.9, 358181, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.MYTHIC_ICON..DBM_COMMON_L.TANK_ICON)
 local timerDeathKnivesCD							= mod:NewCDCountTimer(33.9, 358434, nil, nil, nil, 3, nil, DBM_COMMON_L.MYTHIC_ICON)

@@ -43,6 +43,9 @@ mod:RegisterEventsInCombat(
  or ability.id = 342732 and type = "cast"
  --]]
  --General
+DBM:RegisterAltSpellName(344496, 138658)--Reverberating Eruption -> short name
+DBM:RegisterAltSpellName(334009, 337445)--Reverberating Leap -> short name
+
 local warnHardenedStoneForm						= mod:NewTargetNoFilterAnnounce(329636, 2)
 local warnHardenedStoneFormOver					= mod:NewEndAnnounce(329636, 1)
 local warnSoldiersOath							= mod:NewTargetNoFilterAnnounce(336212, 4)
@@ -98,8 +101,8 @@ local yellMeteor								= mod:NewYell(342544, nil, nil, nil, "YELL")
 local specWarnStoneFist							= mod:NewSpecialWarningDefensive(342425, nil, nil, nil, 1, 2, nil, nil, "defensive")
 local specWarnStoneFistTaunt					= mod:NewSpecialWarningTaunt(342425, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 
-local timerReverberatingEruptionCD				= mod:NewCDCountTimer(30, 344496, 138658, nil, 3, 3, nil, nil, true)--Short text "Eruption" (Normal+)
-local timerReverberatingLeapCD					= mod:NewCDCountTimer(30, 334009, 337445, nil, 3, 3, nil, nil, true)--Short text "Leap" (LFR)
+local timerReverberatingEruptionCD				= mod:NewCDCountTimer(30, 344496, nil, nil, 3, 3, nil, nil, true)--Short text "Eruption" (Normal+)
+local timerReverberatingLeapCD					= mod:NewCDCountTimer(30, 334009, nil, nil, 3, 3, nil, nil, true)--Short text "Leap" (LFR)
 local timerSeismicUpheavalCD					= mod:NewCDCountTimer(25.1, 334498, nil, nil, nil, 3, nil, nil, true)
 local timerCrystalizeCD							= mod:NewCDCountTimer(55, 339690, nil, nil, 3, 5, nil, nil, true)--55 on mythic, 50 on non mythic
 local timerStoneFistCD							= mod:NewCDCountTimer(18, 342425, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON, true)

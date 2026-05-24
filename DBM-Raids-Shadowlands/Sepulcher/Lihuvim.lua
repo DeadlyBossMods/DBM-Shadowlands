@@ -37,6 +37,9 @@ mod:RegisterEventsInCombat(
  or ability.id = 365257 and type = "begincast"
  or ability.id = 368738 and type = "applydebuff"
 --]]
+DBM:RegisterAltSpellName(364652, 260885)--Protoform Cascade -> short name
+DBM:RegisterAltSpellName(363795, 119342)--Deconstructing Energy -> Bombs
+
 --Boss
 local warnSynthesize							= mod:NewCountAnnounce(363130, 3)
 local warnResonance								= mod:NewSpellAnnounce(368027, 3, nil, "Tank")
@@ -68,10 +71,10 @@ local timerAlignmentShiftCD						= mod:NewCDTimer(20.6, 362659, nil, nil, nil, 3
 local timerUnstableMoteCD						= mod:NewCDCountTimer(20.6, 362622, nil, nil, nil, 3)
 local timerUnstableMote							= mod:NewBuffFadesTimer(5.9, 362622, nil, nil, nil, 5)--1.9+4
 local timerProtoformRadiance					= mod:NewBuffActiveTimer(28.8, 363537, nil, nil, nil, 2)
-local timerProtoformCascadeCD					= mod:NewCDCountTimer(10.9, 364652, 260885, nil, nil, 3)
-local timerResonanceCD							= mod:NewCDCountTimer(41.2, 368027, DBM_COMMON_L.TANKCOMBO.." (%s)", "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
+local timerProtoformCascadeCD					= mod:NewCDCountTimer(10.9, 364652, nil, nil, nil, 3)
+local timerResonanceCD							= mod:NewCDCountTimer(41.2, 368027, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON)
 local timerCosmicShiftCD						= mod:NewCDCountTimer(20.3, 363088, nil, nil, nil, 3)
-local timerDeconstructingEnergyCD				= mod:NewCDCountTimer(37.2, 363795, 119342, nil, nil, 3)--Shorttext "Bombs"
+local timerDeconstructingEnergyCD				= mod:NewCDCountTimer(37.2, 363795, nil, nil, nil, 3)--Shorttext "Bombs"
 local timerSynthesizeCD							= mod:NewCDCountTimer(101, 363130, nil, nil, nil, 6)
 local timerSynthesize							= mod:NewBuffActiveTimer(20, 363130, nil, nil, nil, 6, nil, DBM_COMMON_L.DAMAGE_ICON)
 local timerRealignment							= mod:NewBuffActiveTimer(20, 361200, nil, nil, nil, 6)

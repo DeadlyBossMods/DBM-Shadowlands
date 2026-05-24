@@ -42,9 +42,12 @@ mod:RegisterEventsInCombat(
 --]]
 --Stage One: Kingsmourne Hungers
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(24462))
-local warnBefouledBarrier						= mod:NewCountAnnounce(365295, 3, nil, nil, 300531)
+DBM:RegisterAltSpellName(365295, 300531)--Befouled Barrier -> short name
+DBM:RegisterAltSpellName(366849, 249194)--Domination Word: Pain -> short name
+
+local warnBefouledBarrier						= mod:NewCountAnnounce(365295, 3)
 local warnWickedStar							= mod:NewTargetCountAnnounce(365030, 3, nil, nil, nil, nil, nil, nil, true)
-local warnDominationWordPain					= mod:NewTargetNoFilterAnnounce(366849, 3, nil, "Healer", 249194)
+local warnDominationWordPain					= mod:NewTargetNoFilterAnnounce(366849, 3, nil, "Healer")
 
 local specWarnKingsmourneHungers				= mod:NewSpecialWarningCount(362405, nil, nil, nil, 1, 2, nil, nil, "shockwave")
 local specWarnMalignantward						= mod:NewSpecialWarningDispel(364031, "RemoveMagic", nil, nil, 1, 2, nil, nil, "helpdispel")
@@ -64,11 +67,11 @@ local timerPhaseCD								= mod:NewStageTimer(30)
 local timerKingsmourneHungersCD					= mod:NewCDCountTimer(28.8, 362405, nil, nil, nil, 3)
 local timerLostSoul								= mod:NewBuffFadesTimer(35, 362055, nil, nil, nil, 5)
 local timerBlasphemyCD							= mod:NewCDCountTimer(28.8, 361989, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)
-local timerBefouledBarrierCD					= mod:NewCDCountTimer(28.8, 365295, 300531, nil, nil, 5, nil, DBM_COMMON_L.HEALER_ICON)
+local timerBefouledBarrierCD					= mod:NewCDCountTimer(28.8, 365295, nil, nil, nil, 5, nil, DBM_COMMON_L.HEALER_ICON)
 local timerWickedStarCD							= mod:NewCDCountTimer(28.8, 365030, nil, nil, nil, 3)
 local timerWickedStar							= mod:NewTargetCountTimer(4, 365021, nil, false, nil, 5)
 local timerHopebreakerCD						= mod:NewCDCountTimer(28.8, 361815, nil, nil, nil, 2)
-local timerDominationWordPainCD					= mod:NewCDCountTimer(28.8, 366849, 249194, nil, nil, 5, nil, DBM_COMMON_L.HEALER_ICON)
+local timerDominationWordPainCD					= mod:NewCDCountTimer(28.8, 366849, nil, nil, nil, 5, nil, DBM_COMMON_L.HEALER_ICON)
 
 mod:AddSetIconOption("SetIconOnAnduinsHope", -24468, true, 5, {1, 2, 3, 4})
 mod:GroupSpells(361989, 361992, 361993)--Group two debuffs with parent spell Blasphemy

@@ -35,6 +35,8 @@ mod:RegisterEventsInCombat(
  or ability.id = 368347 and type = "applydebuff"
  or ability.id = 360115 and type = "removebuff"
 --]]
+DBM:RegisterAltSpellName(361676, 183426)--Earthbreaker Missiles -> short name
+
 --Stage One: The Reclaimer
 local warnReclamationForm						= mod:NewCastAnnounce(359235, 2)
 local warnSeismicTremors						= mod:NewCountAnnounce(367079, 2)
@@ -64,7 +66,7 @@ local specWarnShatter							= mod:NewSpecialWarningDodge(362056, nil, nil, nil, 
 --Stage One: The Reclaimer
 local timerReclaimCD							= mod:NewCDCountTimer(60, 360115, nil, nil, nil, 5)
 local timerSeismicTremorsCD						= mod:NewCDCountTimer(26.7, 367079, nil, nil, nil, 5)--Make me count timer when leaving AI
-local timerEarthbreakerMissilesCD				= mod:NewCDCountTimer(26.1, 361676, 183426, nil, nil, 3)--shorttext "Missiles"
+local timerEarthbreakerMissilesCD				= mod:NewCDCountTimer(26.1, 361676, nil, nil, nil, 3)--shorttext "Missiles"
 local timerPlanetcrackerBeamCD					= mod:NewCDTimer(33.2, 369210, nil, nil, nil, 3)
 local timerCrushingPrismCD						= mod:NewCDCountTimer(26.9, 365297, nil, nil, nil, 3, nil, DBM_COMMON_L.MAGIC_ICON)
 --Stage Two: The Shimmering Cliffs

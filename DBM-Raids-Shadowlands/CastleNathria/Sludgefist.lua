@@ -35,6 +35,9 @@ mod:RegisterEventsInCombat(
  or ability.id = 346269 or ability.id = 331314
  or (ability.id = 342420 or ability.id = 340817) and type = "applydebuff"
 --]]
+DBM:RegisterAltSpellName(332318, 247733)--Destructive Stomp -> short name
+DBM:RegisterAltSpellName(332687, 226056)--Colossal Roar -> short name
+
 local warnHatefulGaze							= mod:NewTargetCountAnnounce(331209, 4, nil, nil, nil, nil, nil, nil, true)
 local warnStunnedImpact							= mod:NewTargetNoFilterAnnounce(331314, 1)
 --local warnChainLink								= mod:NewTargetAnnounce(342419, 3)--Targetting debuff
@@ -62,9 +65,9 @@ local timerHatefulGazeCD						= mod:NewCDCountTimer(68.9, 331209, nil, nil, nil,
 local timerStunnedImpact						= mod:NewBuffActiveTimer(12, 331314, nil, nil, nil, 5, nil, DBM_COMMON_L.DAMAGE_ICON)
 local timerChainLinkCD							= mod:NewCDCountTimer(68.9, 335300, nil, nil, nil, 3, nil, nil, true)
 local timerChainSlamCD							= mod:NewCDCountTimer(68.9, 335470, nil, nil, nil, 3, nil, DBM_COMMON_L.HEROIC_ICON, true)
-local timerDestructiveStompCD					= mod:NewCDCountTimer(44.3, 332318, 247733, nil, nil, 3, nil, nil, true)
+local timerDestructiveStompCD					= mod:NewCDCountTimer(44.3, 332318, nil, nil, nil, 3, nil, nil, true)
 local timerFallingRubbleCD						= mod:NewCDCountTimer(68.9, 332572, nil, nil, nil, 3, nil, nil, true)
-local timerColossalRoarCD						= mod:NewCDCountTimer(27.9, 332687, 226056, nil, nil, 2, nil, nil, true)
+local timerColossalRoarCD						= mod:NewCDCountTimer(27.9, 332687, nil, nil, nil, 2, nil, nil, true)
 local timerSiesmicShiftCD						= mod:NewCDCountTimer(34, 340817, nil, nil, nil, 3, nil, DBM_COMMON_L.MYTHIC_ICON, true)--Mythic
 
 --local berserkTimer							= mod:NewBerserkTimer(600)

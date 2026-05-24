@@ -39,11 +39,13 @@ mod:RegisterEventsInCombat(
  or ability.id = 351194 and type = "applydebuff"
  or ability.id = 350415 and type = "removebuff"
 --]]
+DBM:RegisterAltSpellName(350415, 298215)--Warmonger Shackles -> short name
+
 --BOSS
 local warnDefiance							= mod:NewTargetNoFilterAnnounce(350650, 3, nil, false)--Even with 1 second aggregation might be spammy based on add count, plus mythic
 local warnBrandofTorment					= mod:NewTargetNoFilterAnnounce(350647, 3)
 local warnRuinblade							= mod:NewStackAnnounce(350422, 2, nil, "Tank|Healer")
-local warnShacklesRemaining					= mod:NewCountAnnounce(350415, 1, nil, nil, 298215)
+local warnShacklesRemaining					= mod:NewCountAnnounce(350415, 1)
 --Adds
 local warnSpawnMawsworn						= mod:NewCountAnnounce(350615, 3)
 --local warnVesselofTorment					= mod:NewTargetNoFilterAnnounce(350851, 4)--FIXME
@@ -66,7 +68,7 @@ local timerTormentedEruptionsCD				= mod:NewCDCountTimer(160.7, 349985, nil, nil
 local timerSpawnMawswornCD					= mod:NewCDCountTimer(57.5, 350615, nil, nil, nil, 1, nil, nil, true)--Ability is reset by eruption?
 local timerBrandofTormentCD					= mod:NewCDCountTimer(16, 350647, nil, nil, nil, 3)--Secondary ability cast in 3s after each spawn mawsworn
 local timerRuinbladeCD						= mod:NewCDCountTimer(32.9, 350422, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--Ability is reset by eruption
-local timerShacklesCD						= mod:NewCDCountTimer(161, 350415, 298215, nil, nil, 6)--Tied to bosses energy cycle
+local timerShacklesCD						= mod:NewCDCountTimer(161, 350415, nil, nil, nil, 6)--Tied to bosses energy cycle
 --Hellscream
 local timerHellscream						= mod:NewCastTimer(35, 350411, nil, nil, nil, 2, nil, DBM_COMMON_L.DEADLY_ICON)
 

@@ -40,6 +40,8 @@ mod:RegisterEventsInCombat(
 --]]
 --TODO, same approach and margock, make it so warnings show which rank it is
 --General
+DBM:RegisterAltSpellName(325064, 202046)--Sins and Suffering -> Beams
+
 local specWarnGTFO								= mod:NewSpecialWarningGTFO(325713, nil, nil, nil, 1, 8, nil, nil, "watchfeet")
 
 --local timerFocusAnimaCD							= mod:NewCDTimer(100, 331844, nil, nil, nil, 6)
@@ -81,7 +83,7 @@ local warnCondemnTank							= mod:NewCastAnnounce(334017, 3, nil, nil, "Tank")
 local specWarnSharedSuffering					= mod:NewSpecialWarningYouCount(324983, nil, 202046, nil, 1, 2, nil, nil, "targetyou")--Short Name "Beams"
 local yellSharedSuffering						= mod:NewShortYell(324983, 202046)--Short Name "Beams"
 
-local timerSinsandSufferingCD					= mod:NewCDCountTimer(44.3, 325064, 202046, nil, nil, 3, nil, nil, true)--ShortName "Beams"
+local timerSinsandSufferingCD					= mod:NewCDCountTimer(44.3, 325064, nil, nil, nil, 3, nil, nil, true)--ShortName "Beams"
 
 mod:AddSetIconOption("SetIconOnSharedSuffering", 324983, true, 0, {1, 2, 3})
 --Container of Concentrated Anima

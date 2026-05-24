@@ -34,6 +34,11 @@ mod:RegisterEventsInCombat(
  or ability.id = 328921
  or ability.id = 342077 and type = "applydebuff"
 --]]
+DBM:RegisterAltSpellName(328857, 17253)--Exsanguinating Bite -> short name
+DBM:RegisterAltSpellName(330711, 251719)--Earsplitting Shriek -> short name
+DBM:RegisterAltSpellName(345936, 251719)--Earsplitting Shriek (phase variant) -> short name
+DBM:RegisterAltSpellName(342863, 252538)--Echoing Screech -> short name
+
 --Stage One - Thirst for Blood
 local warnExsanguinated							= mod:NewStackAnnounce(328897, 2, nil, "Tank|Healer")
 local warnEcholocation							= mod:NewTargetAnnounce(342074, 3)
@@ -63,13 +68,13 @@ local yellDeadlyDescent							= mod:NewYell(343021, nil, false)--Useless with on
 local specWarnGTFO								= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8, nil, nil, "watchfeet")
 
 --Stage One - Thirst for Blood
-local timerExsanguinatingBiteCD					= mod:NewCDTimer(17.8, 328857, 17253, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--10-22.9 (too varaible for a countdown by default)
+local timerExsanguinatingBiteCD					= mod:NewCDTimer(17.8, 328857, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.TANK_ICON)--10-22.9 (too varaible for a countdown by default)
 local timerEcholocationCD						= mod:NewCDTimer(23, 342074, nil, nil, nil, 3, nil, nil, nil, 1, 3)--Seems to be 42.7 without a hitch
-local timerEarsplittingShriekCD					= mod:NewCDTimer(47.1, 330711, 251719, nil, nil, 2)--Shortname "Shriek"
-local timerEarsplittingShriek					= mod:NewCastTimer(4, 345936, 251719, false, nil, 5)--For users to see cast bar if boss remains untargetable in intermission
+local timerEarsplittingShriekCD					= mod:NewCDTimer(47.1, 330711, nil, nil, nil, 2)--Shortname "Shriek"
+local timerEarsplittingShriek					= mod:NewCastTimer(4, 345936, nil, false, nil, 5)--For users to see cast bar if boss remains untargetable in intermission
 local timerWaveofBloodCD						= mod:NewCDCountTimer(24.8, 345397, nil, nil, nil, 2, nil, DBM_COMMON_L.HEALER_ICON)--24-30
 local timerBlindSwipeCD							= mod:NewCDTimer(44.4, 343005, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON)
-local timerEchoingScreechCD						= mod:NewCDTimer(48, 342863, 252538, nil, nil, 3, nil, DBM_COMMON_L.HEROIC_ICON)
+local timerEchoingScreechCD						= mod:NewCDTimer(48, 342863, nil, nil, nil, 3, nil, DBM_COMMON_L.HEROIC_ICON)
 local timerBloodshroudCD						= mod:NewCDTimer(112, 328921, nil, nil, nil, 6)--100-103
 --Stage Two - Terror of Castle Nathria
 --local timerBloodshroud						= mod:NewBuffActiveTimer(47.5, 328921, nil, nil, nil, 6)--43.4-47.5, more to it than this? or just fact blizzards energy code always proves to be dogshit

@@ -33,8 +33,11 @@ mod:RegisterEventsInCombat(
 (ability.id = 334522 or ability.id = 334266 or ability.id = 329455 or ability.id = 329774 or ability.id = 338621) and type = "begincast"
  or ability.id = 329298 and type = "applydebuff"
 --]]
-local warnGluttonousMiasma						= mod:NewTargetNoFilterAnnounce(329298, 4, nil, nil, 212238)
-local warnVolatileEjection						= mod:NewTargetNoFilterAnnounce(334266, 4, nil, nil, 202046)
+DBM:RegisterAltSpellName(329298, 212238)--Gluttonous Miasma -> short name
+DBM:RegisterAltSpellName(334266, 202046)--Volatile Ejection -> Beam
+
+local warnGluttonousMiasma						= mod:NewTargetNoFilterAnnounce(329298, 4)
+local warnVolatileEjection						= mod:NewTargetNoFilterAnnounce(334266, 4)
 
 local specWarnGluttonousMiasma					= mod:NewSpecialWarningYouPos(329298, nil, 212238, nil, 1, 2, nil, nil, "mm1")
 local yellGluttonousMiasma						= mod:NewShortPosYell(329298, 212238, false, 2)
@@ -49,10 +52,10 @@ local specWarnGrowingHungerOther				= mod:NewSpecialWarningTaunt(332295, nil, ni
 local specWarnOverwhelm							= mod:NewSpecialWarningDefensive(329774, "Tank", nil, nil, 1, 2, nil, nil, "defensive")
 local specWarnOverwhelmTaunt					= mod:NewSpecialWarningTaunt(329774, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 
-local timerGluttonousMiasmaCD					= mod:NewCDCountTimer(23.8, 329298, 212238, nil, nil, 3, nil, nil, nil, 1, 3)--Short text, Miasma
+local timerGluttonousMiasmaCD					= mod:NewCDCountTimer(23.8, 329298, nil, nil, nil, 3, nil, nil, nil, 1, 3)--Short text, Miasma
 local timerConsumeCD							= mod:NewNextCountTimer(119.8, 334522, nil, nil, nil, 2)
 local timerExpungeCD							= mod:NewNextCountTimer(44.3, 329725, nil, nil, nil, 3)
-local timerVolatileEjectionCD					= mod:NewNextCountTimer(35.9, 334266, 202046, nil, nil, 3)--202046 for beam
+local timerVolatileEjectionCD					= mod:NewNextCountTimer(35.9, 334266, nil, nil, nil, 3)--202046 for beam
 local timerDesolateCD							= mod:NewNextCountTimer(59.8, 329455, nil, nil, nil, 2, nil, DBM_COMMON_L.HEALER_ICON)
 local timerOverwhelmCD							= mod:NewNextCountTimer(11.9, 329774, nil, "Tank", nil, 5, nil, DBM_COMMON_L.TANK_ICON, nil, 2, 3)
 

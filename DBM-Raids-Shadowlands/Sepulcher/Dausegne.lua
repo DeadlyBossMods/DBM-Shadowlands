@@ -29,11 +29,13 @@ mod:RegisterEventsInCombat(
  or ability.id = 361750
  or ability.id = 361651 and (type = "applybuff" or type = "removebuff")
 --]]
+DBM:RegisterAltSpellName(365373, 161172)--Disintegration Halo -> short name
+
 --The Fallen Oracle
 local warnInfusedStrikes						= mod:NewStackAnnounce(361966, 2, nil, "Tank|Healer")
 local warnStaggeringBarrage						= mod:NewTargetCountAnnounce(361018, 3, nil, nil, nil, nil, nil, nil, true)
 local warnDominationCore						= mod:NewCountAnnounce(359483, 3)
-local warnDisintegrationHalo					= mod:NewCountAnnounce(365373, 4, nil, nil, 161172)
+local warnDisintegrationHalo					= mod:NewCountAnnounce(365373, 4)
 --Inevitable Dominion
 local warnSiphonReservoir						= mod:NewCountAnnounce(361643, 2)
 
@@ -57,8 +59,8 @@ local timerUnleashedInfusion					= mod:NewTargetTimer(20, 361967, nil, nil, nil,
 local timerStaggeringBarrageCD					= mod:NewCDCountTimer(35, 361018, nil, nil, nil, 3)
 local timerDominationCoreCD						= mod:NewCDCountTimer(33.5, 359483, nil, nil, nil, 1, nil, DBM_COMMON_L.DAMAGE_ICON)
 local timerObliterationArcCD					= mod:NewCDCountTimer(35, 361513, nil, nil, nil, 3)
-local timerDisintegrationHaloCD					= mod:NewCDCountTimer(70, 365373, 161172, nil, nil, 3)
-local timerDisintegrationHalo					= mod:NewCastCountTimer(5, 365373, 161172, nil, nil, 5)
+local timerDisintegrationHaloCD					= mod:NewCDCountTimer(70, 365373, nil, nil, nil, 3)
+local timerDisintegrationHalo					= mod:NewCastCountTimer(5, 365373, nil, nil, nil, 5)
 --Inevitable Dominion
 local timerSiphonReservoirCD					= mod:NewCDCountTimer(28.8, 361643, nil, nil, nil, 6)
 

@@ -72,9 +72,9 @@ mod:AddTimerLine(DBM:EJ_GetSectionInfo(23877))
 local warnMatterDisoilution						= mod:NewTargetNoFilterAnnounce(364881, 4)
 
 local specWarnSplitResolution					= mod:NewSpecialWarningDefensive(360162, nil, nil, nil, 1, 2, nil, nil, "defensive")
-local specWarnPneumaticImpact					= mod:NewSpecialWarningTaunt(360414, nil, nil, nil, 1, 2)
+local specWarnPneumaticImpact					= mod:NewSpecialWarningTaunt(360414, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 local specWarnMatterDisolution					= mod:NewSpecialWarningYou(364881, nil, nil, nil, 1, 2, nil, nil, "targetyou")--Initial
-local specWarnMatterDisolutionOut				= mod:NewSpecialWarningMoveAway(364881, nil, nil, nil, 1, 2)--Delayed
+local specWarnMatterDisolutionOut				= mod:NewSpecialWarningMoveAway(364881, nil, nil, nil, 1, 2, nil, nil, "runout")--Delayed
 local yellMatterDisolutionFades					= mod:NewShortFadesYell(364881)
 
 local timerSplitResolutionCD					= mod:NewCDTimer(30.2, 360162, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON)--30.2-34 (also acts as Pneumatic Impact timer)

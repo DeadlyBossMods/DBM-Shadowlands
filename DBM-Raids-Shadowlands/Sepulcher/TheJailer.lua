@@ -63,7 +63,7 @@ local yellMartyrdomFades						= mod:NewShortFadesYell(363893, nil, nil, nil, "YE
 local specWarnMisery							= mod:NewSpecialWarningTaunt(362192, nil, nil, nil, 1, 2, 4, nil, "tauntboss")
 local specWarnTorment							= mod:NewSpecialWarningMoveAway(365436, nil, nil, nil, 1, 2, nil, nil, "scatter")
 local specWarnRuneofDamnation					= mod:NewSpecialWarningYou(360281, nil, nil, nil, 1, 2, nil, nil, "targetyou")
-local specWarnRuneofDamnationPit				= mod:NewSpecialWarningMoveTo(360281, nil, nil, nil, 1, 7)
+local specWarnRuneofDamnationPit				= mod:NewSpecialWarningMoveTo(360281, nil, nil, nil, 1, 7, nil, nil, "jumpinpit")
 local yellRuneofDamnation						= mod:NewShortPosYell(360281, 166419)--short text "Rune"
 local yellRuneofDamnationFades					= mod:NewIconFadesYell(360281)
 
@@ -90,7 +90,7 @@ local specWarnRuneofCompulsion					= mod:NewSpecialWarningYou(366285, nil, nil, 
 local yellRuneofCompulsion						= mod:NewShortPosYell(366285, 166419)--short text "Rune"
 local yellRuneofCompulsionFades					= mod:NewIconFadesYell(366285)
 local specWarnDecimator							= mod:NewSpecialWarningCount(364942, nil, 72994, nil, 2, 2, nil, nil, "specialsoon")
-local specWarnTormentingEcho					= mod:NewSpecialWarningDodge(365371, nil, nil, nil, 2, 2)
+local specWarnTormentingEcho					= mod:NewSpecialWarningDodge(365371, nil, nil, nil, 2, 2, nil, nil, "watchstep")
 
 local timerWorldCrackerCD						= mod:NewCDCountTimer(28.8, 366678, nil, nil, nil, 2, nil, DBM_COMMON_L.MYTHIC_ICON)
 local timerUnholyAttunementCD					= mod:NewCDCountTimer(28.8, 360373, nil, nil, nil, 3)

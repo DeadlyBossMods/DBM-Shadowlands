@@ -149,7 +149,7 @@ local specWarnFilthTaunt							= mod:NewSpecialWarningTaunt(351589, nil, nil, ni
 local specWarnExpulsion								= mod:NewSpecialWarningYouPos(351562, nil, nil, nil, 1, 2, 4, nil, "mm1")--Mythic
 local yellExpulsion									= mod:NewShortPosYell(351562)
 local yellExpulsionFades							= mod:NewIconFadesYell(351562)
-local specWarnExpulsionTarget						= mod:NewSpecialWarningTarget(351562, false, nil, nil, 1, 2, 4)
+local specWarnExpulsionTarget						= mod:NewSpecialWarningTarget(351562, false, nil, nil, 1, 2, 4, nil, "helpsoak")
 
 local timerChannelIce								= mod:NewCastTimer(5, 348148, nil, nil, nil, 6)
 local timerCallEarth								= mod:NewCastTimer(5, 348093, nil, nil, nil, 6)
@@ -182,8 +182,8 @@ local warnBansheesBlades							= mod:NewCountAnnounce(358181, 4, nil, "Tank")
 local warnDeathKnives								= mod:NewTargetNoFilterAnnounce(358434, 3)
 local warnMerciless									= mod:NewCountAnnounce(358588, 2)
 
-local specWarnBansheesBane							= mod:NewSpecialWarningStack(353929, nil, 1, nil, nil, 1, 6)
-local specWarnBansheesBaneDispel					= mod:NewSpecialWarningDispel(353929, "RemoveMagic", nil, nil, 3, 2)--Dispel alert during Fury
+local specWarnBansheesBane							= mod:NewSpecialWarningStack(353929, nil, 1, nil, nil, 1, 6, nil, nil, "targetyou")
+local specWarnBansheesBaneDispel					= mod:NewSpecialWarningDispel(353929, "RemoveMagic", nil, nil, 3, 2, nil, nil, "helpdispel")--Dispel alert during Fury
 local specWarnBansheeScream							= mod:NewSpecialWarningYou(357720, nil, 31295, nil, 1, 2, nil, nil, "scatter")
 local yellBansheeScream								= mod:NewYell(357720, 31295)
 local specWarnRaze									= mod:NewSpecialWarningRunCount(354147, nil, nil, nil, 4, 2, nil, nil, "justrun")

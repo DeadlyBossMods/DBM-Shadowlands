@@ -100,7 +100,7 @@ local specWarnDreadboltVolley					= mod:NewSpecialWarningInterruptCount(337110, 
 local timerDrainEssenceCD						= mod:NewCDTimer(22.5, 346654, nil, nil, nil, 5, nil, DBM_COMMON_L.HEALER_ICON)
 local timerDreadboltVolleyCD					= mod:NewCDTimer(45, 337110, nil, nil, nil, 2, nil, DBM_COMMON_L.MYTHIC_ICON)--Only for after image
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22202))--One is dead
-local specWarnPridefulEruption					= mod:NewSpecialWarningMoveAway(346657, nil, 138658, nil, 2, 2, nil, nil, "scatter")--One boss dead
+local specWarnPridefulEruption					= mod:NewSpecialWarningMoveAway(346657, nil, nil, nil, 2, 2, nil, nil, "scatter")--One boss dead
 
 local timerPridefulEruptionCD					= mod:NewCDTimer(25, 346657, nil, nil, nil, 3)
 
@@ -112,7 +112,7 @@ mod:AddSetIconOption("SetIconOnImage", -22433, true, 5, {6})
 mod:AddTimerLine(DBM:EJ_GetSectionInfo(22149))--2 baseline abilities
 local warnDarkRecital							= mod:NewTargetNoFilterAnnounce(331634, 3)
 
-local specWarnEvasiveLunge						= mod:NewSpecialWarningDodge(327497, nil, 219588, nil, 2, 2, nil, nil, "chargemove")
+local specWarnEvasiveLunge						= mod:NewSpecialWarningDodge(327497, nil, nil, nil, 2, 2, nil, nil, "chargemove")
 local specWarnDarkRecital						= mod:NewSpecialWarningMoveTo(331634, nil, nil, nil, 1, 2, nil, nil, "gather")--One boss dead
 local yellDarkRecitalRepeater					= mod:NewIconRepeatYell(331634, DBM_CORE_L.AUTO_YELL_ANNOUNCE_TEXT.shortyell)--One boss dead
 

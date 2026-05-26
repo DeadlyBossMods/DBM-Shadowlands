@@ -49,7 +49,7 @@ local yellStaggeringBarrageFades				= mod:NewIconFadesYell(361018)
 local specWarnStaggeringBarrageTarget			= mod:NewSpecialWarningTargetCount(361018, false, nil, nil, 1, 2, 3, nil, "helpsoak")--Optional Soak special warning that auto checks no soak debuff
 local specWarnDominationBolt					= mod:NewSpecialWarningInterruptCount(363607, "HasInterrupt", nil, nil, 1, 2, nil, nil, "kickcast")
 local specWarnObliterationArc					= mod:NewSpecialWarningDodgeCount(361513, nil, nil, nil, 2, 2, nil, nil, "shockwave")
-local specWarnDisintegrationHalo				= mod:NewSpecialWarningCount(365373, nil, 161172, nil, 2, 2, nil, nil, "watchwave")
+local specWarnDisintegrationHalo				= mod:NewSpecialWarningCount(365373, nil, nil, nil, 2, 2, nil, nil, "watchwave")
 --local specWarnGTFO							= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8)
 --Inevitable Dominion
 local specWarnTotalDominion						= mod:NewSpecialWarningSpell(365418, nil, nil, nil, 3, 2, nil, nil, "stilldanger")--Basically soft enrage/wipe mechanic

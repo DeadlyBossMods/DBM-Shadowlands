@@ -55,12 +55,12 @@ local specWarnMelodicAlignment					= mod:NewSpecialWarningYou(368740, nil, nil, 
 
 local specWarnCosmicShift						= mod:NewSpecialWarningTarget(363088, nil, DBM_CORE_L.AUTO_SPEC_WARN_OPTIONS.spell:format(363088), nil, 2, 13, nil, nil, "pushbackincoming")
 local specWarnUnstableMote						= mod:NewSpecialWarningYou(362622, nil, nil, nil, 1, 2, nil, nil, "targetyou")
-local specWarnProtoformCascade					= mod:NewSpecialWarningDodge(364652, nil, 260885, nil, 1, 2, nil, nil, "defensive")
+local specWarnProtoformCascade					= mod:NewSpecialWarningDodge(364652, nil, nil, nil, 1, 2, nil, nil, "defensive")
 local specWarnResonance							= mod:NewSpecialWarningDefensive(368027, false, nil, nil, 1, 2, nil, nil, "defensive")
 local specWarnKinResonanceTaunt					= mod:NewSpecialWarningTaunt(368024, false, nil, 2, 1, 2, nil, nil, "tauntboss")
 local specWarnSunResonanceTaunt					= mod:NewSpecialWarningTaunt(368025, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
-local specWarnDeconstructingEnergy				= mod:NewSpecialWarningYou(363795, nil, 37859, nil, 1, 2, nil, nil, "runout")--Shorttext "Bomb"
-local specWarnDeconstructingEnergyTaunt			= mod:NewSpecialWarningTaunt(363795, nil, 37859, nil, 1, 2, nil, nil, "tauntboss")--Shorttext "Bomb"
+local specWarnDeconstructingEnergy				= mod:NewSpecialWarningYou(363795, nil, nil, nil, 1, 2, nil, nil, "runout")--Shorttext "Bomb"
+local specWarnDeconstructingEnergyTaunt			= mod:NewSpecialWarningTaunt(363795, nil, nil, nil, 1, 2, nil, nil, "tauntboss")--Shorttext "Bomb"
 local yellDeconstructingEnergy					= mod:NewYell(363795, 37859)--Shorttext "Bomb"
 local yellDeconstructingEnergyFades				= mod:NewShortFadesYell(363795, 37859)--Shorttext "Bomb"
 

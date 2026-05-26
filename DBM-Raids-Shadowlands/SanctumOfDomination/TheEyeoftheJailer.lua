@@ -59,9 +59,9 @@ local specWarnDeathlink						= mod:NewSpecialWarningDefensive(350828, nil, nil, 
 local specWarnDeathlinkTaunt				= mod:NewSpecialWarningTaunt(350828, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 local specWarnDraggingChains				= mod:NewSpecialWarningYou(358609, nil, nil, nil, 1, 2, nil, nil, "targetyou")
 local yellDraggingChains					= mod:NewYell(358609)
-local specWarnHopelessLethargy				= mod:NewSpecialWarningMoveAway(350604, nil, 31589, nil, 1, 2, 4, nil, "runout")--Mythic
+local specWarnHopelessLethargy				= mod:NewSpecialWarningMoveAway(350604, nil, nil, nil, 1, 2, 4, nil, "runout")--Mythic
 local yellHopelessLethargy					= mod:NewYell(350604, 31589)
-local specWarnAnnihilatingGlare				= mod:NewSpecialWarningDodge(350764, nil, 182908, nil, 3, 2, nil, nil, "laserrun")
+local specWarnAnnihilatingGlare				= mod:NewSpecialWarningDodge(350764, nil, nil, nil, 3, 2, nil, nil, "laserrun")
 
 local timerDeathlinkCD						= mod:NewCDCountTimer(10.9, 350828, nil, "Tank|Healer", nil, 5, nil, DBM_COMMON_L.DEADLY_ICON..DBM_COMMON_L.TANK_ICON)
 local timerHopelessLethargyCD				= mod:NewCDCountTimer(47.3, 350604, nil, nil, nil, 3, nil, DBM_COMMON_L.MYTHIC_ICON)--Shortname "Slow"

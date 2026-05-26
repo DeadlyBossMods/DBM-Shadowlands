@@ -89,7 +89,7 @@ local specWarnShatteringBlast					= mod:NewSpecialWarningMoveTo(359856, nil, nil
 local specWarnRuneofCompulsion					= mod:NewSpecialWarningYou(366285, nil, nil, nil, 1, 2, nil, nil, "runout")
 local yellRuneofCompulsion						= mod:NewShortPosYell(366285, 166419)--short text "Rune"
 local yellRuneofCompulsionFades					= mod:NewIconFadesYell(366285)
-local specWarnDecimator							= mod:NewSpecialWarningCount(364942, nil, 72994, nil, 2, 2, nil, nil, "specialsoon")
+local specWarnDecimator							= mod:NewSpecialWarningCount(364942, nil, nil, nil, 2, 2, nil, nil, "specialsoon")
 local specWarnTormentingEcho					= mod:NewSpecialWarningDodge(365371, nil, nil, nil, 2, 2, nil, nil, "watchstep")
 
 local timerWorldCrackerCD						= mod:NewCDCountTimer(28.8, 366678, nil, nil, nil, 2, nil, DBM_COMMON_L.MYTHIC_ICON)

@@ -80,7 +80,7 @@ local warnSharedSuffering						= mod:NewTargetNoFilterAnnounce(324983, 3)
 local warnConcentrateAnima						= mod:NewTargetNoFilterAnnounce(342321, 3)
 local warnCondemnTank							= mod:NewCastAnnounce(334017, 3, nil, nil, "Tank")
 
-local specWarnSharedSuffering					= mod:NewSpecialWarningYouCount(324983, nil, 202046, nil, 1, 2, nil, nil, "targetyou")--Short Name "Beams"
+local specWarnSharedSuffering					= mod:NewSpecialWarningYouCount(324983, nil, nil, nil, 1, 2, nil, nil, "targetyou")--Short Name "Beams"
 local yellSharedSuffering						= mod:NewShortYell(324983, 202046)--Short Name "Beams"
 
 local timerSinsandSufferingCD					= mod:NewCDCountTimer(44.3, 325064, nil, nil, nil, 3, nil, nil, true)--ShortName "Beams"

@@ -69,8 +69,8 @@ local warnAscensionsCall						= mod:NewCountAnnounce(361066, 2)
 local warnBastionsWard							= mod:NewCastAnnounce(360845, 1)
 local warnPinned								= mod:NewTargetNoFilterAnnounce(362352, 4)
 
-local specWarnHumblingStrikes					= mod:NewSpecialWarningDefensive(365272, nil, 31907, nil, 1, 2, nil, nil, "defensive")
-local specWarnHumblingStrikesTaunt				= mod:NewSpecialWarningTaunt(365272, nil, 31907, nil, 1, 2, nil, nil, "tauntboss")
+local specWarnHumblingStrikes					= mod:NewSpecialWarningDefensive(365272, nil, nil, nil, 1, 2, nil, nil, "defensive")
+local specWarnHumblingStrikesTaunt				= mod:NewSpecialWarningTaunt(365272, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 local specWarnPinningVolley						= mod:NewSpecialWarningDodgeCount(361278, nil, nil, nil, 2, 2, nil, nil, "watchstep")--Is it dodgeable?
 local yellPinned								= mod:NewShortYell(362352)
 

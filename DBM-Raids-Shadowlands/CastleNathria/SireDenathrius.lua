@@ -59,7 +59,7 @@ local specWarnNightHunter						= mod:NewSpecialWarningYouPos(327796, nil, nil, n
 local yellNightHunter							= mod:NewShortPosYell(327796)--Heroic/Mythic (not red on purpose, you do NOT want to be anywhere near victim, you want to soak the line before victim)
 local yellNightHunterFades						= mod:NewIconFadesYell(327796)--Heroic/Mythic (not red on purpose, you do NOT want to be anywhere near victim, you want to soak the line before victim)
 local specWarnNightHunterTarget					= mod:NewSpecialWarningTarget(327796, false, nil, nil, 1, 2, 3, nil, "helpsoak")--Opt in, for people who are assigned to this soak
-local specWarnCommandRavage						= mod:NewSpecialWarningCount(327227, nil, 327122, nil, 2, 2, nil, nil, "specialsoon")
+local specWarnCommandRavage						= mod:NewSpecialWarningCount(327227, nil, nil, nil, 2, 2, nil, nil, "specialsoon")
 --local specWarnMindFlay						= mod:NewSpecialWarningInterrupt(310552, "HasInterrupt", nil, nil, 1, 2)
 local specWarnGTFO								= mod:NewSpecialWarningGTFO(327992, nil, nil, nil, 1, 8, nil, nil, "watchfeet")
 
@@ -106,7 +106,7 @@ mod:AddSetIconOption("SetIconOnImpale", 329951, true, 0, {1, 2, 3, 4})
 local specWarnWrackingPain						= mod:NewSpecialWarningDefensive(329181, "Tank", nil, nil, 1, 2, nil, nil, "shockwave")--Change to defensive if it can't be dodged
 local specWarnWrackingPainTaunt					= mod:NewSpecialWarningTaunt(329181, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 local specWarnHandofDestruction					= mod:NewSpecialWarningRun(333932, nil, nil, nil, 4, 2, nil, nil, "justrun")
-local specWarnCommandMassacre					= mod:NewSpecialWarningDodgeCount(330042, nil, 330137, nil, 2, 2, nil, nil, "watchstep")
+local specWarnCommandMassacre					= mod:NewSpecialWarningDodgeCount(330042, nil, nil, nil, 2, 2, nil, nil, "watchstep")
 
 local timerWrackingPainCD						= mod:NewCDCountTimer(16.6, 329181, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON, true)
 local timerHandofDestructionCD					= mod:NewCDCountTimer(44.3, 333932, nil, nil, nil, 2)

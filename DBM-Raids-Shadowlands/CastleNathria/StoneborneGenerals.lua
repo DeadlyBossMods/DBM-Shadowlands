@@ -84,10 +84,10 @@ local warnReverberatingLeap						= mod:NewTargetCountAnnounce(334009, 3, nil, ni
 local warnCrystalize							= mod:NewTargetCountAnnounce(339690, 2, nil, nil, nil, nil, nil, nil, true)
 local warnPulverizingMeteor						= mod:NewTargetCountAnnounce(342544, 4, nil, nil, nil, nil, nil, nil, true)
 
-local specWarnReverberatingEruption				= mod:NewSpecialWarningYou(344496, nil, 138658, nil, 1, 2, 2, nil, "runout")
+local specWarnReverberatingEruption				= mod:NewSpecialWarningYou(344496, nil, nil, nil, 1, 2, 2, nil, "runout")
 local yellReverberatingEruption					= mod:NewYell(344496, 138658)--Short text "Eruption"
 local yellReverberatingEruptionFades			= mod:NewFadesYell(344496, 138658)--Short text "Eruption"
-local specWarnReverberatingLeap					= mod:NewSpecialWarningYou(334009, nil, 337445, nil, 1, 2, 1, nil, "runout")
+local specWarnReverberatingLeap					= mod:NewSpecialWarningYou(334009, nil, nil, nil, 1, 2, 1, nil, "runout")
 local yellReverberatingLeap						= mod:NewYell(334009, 337445)--Short text "Leap"
 local yellReverberatingLeapFades				= mod:NewFadesYell(334009, 337445)--Short text "Leap"
 local specWarnEchoingAnnihilation				= mod:NewSpecialWarningMoveTo(344721, false, nil, nil, 1, 2, 4, nil, "helpsoak")--Off by default since strats may vary. Auto asigns reverb soak by remember which one you spawned

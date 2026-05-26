@@ -39,6 +39,7 @@ mod:RegisterEventsInCombat(
  --]]
 --Stage One: Scrying Fate
 mod:AddOptionLine(DBM:EJ_GetSectionInfo(22926), "announce")
+DBM:RegisterAltSpellName(353432, 244657)--Burden of Destiny -> Fixate
 DBM:RegisterAltSpellName(350554, 37859)--Call of Eternity -> Bomb
 DBM:RegisterAltSpellName(350355, 207544)--Fated Conjunction -> Beams
 
@@ -54,10 +55,10 @@ local specWarnInvokeDestiny						= mod:NewSpecialWarningMoveAway(351680, nil, ni
 local yellInvokeDestiny							= mod:NewYell(351680)
 local yellInvokeDestinyFades					= mod:NewShortFadesYell(351680)
 local specWarnInvokeDestinySwap					= mod:NewSpecialWarningTaunt(351680, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
-local specWarnBurdenofDestinyYou				= mod:NewSpecialWarningRun(353432, nil, 244657, nil, 4, 2, nil, nil, "justrun")--"Fixate"
+local specWarnBurdenofDestinyYou				= mod:NewSpecialWarningRun(353432, nil, nil, nil, 4, 2, nil, nil, "justrun")--"Fixate"
 local specWarnBurdenofDestiny					= mod:NewSpecialWarningSwitch(353432, "Dps", nil, nil, 1, 2, nil, nil, "killmob")
-local specWarnFatedConjunction					= mod:NewSpecialWarningDodge(350355, nil, 207544, nil, 2, 2, nil, nil, "watchstep")
-local specWarnCallofEternity					= mod:NewSpecialWarningMoveAway(350554, nil, 37859, nil, 1, 2, nil, nil, "runout")
+local specWarnFatedConjunction					= mod:NewSpecialWarningDodge(350355, nil, nil, nil, 2, 2, nil, nil, "watchstep")
+local specWarnCallofEternity					= mod:NewSpecialWarningMoveAway(350554, nil, nil, nil, 1, 2, nil, nil, "runout")
 local yellCallofEternity						= mod:NewShortPosYell(350554, 37859)--"Bomb"
 local yellCallofEternityFades					= mod:NewIconFadesYell(350554, 37859)
 

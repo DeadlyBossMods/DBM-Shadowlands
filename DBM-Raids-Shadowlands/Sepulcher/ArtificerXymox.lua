@@ -44,7 +44,7 @@ mod:AddTimerLine(DBM:EJ_GetSectionInfo(24588))
 local warnDimensionalTear						= mod:NewTargetNoFilterAnnounce(362615, 3)
 local warnStasisTrap							= mod:NewTargetNoFilterAnnounce(362882, 2)--Failing to dodge it
 
-local specWarnDimensionalTear					= mod:NewSpecialWarningYouPos(362615, nil, 67833, nil, 1, 2, nil, nil, "mm1")
+local specWarnDimensionalTear					= mod:NewSpecialWarningYouPos(362615, nil, nil, nil, 1, 2, nil, nil, "mm1")
 local yellDimensionalTear						= mod:NewPosYell(362615, 67833)
 local yellDimensionalTearFades					= mod:NewIconFadesYell(362615, 67833)
 local specWarnCartelElite						= mod:NewSpecialWarningSwitch(363485, "-Healer", nil, nil, 1, 2, 4, nil, "killmob")
@@ -54,7 +54,7 @@ local yellGlyphofRelocationFades				= mod:NewShortFadesYell(362803)
 local specWarnGlyphofRelocationTaunt			= mod:NewSpecialWarningTaunt(362803, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 local specWarnStasisTrap						= mod:NewSpecialWarningDodgeCount(362882, nil, nil, nil, 2, 2, nil, nil, "watchstep")
 local yellStasisTrap							= mod:NewYell(362882)--Failing to dodge it
-local specWarnHyperlightSpark					= mod:NewSpecialWarningCount(362849, nil, 206794, nil, 2, 2, nil, nil, "aesoon")--Short Text "Nova"
+local specWarnHyperlightSpark					= mod:NewSpecialWarningCount(362849, nil, nil, nil, 2, 2, nil, nil, "aesoon")--Short Text "Nova"
 
 local timerDimensionalTearCD					= mod:NewNextCountTimer(8, 362615, nil, nil, nil, 3)
 local timerCartelEliteCD						= mod:NewCDTimer(28.8, 363485, nil, nil, nil, 1, nil, DBM_COMMON_L.MYTHIC_ICON)

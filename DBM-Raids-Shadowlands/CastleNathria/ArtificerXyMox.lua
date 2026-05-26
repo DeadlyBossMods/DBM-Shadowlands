@@ -41,7 +41,7 @@ local warnPhase										= mod:NewPhaseChangeAnnounce(2, nil, nil, nil, nil, nil
 local warnDimensionalTear							= mod:NewTargetNoFilterAnnounce(328437, 3)
 local warnHyperlightSpark							= mod:NewCountAnnounce(325399, 2, nil, false, 2)
 
-local specWarnDimensionalTear						= mod:NewSpecialWarningYouPos(328437, nil, 327770, nil, 1, 2, nil, nil, "mm1")
+local specWarnDimensionalTear						= mod:NewSpecialWarningYouPos(328437, nil, nil, nil, 1, 2, nil, nil, "mm1")
 local yellDimensionalTear							= mod:NewPosYell(328437, 327770)
 local yellDimensionalTearFades						= mod:NewIconFadesYell(328437, 327770)
 local specWarnGlyphofDestruction					= mod:NewSpecialWarningMoveAwayCount(325361, nil, nil, nil, 1, 2, nil, nil, "runout")
@@ -69,7 +69,7 @@ local warnSeedsofExtinction							= mod:NewSpellAnnounce(329834, 3)--Shortname "
 local warnUnleashPower								= mod:NewCountAnnounce(342854, 4)
 
 local specWarnFixate								= mod:NewSpecialWarningRun(327902, nil, nil, nil, 4, 2, nil, nil, "justrun")
-local specWarnEdgeofAnnihilation					= mod:NewSpecialWarningRunCount(328789, nil, 307421, nil, 4, 2, nil, nil, "justrun")
+local specWarnEdgeofAnnihilation					= mod:NewSpecialWarningRunCount(328789, nil, nil, nil, 4, 2, nil, nil, "justrun")
 
 local timerFleetingSpiritsCD						= mod:NewCDTimer(40.8, 340758, nil, nil, nil, 3)--40.8-46
 local timerSeedsofExtinctionCD						= mod:NewCDTimer(43.7, 329770, nil, nil, nil, 5)--43-49. Shortname "Planting Seeds"

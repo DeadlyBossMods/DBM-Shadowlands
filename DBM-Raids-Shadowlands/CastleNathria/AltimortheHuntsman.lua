@@ -57,7 +57,7 @@ local warnViciousLunge							= mod:NewTargetNoFilterAnnounce(334945, 3)
 
 local specWarnJaggedClaws						= mod:NewSpecialWarningStack(334971, nil, 2, nil, nil, 1, 6, nil, nil, "stackhigh")
 local specWarnJaggedClawsTaunt					= mod:NewSpecialWarningTaunt(334971, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
-local specWarnViciousLunge						= mod:NewSpecialWarningYou(334945, nil, 262783, nil, 3, 2, nil, nil, "gathershare")
+local specWarnViciousLunge						= mod:NewSpecialWarningYou(334945, nil, nil, nil, 3, 2, nil, nil, "gathershare")
 local yellViciousLunge							= mod:NewYell(334945, 262783, nil, nil, "YELL")
 local yellViciousLungeFades						= mod:NewFadesYell(334945, 262783, nil, nil, "YELL")
 

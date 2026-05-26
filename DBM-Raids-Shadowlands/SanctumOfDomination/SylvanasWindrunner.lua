@@ -78,16 +78,16 @@ local warnBlackArrow								= mod:NewTargetCountAnnounce(358705, 4, nil, nil, ni
 
 local specWarnWindrunner							= mod:NewSpecialWarningCount(347504, nil, nil, nil, 2, 2, nil, nil, "specialsoon")
 local specWarnShadowDagger							= mod:NewSpecialWarningYou(353935, false, nil, nil, 1, 2, nil, nil, "targetyou")
-local specWarnDominationChains						= mod:NewSpecialWarningCount(349419, nil, 298213, nil, 2, 2, nil, nil, "watchstep")
-local specWarnVeilofDarkness						= mod:NewSpecialWarningDodgeCount(347704, nil, 209426, nil, 2, 2, nil, nil, "watchstep")
-local specWarnWailingArrow							= mod:NewSpecialWarningRun(348064, nil, 208407, nil, 4, 2, nil, nil, "runout")
+local specWarnDominationChains						= mod:NewSpecialWarningCount(349419, nil, nil, nil, 2, 2, nil, nil, "watchstep")
+local specWarnVeilofDarkness						= mod:NewSpecialWarningDodgeCount(347704, nil, nil, nil, 2, 2, nil, nil, "watchstep")
+local specWarnWailingArrow							= mod:NewSpecialWarningRun(348064, nil, nil, nil, 4, 2, nil, nil, "runout")
 local yellWailingArrow								= mod:NewShortPosYell(348064, 208407)
 local yellWailingArrowFades							= mod:NewIconFadesYell(348064, 208407)
 local specWarnWailingArrowTaunt						= mod:NewSpecialWarningTaunt(348064, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
-local specWarnBlackArrow							= mod:NewSpecialWarningYou(358705, nil, 208407, nil, 1, 2, 4, nil, "runout")--Is this also on tanks? it doesn't have tank icon
+local specWarnBlackArrow							= mod:NewSpecialWarningYou(358705, nil, nil, nil, 1, 2, 4, nil, "runout")--Is this also on tanks? it doesn't have tank icon
 local yellBlackArrow								= mod:NewShortPosYell(358705, 208407)
 local yellBlackArrowFades							= mod:NewIconFadesYell(358705, 208407)
-local specWarnBlackArrowTaunt						= mod:NewSpecialWarningTaunt(358705, nil, 208407, nil, 1, 2, nil, nil, "tauntboss")
+local specWarnBlackArrowTaunt						= mod:NewSpecialWarningTaunt(358705, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 local specWarnRage									= mod:NewSpecialWarningRun(358711, nil, nil, nil, 4, 2, nil, nil, "justrun")
 
 local timerRP										= mod:NewRPTimer(58.3)
@@ -184,7 +184,7 @@ local warnMerciless									= mod:NewCountAnnounce(358588, 2)
 
 local specWarnBansheesBane							= mod:NewSpecialWarningStack(353929, nil, 1, nil, nil, 1, 6, nil, nil, "targetyou")
 local specWarnBansheesBaneDispel					= mod:NewSpecialWarningDispel(353929, "RemoveMagic", nil, nil, 3, 2, nil, nil, "helpdispel")--Dispel alert during Fury
-local specWarnBansheeScream							= mod:NewSpecialWarningYou(357720, nil, 31295, nil, 1, 2, nil, nil, "scatter")
+local specWarnBansheeScream							= mod:NewSpecialWarningYou(357720, nil, nil, nil, 1, 2, nil, nil, "scatter")
 local yellBansheeScream								= mod:NewYell(357720, 31295)
 local specWarnRaze									= mod:NewSpecialWarningRunCount(354147, nil, nil, nil, 4, 2, nil, nil, "justrun")
 local specWarnDeathKnives							= mod:NewSpecialWarningMoveAway(358434, nil, nil, nil, 1, 2, 4, nil, "runout")--Mythic

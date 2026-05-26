@@ -31,7 +31,7 @@ mod:RegisterEventsInCombat(
 --TODO, do people really need a timer for purging protocol? it's based on bosses energy depletion rate (which is exactly 1 energy per second and visible on infoframe)
 --In other words, infoframe energy tracker IS the timer, and his energy is constantly going up and down based on core strategy, timer would need aggressive updates from UNIT_POWER
 DBM:RegisterAltSpellName(352833, 182908)--Disintegration -> short name
-DBM:RegisterAltSpellName(350496, 167180)--Threat Neutralization -> short name
+DBM:RegisterAltSpellName(350496, 37859)--Threat Neutralization -> short name
 DBM:RegisterAltSpellName(350735, 350732)--Elimination Pattern -> Sunder
 
 local warnDisintegration						= mod:NewTargetNoFilterAnnounce(352833, 3)
@@ -48,9 +48,9 @@ local specWarnSunder							= mod:NewSpecialWarningDefensive(350732, nil, nil, ni
 local specWarnSunderTaunt						= mod:NewSpecialWarningTaunt(350732, nil, nil, nil, 1, 2, nil, nil, "tauntboss")--Only used on normal/LFR, swaps for heroic and mythic are during Obliterate
 local specWarnObliterate						= mod:NewSpecialWarningTaunt(350734, nil, nil, nil, 1, 2, nil, nil, "tauntboss")
 local specWarnObliterateCount					= mod:NewSpecialWarningCount(350734, false, nil, nil, 1, 2)
-local specWarnDisintegration					= mod:NewSpecialWarningDodgeCount(352833, nil, 182908, nil, 2, 2, nil, nil, "farfromline")
+local specWarnDisintegration					= mod:NewSpecialWarningDodgeCount(352833, nil, nil, nil, 2, 2, nil, nil, "farfromline")
 local yellDisintegration						= mod:NewYell(352833)
-local specWarnThreatNeutralization				= mod:NewSpecialWarningMoveAway(350496, nil, 37859, nil, 1, 2, nil, nil, "runout")
+local specWarnThreatNeutralization				= mod:NewSpecialWarningMoveAway(350496, nil, nil, nil, 1, 2, nil, nil, "runout")
 local yellThreatNeutralization					= mod:NewShortPosYell(350496, 37859)
 local yellThreatNeutralizationFades				= mod:NewIconFadesYell(350496, 37859)
 local specWarnGTFO								= mod:NewSpecialWarningGTFO(340324, nil, nil, nil, 1, 8, nil, nil, "watchfeet")
